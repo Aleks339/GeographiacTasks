@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas</title>
+	<meta charset="utf-8">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+       $( "#brazilBird" ).draggable();
+       $( "#brazilFlag" ).draggable();
+       $( "#brazilFootballer" ).draggable();
+       $( "#india1" ).draggable();
+       $( "#india2" ).draggable();
+       $( "#india3" ).draggable();
+       $( "#india4" ).draggable();
+       $( "#indiatiger" ).draggable();
+       $( "#brazil2" ).draggable();
+       $( "#brazil1" ).draggable();
+  });
+  </script>
+</head>
+
+<body>
+
+	
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+
+<canvas id="myCanvas2" width="500" height="500" style="border:1px solid #000000;"></canvas>
+
+<br><br><br>
+
+<img src = "brazilBird.jpg" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content" id = "brazilBird">
+<img src = "india1.jpg" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content" id = "india1">
+<img src = "brazilFootballer.jpg" width = "100" height = "100" class="ui-widget-content" id = "brazilFootballer">
+<img src = "brazilFlag.jpg" width = "100" height = "100" class="ui-widget-content" id = "brazilFlag">
+<img src = "india2.jpg" width = "100" height = "100" class="ui-widget-content" id = "india2">
+<img src = "india3.jpg" width = "100" height = "100" class="ui-widget-content" id = "india3">
+<img src = "indiatiger.jpg" width = "100" height = "100" class="ui-widget-content" id = "indiatiger">
+<img src = "brazil1.jpg" width = "100" height = "100" class="ui-widget-content" id = "brazil1">
+<img src = "india4.jpg" width = "100" height = "100" class="ui-widget-content" id = "india4">
+<img src = "brazil2.jpg" width = "100" height = "100" class="ui-widget-content" id = "brazil2">
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd=ctx.createRadialGradient(100,100,0,250,250,250);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle=grd;
+ctx.fillRect(0,0,500,500);
+
+ctx.moveTo(0,0);
+ctx.lineTo(250,250);
+ctx.stroke();
+
+ctx.moveTo(250,250);
+ctx.lineTo(500,0);
+ctx.stroke();
+
+ctx.moveTo(50,300);
+ctx.lineTo(450,300);
+ctx.stroke();
+
+ctx.font = "30px Arial";
+ctx.fillStyle = "blue";
+ctx.textAlign = "center";
+ctx.fillText("To my dear friend",245,290); 
+
+ctx.moveTo(50,350);
+ctx.lineTo(450,350);
+ctx.stroke();
+
+ctx.font = "30px Arial";
+ctx.fillStyle = "blue";
+ctx.textAlign = "center";
+ctx.fillText("From Brazil",245,340); 
+
+</script>
+
+<script>
+var c = document.getElementById("myCanvas2");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd=ctx.createRadialGradient(100,100,0,250,250,250);
+grd.addColorStop(0,"green");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle=grd;
+ctx.fillRect(0,0,500,500);
+
+ctx.moveTo(0,0);
+ctx.lineTo(250,250);
+ctx.stroke();
+
+ctx.moveTo(250,250);
+ctx.lineTo(500,0);
+ctx.stroke();
+
+ctx.moveTo(50,300);
+ctx.lineTo(450,300);
+ctx.stroke();
+
+ctx.font = "30px Arial";
+ctx.fillStyle = "blue";
+ctx.textAlign = "center";
+ctx.fillText("To my dear friend",245,290); 
+
+ctx.moveTo(50,350);
+ctx.lineTo(450,350);
+ctx.stroke();
+
+ctx.font = "30px Arial";
+ctx.fillStyle = "blue";
+ctx.textAlign = "center";
+ctx.fillText("From India",245,340); 
+
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<meta charset="utf-8">
+	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	  <script>
+	  $( function() {
+	    $( "#draggable" ).draggable();
+	    $( "#droppable" ).droppable({
+	      drop: function( event, ui ) {
+	        $( this )
+	          .addClass( "ui-state-highlight" )
+	          .find( "p" )
+	            .html( "Dropped!" );
+	      }
+	    });
+	  } );
+	  </script>
+</head>
+<body>
+
+<div style = "float: left;">
+
+<h1>What's the capital of Colombia?</h1>
+
+<canvas width = "300" height = "50" id = "Colombia"></canvas>
+
+<h1>What's the capital of Chilie?</h1>
+
+<canvas width = "300" height = "50" id = "Chilie"></canvas>
+
+<h1>What's the capital of Argentina?</h1>
+
+<canvas width = "300" height = "50" id = "Argentina"></canvas>
+
+<h1>What's the capital of Venezuela?</h1>
+
+<canvas width = "300" height = "50" id = "Venezuela"></canvas>
+
+</div>
+
+<canvas width = "500" height = "500" id = "answers" style = "float:right;"></canvas>
+<canvas width = "100" height = "40" id ="Buenos-Aires"></canvas>
+<canvas width = "100" height = "40" id = "Caracas"></canvas>
+<canvas width = "100" height = "40" id = "Santiago"></canvas>
+<canvas width = "100" height = "40" id = "Bogota"></canvas>
+
+<script>
+//Colombia
+var c = document.getElementById("Colombia");
+var ctx = c.getContext("2d");
+
+ctx.strokeRect(5, 5, 225, 45);
+
+//Chilie
+var c = document.getElementById("Chilie");
+var ctx = c.getContext("2d");
+
+ctx.strokeRect(5, 5, 225, 45);
+
+//Argentina
+var c = document.getElementById("Argentina");
+var ctx = c.getContext("2d");
+
+ctx.strokeRect(5, 5, 225, 45);
+
+//Venezuela
+var c = document.getElementById("Venezuela");
+var ctx = c.getContext("2d");
+
+ctx.strokeRect(5, 5, 225, 45);
+
+//answers
+var c = document.getElementById("answers");
+var ctx = c.getContext("2d");
+
+var x = Math.random() * c.width;
+var y = Math.random() * c.height;
+
+ctx.font = "30px Comic Sans MS";
+ctx.fillStyle = "red";
+
+ctx.fillText("Caracas", 50, 50);
+ctx.fillText("Buenos-Aires", 250, 50);
+ctx.fillText("Santiago", 50, 300);
+ctx.fillText("Bogota", 250, 300);
+</script>
+
+</body>
+</html>
