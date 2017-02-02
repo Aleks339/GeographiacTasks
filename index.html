@@ -9,25 +9,121 @@
   <script type="text/javascript">
   $(document).ready(function() {
        $( "#brazilBird" ).draggable();
+	   $( "#myCanvas" ).droppable({
+	     drop: function( event, ui ) {
+		   $( this )
+			.addClass( "ui-state-highlight" )
+			.find( "p" )
+			  .html( "Exellent!" );
+			 }
+		   });
+	  
+	  
        $( "#brazilFlag" ).draggable();
+	  $( "#myCanvas" ).droppable({
+	     drop: function( event, ui ) {
+		   $( this )
+			.addClass( "ui-state-highlight" )
+			.find( "p" )
+			  .html( "Exellent!" );
+			 }
+		   });
+	  
+	  
        $( "#brazilFootballer" ).draggable();
+	   $( "#myCanvas" ).droppable({
+	     drop: function( event, ui ) {
+		   $( this )
+			.addClass( "ui-state-highlight" )
+			.find( "p" )
+			  .html( "Exellent!" );
+			 }
+		   });
+	  
+	  
        $( "#india1" ).draggable();
+	   $( "#myCanvas2" ).droppable({
+	     drop: function( event, ui ) {
+		   $( this )
+			.addClass( "ui-state-highlight" )
+			.find( "p" )
+			  .html( "Exellent!" );
+			 }
+		   });
+	  
        $( "#india2" ).draggable();
+	   $( "#myCanvas2" ).droppable({
+	     drop: function( event, ui ) {
+		   $( this )
+			.addClass( "ui-state-highlight" )
+			.find( "p" )
+			  .html( "Exellent!" );
+			 }
+		   });
+	  
+	  
        $( "#india3" ).draggable();
+	  $( "#myCanvas2" ).droppable({
+	     drop: function( event, ui ) {
+		   $( this )
+			.addClass( "ui-state-highlight" )
+			.find( "p" )
+			  .html( "Exellent!" );
+			 }
+		   });
+	  
+	  
        $( "#india4" ).draggable();
+	   $( "#myCanvas2" ).droppable({
+	     drop: function( event, ui ) {
+		   $( this )
+			.addClass( "ui-state-highlight" )
+			.find( "p" )
+			  .html( "Exellent!" );
+			 }
+		   });
+	  
+	  
        $( "#indiatiger" ).draggable();
-       $( "#brazil2" ).draggable();
+	   $( "#myCanvas2" ).droppable({
+	     drop: function( event, ui ) {
+		   $( this )
+			.addClass( "ui-state-highlight" )
+			.find( "p" )
+			  .html( "Exellent!" );
+			 }
+		   });
+	  
+	  
+       $( "#brazil2" ).draggable();	   
+	   $( "#myCanvas" ).droppable({
+	     drop: function( event, ui ) {
+		   $( this )
+			.addClass( "ui-state-highlight" )
+			.find( "p" )
+			  .html( "Exellent!" );
+			 }
+		   });
+	  
+	  
        $( "#brazil1" ).draggable();
+	   $( "#myCanvas" ).droppable({
+	     drop: function( event, ui ) {
+		   $( this )
+			.addClass( "ui-state-highlight" )
+			.find( "p" )
+			  .html( "Exellent!" );
+			 }
+		   });
   });
   </script>
 </head>
 
 <body>
 
-	
-<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"><p class="ui-widget-header">Decorate me by Brazilian stamps</p></canvas>
 
-<canvas id="myCanvas2" width="500" height="500" style="border:1px solid #000000;"></canvas>
+<canvas id="myCanvas2" width="500" height="500" style="border:1px solid #000000;"><p class="ui-widget-header">Decorate me by Indian stamps</p></canvas>
 
 <br><br><br>
 
@@ -43,6 +139,7 @@
 <img src = "brazil2.jpg" width = "100" height = "100" class="ui-widget-content" id = "brazil2">
 
 <script>
+//Brazil
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
@@ -80,10 +177,31 @@ ctx.font = "30px Arial";
 ctx.fillStyle = "blue";
 ctx.textAlign = "center";
 ctx.fillText("From Brazil",245,340); 
+	
+//left bottom circle
+ctx.rect(10,380,100,100);
+ctx.stroke();
+
+//center bottom circle
+ctx.rect(200,380,100,100);
+ctx.stroke();
+		
+//right bottom circle
+ctx.rect(390,380,100,100);
+ctx.stroke();
+	
+//left top circle
+ctx.rect(10,120,100,100);
+ctx.stroke();
+	
+//right top circle
+ctx.rect(390,120,100,100);
+ctx.stroke();
 
 </script>
 
 <script>
+//India
 var c = document.getElementById("myCanvas2");
 var ctx = c.getContext("2d");
 
@@ -121,7 +239,26 @@ ctx.font = "30px Arial";
 ctx.fillStyle = "blue";
 ctx.textAlign = "center";
 ctx.fillText("From India",245,340); 
-
+	
+//left bottom circle
+ctx.rect(10,380,100,100);
+ctx.stroke();
+	
+//center bottom circle
+ctx.rect(200,380,100,100);
+ctx.stroke(); 
+	
+//right bottom circle
+ctx.rect(390,380,100,100);
+ctx.stroke(); 
+	
+//left top circle
+ctx.rect(10,120,100,100);
+ctx.stroke();
+	
+//right top circle
+ctx.rect(390,120,100,100);
+ctx.stroke();
 </script>
 </body>
 </html>
