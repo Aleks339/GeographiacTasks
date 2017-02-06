@@ -7,88 +7,122 @@
 	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	  <script>
 	  $(document).ready(function() {
-	    $( ".draggable1" ).draggable();
+        //Colombia
+	    $( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
 	    $( "#Colombia" ).droppable({
-			drop: function( event, ui ) {
+            accept: ".draggable1",
+            classes: {
+            "ui-droppable-active": "ui-state-active",
+            "ui-droppable-hover": "ui-state-hover"
+          },
+	     drop: function( event, ui ) {
              $( this )
               .addClass( "ui-state-highlight" )
               .find( "h1" )
                 alert( "Good job!" );
-			}
+	     }
 		});
-		$( ".draggable2" ).draggable();
+            
+                  
+        //Chilie
+	    $( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
 	    $( "#Chilie" ).droppable({
-			drop: function( event, ui ) {
+            accept: ".draggable2",
+            classes: {
+            "ui-droppable-active": "ui-state-active",
+            "ui-droppable-hover": "ui-state-hover"
+            },
+	     drop: function( event, ui ) {
              $( this )
               .addClass( "ui-state-highlight" )
               .find( "h1" )
-                alert( "Good job!" );	
-		    }
-		});
-		$( ".draggable3" ).draggable();
+                alert( "You are right!" );	
+	       }
+             });
+          
+        //Venezuela
+	    $( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
 	    $( "#Venezuela" ).droppable({
-			drop: function( event, ui ) {
+            accept: ".draggable3",
+            classes: {
+            "ui-droppable-active": "ui-state-active",
+            "ui-droppable-hover": "ui-state-hover"
+            },
+	    drop: function( event, ui ) {
              $( this )
               .addClass( "ui-state-highlight" )
               .find( "h1" )
-                alert( "Good job!" );
-			}
-		});
-		$( ".draggable4" ).draggable();
+                alert( "Congratulations!" );
+	      }
+	    });
+          
+        //Argentina"
+	    $( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
 	    $( "#Argentina" ).droppable({
-			drop: function( event, ui ) {
+            accept: ".draggable4",
+            classes: {
+            "ui-droppable-active": "ui-state-active",
+            "ui-droppable-hover": "ui-state-hover"
+           },
+	   drop: function( event, ui ) {
              $( this )
               .addClass( "ui-state-highlight" )
               .find( "h1" )
-                alert( "Good job!" );	
-            }
-		});
-	  } );
+                alert( "Exellent!" );	
+           }
+         });
+       });
 	  </script>
 </head>
 <body>
 
-<div style = "float: left;">
+<div style = "float: left; text-indent:30px;">
 
 <div class = "droppable1">
 	<h1>What's the capital of Colombia?</h1>
 </div>
 
-<canvas width = "300" height = "50" id = "Colombia"></canvas>
+<canvas width = "300" height = "50" id = "Colombia" style = "position:relative; left:30px;"></canvas>
 
 <div class = "droppable2">
 	<h1>What's the capital of Chilie?</h1>
 </div>
-
-<canvas width = "300" height = "50" id = "Chilie"></canvas>
+    
+<canvas width = "300" height = "50" id = "Chilie" style = "position:relative; left:30px;"></canvas>
+    
+</div>
+    
+<div style = "float: left; text-indent:320px;">
 
 <div class = "droppable3">
 	<h1>What's the capital of Venezuela?</h1>
 </div>
 
-<canvas width = "300" height = "50" id = "Venezuela"></canvas>
+<canvas width = "300" height = "50" id = "Venezuela" style = "position:relative; left:320px;"></canvas>
 
 <div class = "droppable4">
 	<h1>What's the capital of Argentina?</h1>
 </div>
 
-<canvas width = "300" height = "50" id = "Argentina"></canvas>
+<canvas width = "300" height = "50" id = "Argentina" style = "position:relative; left:320px;"></canvas>
     
 </div>
+    
+<div style = "float: right; position:relative; left:-10px;">
 
-<canvas id = "BuenAir" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg')" class = "draggable4" width = "300" height = "50">
+<canvas id = "BuenAir" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable4" width = "300" height = "50">
 </canvas>
 
-<canvas id = "carac" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg')" class = "draggable3" width = "300" height = "50">
+<canvas id = "carac" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable3" width = "300" height = "50">
 </canvas>
 
-<canvas id = "san" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg')"  class="draggable2" width = "300" height = "50">
+<canvas id = "san" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100"  class="draggable2" width = "300" height = "50">
 </canvas>
     
-<canvas id = "bog" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg')" class = "draggable1" width = "300" height = "50">
+<canvas id = "bog" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable1" width = "300" height = "50">
 </canvas>
 
-
+</div>
 
 <script>
 //Colombia
