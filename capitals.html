@@ -6,16 +6,43 @@
 	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	  <script>
-	  $( function() {
-	    $( "#draggable" ).draggable();
-	    $( "#droppable" ).droppable({
-	      drop: function( event, ui ) {
-	        $( this )
-	          .addClass( "ui-state-highlight" )
-	          .find( "p" )
-	            .html( "Dropped!" );
-	      }
-	    });
+	  $(document).ready(function() {
+	    $( ".draggable1" ).draggable();
+	    $( "#Colombia" ).droppable({
+			drop: function( event, ui ) {
+             $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "h1" )
+                alert( "Good job!" );
+			}
+		});
+		$( ".draggable2" ).draggable();
+	    $( "#Chilie" ).droppable({
+			drop: function( event, ui ) {
+             $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "h1" )
+                alert( "Good job!" );	
+		    }
+		});
+		$( ".draggable3" ).draggable();
+	    $( "#Venezuela" ).droppable({
+			drop: function( event, ui ) {
+             $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "h1" )
+                alert( "Good job!" );
+			}
+		});
+		$( ".draggable4" ).draggable();
+	    $( "#Argentina" ).droppable({
+			drop: function( event, ui ) {
+             $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "h1" )
+                alert( "Good job!" );	
+            }
+		});
 	  } );
 	  </script>
 </head>
@@ -23,69 +50,94 @@
 
 <div style = "float: left;">
 
-<h1>What's the capital of Colombia?</h1>
+<div class = "droppable1">
+	<h1>What's the capital of Colombia?</h1>
+</div>
 
 <canvas width = "300" height = "50" id = "Colombia"></canvas>
 
-<h1>What's the capital of Chilie?</h1>
+<div class = "droppable2">
+	<h1>What's the capital of Chilie?</h1>
+</div>
 
 <canvas width = "300" height = "50" id = "Chilie"></canvas>
 
-<h1>What's the capital of Argentina?</h1>
-
-<canvas width = "300" height = "50" id = "Argentina"></canvas>
-
-<h1>What's the capital of Venezuela?</h1>
+<div class = "droppable3">
+	<h1>What's the capital of Venezuela?</h1>
+</div>
 
 <canvas width = "300" height = "50" id = "Venezuela"></canvas>
 
+<div class = "droppable4">
+	<h1>What's the capital of Argentina?</h1>
 </div>
 
-<canvas width = "500" height = "500" id = "answers" style = "float:right;"></canvas>
-<canvas width = "100" height = "40" id ="Buenos-Aires"></canvas>
-<canvas width = "100" height = "40" id = "Caracas"></canvas>
-<canvas width = "100" height = "40" id = "Santiago"></canvas>
-<canvas width = "100" height = "40" id = "Bogota"></canvas>
+<canvas width = "300" height = "50" id = "Argentina"></canvas>
+    
+</div>
+
+<canvas id = "BuenAir" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg')" class = "draggable4" width = "300" height = "50">
+</canvas>
+
+<canvas id = "carac" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg')" class = "draggable3" width = "300" height = "50">
+</canvas>
+
+<canvas id = "san" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg')"  class="draggable2" width = "300" height = "50">
+</canvas>
+    
+<canvas id = "bog" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg')" class = "draggable1" width = "300" height = "50">
+</canvas>
+
+
 
 <script>
 //Colombia
-var c = document.getElementById("Colombia");
-var ctx = c.getContext("2d");
+var col = document.getElementById("Colombia");
+var ctx = col.getContext("2d");
 
-ctx.strokeRect(5, 5, 225, 45);
+ctx.strokeRect(5, 5, 290, 40);
 
 //Chilie
-var c = document.getElementById("Chilie");
-var ctx = c.getContext("2d");
+var chi = document.getElementById("Chilie");
+var ctx = chi.getContext("2d");
 
-ctx.strokeRect(5, 5, 225, 45);
+ctx.strokeRect(5, 5, 290, 40);
 
 //Argentina
-var c = document.getElementById("Argentina");
-var ctx = c.getContext("2d");
+var arg = document.getElementById("Argentina");
+var ctx = arg.getContext("2d");
 
-ctx.strokeRect(5, 5, 225, 45);
+ctx.strokeRect(5, 5, 290, 40);
 
 //Venezuela
-var c = document.getElementById("Venezuela");
-var ctx = c.getContext("2d");
+var ven = document.getElementById("Venezuela");
+var ctx = ven.getContext("2d");
 
-ctx.strokeRect(5, 5, 225, 45);
+ctx.strokeRect(5, 5, 290, 40);
+    
+//Buenos-Aries
+var canvas = document.getElementById("BuenAir");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Buenos-Aires",10,30);
 
-//answers
-var c = document.getElementById("answers");
-var ctx = c.getContext("2d");
+//Caracas
+var canvas = document.getElementById("carac");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Caracas",10,30);
+    
+//Santiago
+var canvas = document.getElementById("san");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Santiago",10,30);
 
-var x = Math.random() * c.width;
-var y = Math.random() * c.height;
-
-ctx.font = "30px Comic Sans MS";
-ctx.fillStyle = "red";
-
-ctx.fillText("Caracas", 50, 50);
-ctx.fillText("Buenos-Aires", 250, 50);
-ctx.fillText("Santiago", 50, 300);
-ctx.fillText("Bogota", 250, 300);
+//Bogota
+var canvas = document.getElementById("bog");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Bogota",10,30);
 </script>
 
 </body>
