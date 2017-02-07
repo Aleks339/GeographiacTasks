@@ -7,123 +7,51 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script type="text/javascript">
-  $(document).ready(function() {
-       $( "#brazilBird" ).draggable();
-	   $( "#myCanvas" ).droppable({
-	     drop: function( event, ui ) {
-		   $( this )
-			.addClass( "ui-state-highlight" )
-			.find( "p" )
-			  .html( "Exellent!" );
-			 }
-		   });
-	  
-	  
-       $( "#brazilFlag" ).draggable();
-	  $( "#myCanvas" ).droppable({
-	     drop: function( event, ui ) {
-		   $( this )
-			.addClass( "ui-state-highlight" )
-			.find( "p" )
-			  .html( "Exellent!" );
-			 }
-		   });
-	  
-	  
-       $( "#brazilFootballer" ).draggable();
-	   $( "#myCanvas" ).droppable({
-	     drop: function( event, ui ) {
-		   $( this )
-			.addClass( "ui-state-highlight" )
-			.find( "p" )
-			  .html( "Exellent!" );
-			 }
-		   });
-	  
-	  
-       $( "#india1" ).draggable();
-	   $( "#myCanvas2" ).droppable({
-	     drop: function( event, ui ) {
-		   $( this )
-			.addClass( "ui-state-highlight" )
-			.find( "p" )
-			  .html( "Exellent!" );
-			 }
-		   });
-	  
-       $( "#india2" ).draggable();
-	   $( "#myCanvas2" ).droppable({
-	     drop: function( event, ui ) {
-		   $( this )
-			.addClass( "ui-state-highlight" )
-			.find( "p" )
-			  .html( "Exellent!" );
-			 }
-		   });
-	  
-	  
-       $( "#india3" ).draggable();
-	  $( "#myCanvas2" ).droppable({
-	     drop: function( event, ui ) {
-		   $( this )
-			.addClass( "ui-state-highlight" )
-			.find( "p" )
-			  .html( "Exellent!" );
-			 }
-		   });
-	  
-	  
-       $( "#india4" ).draggable();
-	   $( "#myCanvas2" ).droppable({
-	     drop: function( event, ui ) {
-		   $( this )
-			.addClass( "ui-state-highlight" )
-			.find( "p" )
-			  .html( "Exellent!" );
-			 }
-		   });
-	  
-	  
-       $( "#indiatiger" ).draggable();
-	   $( "#myCanvas2" ).droppable({
-	     drop: function( event, ui ) {
-		   $( this )
-			.addClass( "ui-state-highlight" )
-			.find( "p" )
-			  .html( "Exellent!" );
-			 }
-		   });
-	  
-	  
-       $( "#brazil2" ).draggable();	   
-	   $( "#myCanvas" ).droppable({
-	     drop: function( event, ui ) {
-		   $( this )
-			.addClass( "ui-state-highlight" )
-			.find( "p" )
-			  .html( "Exellent!" );
-			 }
-		   });
-	  
-	  
-       $( "#brazil1" ).draggable();
-	   $( "#myCanvas" ).droppable({
-	     drop: function( event, ui ) {
-		   $( this )
-			.addClass( "ui-state-highlight" )
-			.find( "p" )
-			  .html( "Exellent!" );
-			 }
-		   });
-  });
+      
+$(document).ready(function(){
+    //Brazil
+     $( "#brazilBird, #brazilFootballer, #brazilFlag, #brazil1, #brazil2, #india1, #india2, #india3, #indiatiger, #india4" ).draggable();
+	    $( "#BrazCanvas" ).droppable({
+            accept: "#brazilBird, #brazilFootballer, #brazilFlag, #brazil1, #brazil2",
+            classes: {
+            "ui-droppable-active": "ui-state-active",
+            "ui-droppable-hover": "ui-state-hover"
+          },
+			drop: function( event, ui ) {
+             $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "canvas" )
+                alert( "Good job!" );
+			}
+		});
+    
+    //India
+     $( "#brazilBird, #brazilFootballer, #brazilFlag, #brazil1, #brazil2, #india1, #india2, #india3, #indiatiger, #india4" ).draggable();
+	    $( "#IndCanvas" ).droppable({
+            accept: " #india1, #india2, #india3, #indiatiger, #india4",
+            classes: {
+            "ui-droppable-active": "ui-state-active",
+            "ui-droppable-hover": "ui-state-hover"
+          },
+			drop: function( event, ui ) {
+             $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "canvas" )
+                alert( "You are absolutely right!" );
+			}
+		});
+})
   </script>
 </head>
 
 <body>
+    
+<h2>Try to clue Brazilian post stamps on the Brazilian envelope, and Indian ones on the Indian envelope!</h2>
 
-<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"><p class="ui-widget-header">Decorate me by Brazilian stamps</p></canvas>
+<canvas id="BrazCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
 
-<canvas id="myCanvas2" width="500" height="500" style="border:1px solid #000000;"><p class="ui-widget-header">Decorate me by Indian stamps</p></canvas>
+<canvas id="IndCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+
 
 <br><br><br>
 
@@ -140,7 +68,7 @@
 
 <script>
 //Brazil
-var c = document.getElementById("myCanvas");
+var c = document.getElementById("BrazCanvas");
 var ctx = c.getContext("2d");
 
 // Create gradient
@@ -177,32 +105,12 @@ ctx.font = "30px Arial";
 ctx.fillStyle = "blue";
 ctx.textAlign = "center";
 ctx.fillText("From Brazil",245,340); 
-	
-//left bottom circle
-ctx.rect(10,380,100,100);
-ctx.stroke();
-
-//center bottom circle
-ctx.rect(200,380,100,100);
-ctx.stroke();
-		
-//right bottom circle
-ctx.rect(390,380,100,100);
-ctx.stroke();
-	
-//left top circle
-ctx.rect(10,120,100,100);
-ctx.stroke();
-	
-//right top circle
-ctx.rect(390,120,100,100);
-ctx.stroke();
 
 </script>
 
 <script>
 //India
-var c = document.getElementById("myCanvas2");
+var c = document.getElementById("IndCanvas");
 var ctx = c.getContext("2d");
 
 // Create gradient
@@ -239,26 +147,7 @@ ctx.font = "30px Arial";
 ctx.fillStyle = "blue";
 ctx.textAlign = "center";
 ctx.fillText("From India",245,340); 
-	
-//left bottom circle
-ctx.rect(10,380,100,100);
-ctx.stroke();
-	
-//center bottom circle
-ctx.rect(200,380,100,100);
-ctx.stroke(); 
-	
-//right bottom circle
-ctx.rect(390,380,100,100);
-ctx.stroke(); 
-	
-//left top circle
-ctx.rect(10,120,100,100);
-ctx.stroke();
-	
-//right top circle
-ctx.rect(390,120,100,100);
-ctx.stroke();
+
 </script>
 </body>
 </html>
