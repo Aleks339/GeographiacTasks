@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h2>Russian flag</h2>
+    <canvas width = "600" height = "300" id = "Russia" style = "border:1px solid black"></canvas>
+    
+    <h2>Finnish flag</h2>
+    <canvas width = "600" height = "300" id = "Finland" style = "border:1px solid black"></canvas>
+    
+    <h2>Icelandic flag</h2>
+    <canvas width = "600" height = "300" id = "Iceland" style = "border:1px solid black"></canvas>
+    
+    <h2>Norwegian flag</h2>
+    <canvas width = "600" height = "300" id = "Norway" style = "border:1px solid black"></canvas>
+    
+    <h2>Czech flag</h2>
+    <canvas width = "600" height = "300" id = "Czechia" style = "border:1px solid black"></canvas>
+    
+    <script>
+        //Russian flag
+       var canvas = document.getElementById("Russia");
+       var ctx = canvas.getContext("2d");
+        
+       ctx.fillStyle = "white";
+       ctx.fillRect(0,0,600,100);
+        
+       ctx.fillStyle = "blue";
+       ctx.fillRect(0,100,600,100);
+        
+       ctx.fillStyle = "red";
+       ctx.fillRect(0,200,600,100);
+        
+        
+       
+        //Finnish flag
+       var canvas = document.getElementById("Finland");
+       var ctx = canvas.getContext("2d");
+        
+       ctx.fillStyle = "blue";
+       ctx.fillRect(150, 0, 75, 300);
+        
+       ctx.fillStyle = "blue";
+       ctx.fillRect(0, 100, 600, 75);
+        
+        
+        
+        //Icelandic flag
+       var canvas = document.getElementById("Iceland");
+       var ctx = canvas.getContext("2d");
+        //background
+       ctx.fillStyle = "blue";
+       ctx.fillRect(0, 0, 600, 300);
+        //white
+       ctx.fillStyle = "white";
+       ctx.fillRect(150, 0, 75, 300);
+        
+       ctx.fillStyle = "white";
+       ctx.fillRect(0, 100, 600, 75);
+        
+        //red
+       ctx.fillStyle = "red";
+       ctx.fillRect(165, 0, 45, 300);
+        
+       ctx.fillStyle = "red";
+       ctx.fillRect(0, 115, 600, 45);
+        
+        
+         //Norwegian flag
+       var canvas = document.getElementById("Norway");
+       var ctx = canvas.getContext("2d");
+        //background
+       ctx.fillStyle = "red";
+       ctx.fillRect(0, 0, 600, 300);
+        //white
+       ctx.fillStyle = "white";
+       ctx.fillRect(150, 0, 75, 300);
+        
+       ctx.fillStyle = "white";
+       ctx.fillRect(0, 100, 600, 75);
+        
+        //red
+       ctx.fillStyle = "blue";
+       ctx.fillRect(165, 0, 45, 300);
+        
+       ctx.fillStyle = "blue";
+       ctx.fillRect(0, 115, 600, 45);
+    </script>
+</body>
+</html>
