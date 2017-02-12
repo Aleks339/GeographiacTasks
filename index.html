@@ -3,41 +3,41 @@
 <head>
 	<title>canvas</title>
 	<meta charset="utf-8">
-
+  <style>
+  .ui-state-highlight{
+    border: 3px solid green;
+  }
+  </style>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script type="text/javascript">
       
 $(document).ready(function(){
     //Brazil
-     $( "#brazilBird, #brazilFootballer, #brazilFlag, #brazil1, #brazil2, #india1, #india2, #india3, #indiatiger, #india4" ).draggable();
-	    $( "#BrazCanvas" ).droppable({
-            accept: "#brazilBird, #brazilFootballer, #brazilFlag, #brazil1, #brazil2",
-            classes: {
-            "ui-droppable-active": "ui-state-active",
-            "ui-droppable-hover": "ui-state-hover"
-          },
-			drop: function( event, ui ) {
-             $( this )
-              .addClass( "ui-state-highlight" )
-              .find( "canvas" )
-                alert( "Good job!" );
-			}
+     $( ".ui-widget-content" ).draggable();
+     $( "#BrazCanvas" ).droppable({
+      accept: ".ui-widget-content",
+      drop: function( event, ui ) {
+        if($(event.toElement).hasClass('braz-drop')){
+          $(event.toElement).css("border", "3px solid green");
+        }
+        else{
+          $(event.toElement).css("border", "3px solid red");
+        }
+      }
 		});
     
-    //India
-     $( "#brazilBird, #brazilFootballer, #brazilFlag, #brazil1, #brazil2, #india1, #india2, #india3, #indiatiger, #india4" ).draggable();
+     //India
 	    $( "#IndCanvas" ).droppable({
-            accept: " #india1, #india2, #india3, #indiatiger, #india4",
-            classes: {
-            "ui-droppable-active": "ui-state-active",
-            "ui-droppable-hover": "ui-state-hover"
-          },
+            accept: " .ui-widget-content",
 			drop: function( event, ui ) {
-             $( this )
-              .addClass( "ui-state-highlight" )
-              .find( "canvas" )
-                alert( "You are absolutely right!" );
+             $(event.toElement).css("border", "3px solid green");
+             if($(event.toElement).hasClass('ind-drop')){
+          $(event.toElement).css("border", "3px solid green");
+        }
+        else{
+          $(event.toElement).css("border", "3px solid red");
+        }
 			}
 		});
 })
@@ -55,16 +55,16 @@ $(document).ready(function(){
 
 <br><br><br>
 
-<img src = "brazilBird.jpg" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content" id = "brazilBird">
-<img src = "india1.jpg" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content" id = "india1">
-<img src = "brazilFootballer.jpg" width = "100" height = "100" class="ui-widget-content" id = "brazilFootballer">
-<img src = "brazilFlag.jpg" width = "100" height = "100" class="ui-widget-content" id = "brazilFlag">
-<img src = "india2.jpg" width = "100" height = "100" class="ui-widget-content" id = "india2">
-<img src = "india3.jpg" width = "100" height = "100" class="ui-widget-content" id = "india3">
-<img src = "indiatiger.jpg" width = "100" height = "100" class="ui-widget-content" id = "indiatiger">
-<img src = "brazil1.jpg" width = "100" height = "100" class="ui-widget-content" id = "brazil1">
-<img src = "india4.jpg" width = "100" height = "100" class="ui-widget-content" id = "india4">
-<img src = "brazil2.jpg" width = "100" height = "100" class="ui-widget-content" id = "brazil2">
+<img src = "brazilBird.jpg" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content braz-drop" id = "brazilBird">
+<img src = "india1.jpg" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content ind-drop" id = "india1">
+<img src = "brazilFootballer.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazilFootballer">
+<img src = "brazilFlag.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazilFlag">
+<img src = "india2.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india2">
+<img src = "india3.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india3">
+<img src = "indiatiger.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "indiatiger">
+<img src = "brazil1.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazil1">
+<img src = "india4.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india4">
+<img src = "brazil2.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazil2">
 
 <script>
 //Brazil
