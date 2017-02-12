@@ -13,33 +13,29 @@
   <script type="text/javascript">
       
 $(document).ready(function(){
-    //Brazil
-     $( ".ui-widget-content" ).draggable();
-     $( "#BrazCanvas" ).droppable({
-      accept: ".ui-widget-content",
-      drop: function( event, ui ) {
-        if($(event.toElement).hasClass('braz-drop')){
-          $(event.toElement).css("border", "3px solid green");
-        }
-        else{
-          $(event.toElement).css("border", "3px solid red");
-        }
+//Brazil
+$( ".ui-widget-content" ).draggable();
+  function showBorder(jqEl, className) {
+      if(jqEl.hasClass(className)){
+        $(jqEl).css("border", "3px solid green");
+      } else {
+        $(jqEl).css("border", "3px solid red");
       }
-		});
-    
-     //India
-	    $( "#IndCanvas" ).droppable({
-            accept: " .ui-widget-content",
-			drop: function( event, ui ) {
-             $(event.toElement).css("border", "3px solid green");
-             if($(event.toElement).hasClass('ind-drop')){
-          $(event.toElement).css("border", "3px solid green");
-        }
-        else{
-          $(event.toElement).css("border", "3px solid red");
-        }
-			}
-		});
+  }
+  $( "#BrazCanvas" ).droppable({
+    accept: ".ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'braz-drop');
+    }
+  });
+
+  //India
+  $( "#IndCanvas" ).droppable({
+    accept: " .ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'ind-drop');
+    }
+  });
 })
   </script>
 </head>
