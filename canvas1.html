@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas</title>
+	<meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href = "myStyles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .ui-state-highlight{
+    border: 3px solid green;
+  }
+  </style>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript">
+      
+$(document).ready(function(){
+//Brazil
+$( ".ui-widget-content" ).draggable();
+  function showBorder(jqEl, className) {
+      if(jqEl.hasClass(className)){
+        $(jqEl).css("border", "3px solid green");
+      } else {
+        $(jqEl).css("border", "3px solid red");
+      }
+  }
+  $( "#BrazCanvas" ).droppable({
+    accept: ".ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'braz-drop');
+    }
+  });
+  //India
+  $( "#IndCanvas" ).droppable({
+    accept: " .ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'ind-drop');
+    }
+  });
+})
+  </script>
+</head>
+
+<body>
+    
+<header>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Geographical Quizes</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Capital quizes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Capitals of Latin America</a></li>
+          <li><a href="#">Capitals of Asia</a></li>
+          <li><a href="#">Capitals of Europe</a></li>
+          <li><a href="#">Capitals of Africa</a></li>
+        </ul>
+      </li>
+      <li>
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Envelope quizes
+       <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Envelopes from BRICS countries</a></li>
+          <li><a href="#">Envelopes from EU countries</a></li>
+        </ul>
+        </li>
+      <li>
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Culture quizes
+      <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Ethnic food quiz</a></li>
+          <li><a href="#">Celebrations quiz</a></li>
+          <li><a href="#">Traditional clothes quiz</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>    
+</header>
+    
+<div class = "container">
+    <div class = "row">
+        <div class = "col-sm-11">
+            <h2>Try to clue Brazilian post stamps on the Brazilian envelope, and Indian ones on the Indian envelope!</h2>
+            
+            <div class = "row">
+                <div class = "col-sm-6 col-xs-12">
+                    <canvas id="BrazCanvas" width="400" height="400"></canvas>
+                </div>
+                
+                <div class = "col-sm-6 col-xs-12">
+                    <canvas id="IndCanvas" width="400" height="400"></canvas>
+                </div>
+                
+                <div class = "col-sm-6 col-xs-12">
+                    <canvas id="ChiCanvas" width="400" height="400"></canvas>
+                </div>
+                
+                <div class = "col-sm-6 col-xs-12">
+                    <canvas id="AfrCanvas" width="400" height="400"></canvas>
+                </div>
+            </div>
+
+            <br><br><br>
+
+            <img src = "brazilBird.jpg" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content braz-drop" id = "brazilBird">
+            <img src = "india1.jpg" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content ind-drop" id = "india1">
+            <img src = "https://s-media-cache-ak0.pinimg.com/736x/f3/55/3c/f3553cf2347e4f332329e498a7dbe234.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa3">
+            <img src = "http://chinablog.cc/wp-content/gallery/art/tiger_stamp/China_tiger_stamp.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china2">
+            <img src = "brazilFootballer.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazilFootballer">
+            <img src = "brazilFlag.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazilFlag">
+            <img src = "india2.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india2">
+             <img src = "https://s-media-cache-ak0.pinimg.com/236x/fa/0a/0c/fa0a0c40fd4c1d074455af3874031d83.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa1">
+            <img src = "https://s-media-cache-ak0.pinimg.com/originals/93/b1/7a/93b17a6946f284fe3c409c1c328c3fa8.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china1">
+            <img src = "https://s-media-cache-ak0.pinimg.com/originals/5f/f4/81/5ff481e3be28d19fb056f631fcf4cbef.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa4">
+            <img src = "http://www.philatelicdatabase.com/wp-content/uploads/2008/05/china-1894-9c.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china3">
+            <img src = "india3.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india3">
+            <img src = "indiatiger.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "indiatiger">
+            <img src = "brazil1.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazil1">
+            <img src = "http://newsdesk.si.edu/sites/default/files/photos/HR%20Giant%20Panda%20single,%20China,%201973.JPG" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china5">
+            <img src = "http://www.marquetry.org/photos_and_illustrations/early_nationals/1980s/813a1_south_african_1d_stamp.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa5">
+            <img src = "https://www.drweb.de/magazin/wp-content/uploads/sm/wp-content/uploads/2010/01/southafrica2.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa2">
+            <img src = "india4.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india4">
+            <img src = "brazil2.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazil2">
+            <img src = "http://newsdesk.si.edu/sites/default/files/photos/HR%2010c%20Temple%20of%20Heaven%20model,%20China,%201923.JPG" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china4">
+        </div>
+    </div>    
+</div>
+    
+
+
+<script src = "brazil.js"></script>
+
+<script src = "india.js"></script>
+    
+<script src = "china.js"></script>
+    
+<script src = "southAfrica.js"></script>
+</body>
+</html>
