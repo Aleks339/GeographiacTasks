@@ -1,3 +1,10 @@
-.envelope {
+canvas {
   border: 1px solid black;
+}
+.quizCanvas {
+  width: 96px;
+  height: 84px;
+}
+hr {
+  width: 3;
 }
