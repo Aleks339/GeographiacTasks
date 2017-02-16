@@ -2,7 +2,7 @@
 var c = document.getElementById("BrazCanvas");
 var ctx = c.getContext("2d");
 // Create gradient
-var grd = ctx.createRadialGradient(100,100,0,250,250,250);
+var grd = ctx.createRadialGradient(100,100,0,200,200,200);
 grd.addColorStop(0, "red");
 grd.addColorStop(1, "white");
 // Fill with gradient

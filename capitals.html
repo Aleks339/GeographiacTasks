@@ -15,63 +15,63 @@
             "ui-droppable-active": "ui-state-active",
             "ui-droppable-hover": "ui-state-hover"
           },
-	     drop: function( event, ui ) {
+			drop: function( event, ui ) {
              $( this )
               .addClass( "ui-state-highlight" )
               .find( "h1" )
                 alert( "Good job!" );
-	     }
+			}
 		});
             
                   
         //Chilie
-	    $( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
+		$( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
 	    $( "#Chilie" ).droppable({
             accept: ".draggable2",
             classes: {
             "ui-droppable-active": "ui-state-active",
             "ui-droppable-hover": "ui-state-hover"
-            },
-	     drop: function( event, ui ) {
+        },
+			drop: function( event, ui ) {
              $( this )
               .addClass( "ui-state-highlight" )
               .find( "h1" )
                 alert( "You are right!" );	
-	       }
-             });
+		    }
+		});
           
         //Venezuela
-	    $( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
+		$( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
 	    $( "#Venezuela" ).droppable({
             accept: ".draggable3",
             classes: {
             "ui-droppable-active": "ui-state-active",
             "ui-droppable-hover": "ui-state-hover"
-            },
-	    drop: function( event, ui ) {
+        },
+			drop: function( event, ui ) {
              $( this )
               .addClass( "ui-state-highlight" )
               .find( "h1" )
                 alert( "Congratulations!" );
-	      }
-	    });
+			}
+		});
           
         //Argentina"
-	    $( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
+		$( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
 	    $( "#Argentina" ).droppable({
             accept: ".draggable4",
             classes: {
             "ui-droppable-active": "ui-state-active",
             "ui-droppable-hover": "ui-state-hover"
-           },
-	   drop: function( event, ui ) {
+        },
+			drop: function( event, ui ) {
              $( this )
               .addClass( "ui-state-highlight" )
               .find( "h1" )
                 alert( "Exellent!" );	
-           }
-         });
-       });
+            }
+		});
+	  } );
 	  </script>
 </head>
 <body>
