@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canvas</title>
+    <link rel="stylesheet" href="less/myStyles.css/myStyles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+      
+$(document).ready(function(){
+//Brazil
+$( ".flag" ).draggable();
+  function showBorder(jqEl, className) {
+      if(jqEl.hasClass(className)){
+        $(jqEl).css("border", "3px solid green");
+      } else {
+        $(jqEl).css("border", "3px solid red");
+      }
+  }
+  $( "#china-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'china');
+    }
+  });
+  //India
+  $( "#usa-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'usa');
+    }
+  });
+})
+  </script>
+      
+  </head>
+  <body>
+    <header>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Geographical Quizes</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Capital quizes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Capitals of Latin America</a></li>
+          <li><a href="#">Capitals of Asia</a></li>
+          <li><a href="#">Capitals of Europe</a></li>
+          <li><a href="#">Capitals of Africa</a></li>
+        </ul>
+      </li>
+      <li>
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Envelope quizes
+       <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Envelopes from BRICS countries</a></li>
+          <li><a href="#">Envelopes from EU countries</a></li>
+        </ul>
+        </li>
+      <li>
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Culture quizes
+      <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Ethnic food quiz</a></li>
+          <li><a href="#">Celebrations quiz</a></li>
+          <li><a href="#">Traditional clothes quiz</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>    
+</header>
+      
+<div class = "container">
+      <div class = "row">
+         <div class = 'col-sm-5 col-xs-12'>
+             <img src = "celebrations/chinese.new.year.jpg" alt = "Lunar new year" width = '400' height = '400'>
+             <h4>In what country does this celebration occur?</h4>
+             <canvas class = "quizCanvas" id = "china-drop"></canvas>
+          </div>
+          <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
+              <img src ="celebrations/halloween.jpg" alt = "Lunar new year" width = '400' height = '400'>
+              <h4>In what country does this celebration occur?</h4>
+              <canvas class = "quizCanvas" id = "usa-drop"></canvas>
+          </div>
+      </div>
+</div>
+      
+      <img src = "flags/Flag_of_the_People's_Republic_of_China.svg.png" alt = "Chinese flag" width = "90" height = "80" class = "flag china">
+      <img src = "flags/united_states_of_america_texture.gif" alt = "American flag" width = "90" height = "80" class = "flag usa">
+      <img src = "flags/1280px-Flag_of_Germany.svg.png" alt = "German flag" width = "90" height = "80" class = "flag germany">
+      <img src = "flags/1280px-Flag_of_Japan.svg.png" alt = "Japanese flag" width = "90" height = "80" class = "flag japan">
+      <img src = "flags/russian-flag9.jpg" alt = "Russian flag" width = "90" height = "80" class = "flag russia">
+      <img src = "flags/Flag_of_Spain.svg.png" alt = "Spanish flag" width = "90" height = "80" class = "flag spain">
+      
+      
+      <script>
+        var c = document.getElementsByClassName("quizCanvas");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,90,80);
+        ctx.stroke(); 
+      </script>
+  </body>
+</html>
