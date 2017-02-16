@@ -24,14 +24,27 @@ $( ".flag" ).draggable();
   $( "#china-drop" ).droppable({
     accept: ".flag",
     drop: function( event, ui ) {
-      showBorder($(event.toElement), 'china');
+      showBorder($(event.toElement), '.china');
     }
   });
   //India
   $( "#usa-drop" ).droppable({
     accept: ".flag",
     drop: function( event, ui ) {
-      showBorder($(event.toElement), 'usa');
+      showBorder($(event.toElement), '.usa');
+    }
+  });
+  $( "#india-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), '.india');
+    }
+  });
+  //India
+  $( "#venice-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), '.italy');
     }
   });
 })
@@ -84,15 +97,32 @@ $( ".flag" ).draggable();
          <div class = 'col-sm-5 col-xs-12'>
              <img src = "celebrations/chinese.new.year.jpg" alt = "Lunar new year" width = '400' height = '400'>
              <h4>In what country does this celebration occur?</h4>
+             <h5>Fill the rectangle by the right flag</h5>
              <canvas class = "quizCanvas" id = "china-drop"></canvas>
           </div>
           <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
               <img src ="celebrations/halloween.jpg" alt = "Lunar new year" width = '400' height = '400'>
               <h4>In what country does this celebration occur?</h4>
+              <h5>Fill the rectangle by the right flag</h5>
               <canvas class = "quizCanvas" id = "usa-drop"></canvas>
+          </div>
+          
+          <div class = 'col-sm-5 col-xs-12'>
+             <img src ="celebrations/venice.jpg" alt = "Venice carnival" width = '400' height = '400'>
+             <h4>In what country does this celebration occur?</h4>
+             <h5>Fill the rectangle by the right flag</h5>
+             <canvas class = "quizCanvas" id = "venice-drop"></canvas>
+          </div>
+          <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
+              <img src ="celebrations/holi.jpg" alt = 'Happy holi' width = '400' height = '400'>
+              <h4>In what country does this celebration occur?</h4>
+              <h5>Fill the rectangle by the right flag</h5>
+              <canvas class = "quizCanvas" id = "india-drop"></canvas>
           </div>
       </div>
 </div>
+      
+      <hr style = "height:3;">
       
       <img src = "flags/Flag_of_the_People's_Republic_of_China.svg.png" alt = "Chinese flag" width = "90" height = "80" class = "flag china">
       <img src = "flags/united_states_of_america_texture.gif" alt = "American flag" width = "90" height = "80" class = "flag usa">
@@ -100,6 +130,10 @@ $( ".flag" ).draggable();
       <img src = "flags/1280px-Flag_of_Japan.svg.png" alt = "Japanese flag" width = "90" height = "80" class = "flag japan">
       <img src = "flags/russian-flag9.jpg" alt = "Russian flag" width = "90" height = "80" class = "flag russia">
       <img src = "flags/Flag_of_Spain.svg.png" alt = "Spanish flag" width = "90" height = "80" class = "flag spain">
+      <img src ="flags/255px-Flag_of_India.svg.png" alt = "Indian flag" width = "90" height = "80" class = "flag india">
+      <img src = "flags/1280px-Flag_of_Brazil.svg.png" alt = "Brazilian flag" width = "90" height = "80" class = "flag brazil">
+      <img src = "flags/51S6NCQ1SRL._QL70_.gif.jpg" alt = "Italian flag" width = "90" height = "80" class = "flag italy">
+      <img src = "flags/Flag_of_South_Korea.svg.png" alt = "Korean flag" width = "90" height = "80" class = "flag korea">
       
       
       <script>
