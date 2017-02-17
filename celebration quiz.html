@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Canvas</title>
+    <meta charset = "utf-8">
     <link rel="stylesheet" href="less/myStyles.css/myStyles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -59,7 +60,7 @@ $( ".flag" ).draggable();
       <a class="navbar-brand" href="#">Geographical Quizes</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Home</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Capital quizes
         <span class="caret"></span></a>
@@ -74,16 +75,16 @@ $( ".flag" ).draggable();
        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Envelope quizes
        <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Envelopes from BRICS countries</a></li>
+          <li><a href="canvas1.html">Envelopes from BRICS countries</a></li>
           <li><a href="#">Envelopes from EU countries</a></li>
         </ul>
         </li>
-      <li>
+      <li class = "active">
        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Culture quizes
       <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Ethnic food quiz</a></li>
-          <li><a href="#">Celebrations quiz</a></li>
+          <li><a href="celebration%20quiz.html">Celebrations quiz</a></li>
           <li><a href="#">Traditional clothes quiz</a></li>
         </ul>
       </li>
@@ -92,31 +93,39 @@ $( ".flag" ).draggable();
 </nav>    
 </header>
       
+<h1 class = 'h1'>Celebrations quiz</h1>
+      
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Culture quizes</a></li>
+  <li class="breadcrumb-item active">Celebrations quiz</li>
+</ol>
+      
 <div class = "container">
       <div class = "row">
          <div class = 'col-sm-5 col-xs-12'>
              <img src = "celebrations/chinese.new.year.jpg" alt = "Lunar new year" width = '400' height = '400'>
-             <h4>In what country does this celebration occur?</h4>
-             <h5>Fill the rectangle by the right flag</h5>
+             <h4 class = 'h4'>In what country does this celebration occur?</h4>
+             <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
              <canvas class = "quizCanvas" id = "china-drop"></canvas>
           </div>
           <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
-              <img src ="celebrations/halloween.jpg" alt = "Lunar new year" width = '400' height = '400'>
-              <h4>In what country does this celebration occur?</h4>
-              <h5>Fill the rectangle by the right flag</h5>
+              <img src ="celebrations/halloween.jpg" alt = "Halloween" width = '400' height = '400'>
+              <h4 class = 'h4'>In what country does this celebration occur?</h4>
+              <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
               <canvas class = "quizCanvas" id = "usa-drop"></canvas>
           </div>
           
           <div class = 'col-sm-5 col-xs-12'>
              <img src ="celebrations/venice.jpg" alt = "Venice carnival" width = '400' height = '400'>
-             <h4>In what country does this celebration occur?</h4>
-             <h5>Fill the rectangle by the right flag</h5>
+             <h4 class = 'h4'>In what country does this celebration occur?</h4>
+             <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
              <canvas class = "quizCanvas" id = "venice-drop"></canvas>
           </div>
           <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
               <img src ="celebrations/holi.jpg" alt = 'Happy holi' width = '400' height = '400'>
-              <h4>In what country does this celebration occur?</h4>
-              <h5>Fill the rectangle by the right flag</h5>
+              <h4 class = 'h4'>In what country does this celebration occur?</h4>
+              <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
               <canvas class = "quizCanvas" id = "india-drop"></canvas>
           </div>
       </div>
@@ -137,10 +146,32 @@ $( ".flag" ).draggable();
       
       
       <script>
-        var c = document.getElementsByClassName("quizCanvas");
+        //China
+        var c = document.getElementById("china-drop");
         var ctx = c.getContext("2d");
           
-        ctx.rect(0,0,90,80);
+        ctx.rect(0,0,298,149);
+        ctx.stroke(); 
+          
+        //USA
+        var c = document.getElementById("usa-drop");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,298,149);
+        ctx.stroke(); 
+         
+        //Venice
+        var c = document.getElementById("venice-drop");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,298,149);
+        ctx.stroke(); 
+          
+        //Holi India
+        var c = document.getElementById("india-drop");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,298,149);
         ctx.stroke(); 
       </script>
   </body>
