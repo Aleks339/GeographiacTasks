@@ -19,7 +19,7 @@
   <script type="text/javascript">
       
 $(document).ready(function(){
-//Brazil
+
 $( ".ui-widget-content" ).draggable();
   function showBorder(jqEl, className) {
       if(jqEl.hasClass(className)){
@@ -28,6 +28,7 @@ $( ".ui-widget-content" ).draggable();
         $(jqEl).css("border", "3px solid red");
       }
   }
+  //Brazil
   $( "#BrazCanvas" ).droppable({
     accept: ".ui-widget-content",
     drop: function( event, ui ) {
@@ -39,6 +40,20 @@ $( ".ui-widget-content" ).draggable();
     accept: " .ui-widget-content",
     drop: function( event, ui ) {
       showBorder($(event.toElement), 'ind-drop');
+    }
+  });
+  //China
+    $( "#ChiCanvas" ).droppable({
+    accept: ".ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'chin-drop');
+    }
+  });
+  //South Africa
+  $( "#AfrCanvas" ).droppable({
+    accept: " .ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'afr-drop');
     }
   });
 })

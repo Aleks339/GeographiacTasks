@@ -20,7 +20,8 @@ hr {
   font-style: italic;
   text-align: center;
 }
-.h4 {
+.h4,
+.h5 {
   color: #004d00;
   font-weight: bold;
 }
