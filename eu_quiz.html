@@ -19,61 +19,61 @@
       
 $(document).ready(function(){
   $.ajax({
-    url: 'ajax/braz-stamps.html',
+    url: 'ajax/france.html',
     success: function(data){
       $('#stamps').append(data);
       $.ajax({
-        url: 'ajax/india-stamps.html',
+        url: 'ajax/italy.html',
         success: function(data){
           $('#stamps').append(data);
           $.ajax({
-              url: 'ajax/china-stamps.html',
-              success: function(data){
+            url: 'ajax/uk.html',
+            success: function(data){
+              $('#stamps').append(data);
+              $.ajax({
+                url: 'ajax/holland.html',
+                success: function(data){
                   $('#stamps').append(data);
-                  $.ajax({
-                      url: 'ajax/afr-stamps.html',
-                      success: function(data){
-                          $('#stamps').append(data);
                           $( ".ui-widget-content" ).draggable();
-                          function showBorder(jqEl, className) {
-                              if(jqEl.hasClass(className)){
-                                $(jqEl).css("border", "3px solid green");
-                              } else {
-                                $(jqEl).css("border", "3px solid red");
+                              function showBorder(jqEl, className) {
+                                  if(jqEl.hasClass(className)){
+                                    $(jqEl).css("border", "3px solid green");
+                                  } else {
+                                    $(jqEl).css("border", "3px solid red");
+                                  }
                               }
-                          }
-                          //India
-                          $( "#IndCanvas" ).droppable({
-                            accept: " .ui-widget-content",
-                            drop: function( event, ui ) {
-                              showBorder($(event.toElement), 'ind-drop');
-                            }
-                          });
-                            //Brazil
-                            $( "#BrazCanvas" ).droppable({
-                            accept: ".ui-widget-content",
-                            drop: function( event, ui ) {
-                              showBorder($(event.toElement), 'braz-drop');
-                            }
-                        })
-                            //China
-                            $( "#ChiCanvas" ).droppable({
-                            accept: ".ui-widget-content",
-                            drop: function( event, ui ) {
-                              showBorder($(event.toElement), 'chin-drop');
-                            }
-                        })
-                            //South Africa
-                            $( "#BrazCanvas" ).droppable({
-                            accept: ".ui-widget-content",
-                            drop: function( event, ui ) {
-                              showBorder($(event.toElement), 'afr-drop');
-                            }
-                        })
-                      }
-                  })
-              }
-          });
+                              //France
+                              $( "#FranceCanvas" ).droppable({
+                                accept: " .ui-widget-content",
+                                drop: function( event, ui ) {
+                                  showBorder($(event.toElement), 'fr-drop');
+                                }
+                              });
+                                //Italy
+                                $( "#ItalyCanvas" ).droppable({
+                                accept: ".ui-widget-content",
+                                drop: function( event, ui ) {
+                                  showBorder($(event.toElement), 'it-drop');
+                                }
+                            })
+                              //UK
+                              $( "#UKCanvas" ).droppable({
+                                accept: " .ui-widget-content",
+                                drop: function( event, ui ) {
+                                  showBorder($(event.toElement), 'uk-drop');
+                                }
+                              });
+                                //Holland
+                                $( "#HollandCanvas" ).droppable({
+                                accept: ".ui-widget-content",
+                                drop: function( event, ui ) {
+                                  showBorder($(event.toElement), 'holl-drop');
+                                }
+                            })
+                        }
+                    });
+                }
+            })
         }
       });
     }
@@ -129,7 +129,7 @@ $(document).ready(function(){
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="#">Home</a></li>
   <li class="breadcrumb-item"><a href="#">Envelope quizes</a></li>
-  <li class="breadcrumb-item active">Envelopes from BRICS countries</li>
+  <li class="breadcrumb-item active">Envelopes from EU countries</li>
 </ol>
     
 <div class = "container">
@@ -139,11 +139,21 @@ $(document).ready(function(){
             
             <div class = "row">
                 <div class = "col-sm-6 col-xs-12">
-                    <canvas id="IndCanvas" width="400" height="400" class = "envelope"></canvas>
+                    <canvas id="FranceCanvas" width="400" height="400" class = "envelope"></canvas>
                 </div>
                 
                 <div class = "col-sm-6 col-xs-12">
-                    <canvas id="BrazCanvas" width="400" height="400" class = "envelope"></canvas>
+                    <canvas id="UKCanvas" width="400" height="400" class = "envelope"></canvas>
+                </div>
+            </div>
+            
+            <div class = "row">
+                <div class = "col-sm-6 col-xs-12">
+                    <canvas id="ItalyCanvas" width="400" height="400" class = "envelope"></canvas>
+                </div>
+                
+                <div class = "col-sm-6 col-xs-12">
+                    <canvas id="HollandCanvas" width="400" height="400" class = "envelope"></canvas>
                 </div>
             </div>
 
@@ -154,9 +164,9 @@ $(document).ready(function(){
         </div>
     </div>    
 </div>
-<script src = "india.js"></script>
-<script src = "brazil.js"></script>
-<script src ="china.js"></script>
-<script src = "southAfrica.js"></script>
+<script src ="uk.js"></script>
+<script src = "france.js"></script>
+<script src ="holland.js"></script>
+<script src ="italy.js"></script>
 </body>
 </html>
