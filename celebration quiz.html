@@ -15,7 +15,6 @@
   <script>
       
 $(document).ready(function(){
-//Brazil
 $( ".flag" ).draggable();
   function showBorder(jqEl, className) {
       if(jqEl.hasClass(className)){
@@ -24,30 +23,46 @@ $( ".flag" ).draggable();
         $(jqEl).css("border", "3px solid red");
       }
   }
+    //China
   $( "#china-drop" ).droppable({
     accept: ".flag",
     drop: function( event, ui ) {
-      showBorder($(event.toElement), '.china');
+      showBorder($(event.toElement), 'china');
     }
   });
-  //India
+  //USA
   $( "#usa-drop" ).droppable({
     accept: ".flag",
     drop: function( event, ui ) {
-      showBorder($(event.toElement), '.usa');
+      showBorder($(event.toElement), 'usa');
     }
   });
+    //India
   $( "#india-drop" ).droppable({
     accept: ".flag",
     drop: function( event, ui ) {
-      showBorder($(event.toElement), '.india');
+      showBorder($(event.toElement), 'india');
     }
   });
-  //India
+  //Venice
   $( "#venice-drop" ).droppable({
     accept: ".flag",
     drop: function( event, ui ) {
-      showBorder($(event.toElement), '.italy');
+      showBorder($(event.toElement), 'italy');
+    }
+  });
+    //Brazil
+  $( "#rio-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'brazil');
+    }
+  });
+  //India
+  $( "#rus-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'russia');
     }
   });
 })
@@ -77,8 +92,8 @@ $( ".flag" ).draggable();
        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Envelope quizes
        <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="canvas1.html">Envelopes from BRICS countries</a></li>
-          <li><a href="#">Envelopes from EU countries</a></li>
+          <li><a href="index-new.html">Envelopes from BRICS countries</a></li>
+          <li><a href="eu_quiz.html">Envelopes from EU countries</a></li>
         </ul>
         </li>
       <li class = "active">
@@ -130,6 +145,19 @@ $( ".flag" ).draggable();
               <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
               <canvas class = "quizCanvas" id = "india-drop"></canvas>
           </div>
+          
+          <div class = 'col-sm-5 col-xs-12'>
+             <img src ="celebrations/rio-de-janeiro.jpg" alt = "Rio carnival" width = '400' height = '400'>
+             <h4 class = 'h4'>In what country does this celebration occur?</h4>
+             <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
+             <canvas class = "quizCanvas" id = "rio-drop"></canvas>
+          </div>
+          <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
+              <img src ="celebrations/whiterussiannights.jpeg" alt = 'Russia' width = '400' height = '400'>
+              <h4 class = 'h4'>In what country does this celebration occur?</h4>
+              <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
+              <canvas class = "quizCanvas" id = "rus-drop"></canvas>
+          </div>
       </div>
 </div>
       
@@ -141,9 +169,9 @@ $( ".flag" ).draggable();
       <img src = "flags/1280px-Flag_of_Japan.svg.png" alt = "Japanese flag" width = "90" height = "80" class = "flag japan">
       <img src = "flags/russian-flag9.jpg" alt = "Russian flag" width = "90" height = "80" class = "flag russia">
       <img src = "flags/Flag_of_Spain.svg.png" alt = "Spanish flag" width = "90" height = "80" class = "flag spain">
-      <img src ="flags/255px-Flag_of_India.svg.png" alt = "Indian flag" width = "90" height = "80" class = "flag india">
-      <img src = "flags/1280px-Flag_of_Brazil.svg.png" alt = "Brazilian flag" width = "90" height = "80" class = "flag brazil">
-      <img src = "flags/51S6NCQ1SRL._QL70_.gif.jpg" alt = "Italian flag" width = "90" height = "80" class = "flag italy">
+      <img src ="flags/indian-flag.png" alt = "Indian flag" width = "90" height = "80" class = "flag india">
+      <img src = "flags/brazil_flag_MED.gif" alt = "Brazilian flag" width = "90" height = "80" class = "flag brazil">
+      <img src = "flags/italy-flag11.gif" alt = "Italian flag" width = "90" height = "80" class = "flag italy">
       <img src = "flags/Flag_of_South_Korea.svg.png" alt = "Korean flag" width = "90" height = "80" class = "flag korea">
       
       
@@ -174,7 +202,21 @@ $( ".flag" ).draggable();
         var ctx = c.getContext("2d");
           
         ctx.rect(0,0,298,149);
+        ctx.stroke();
+          
+        //Brazil
+        var c = document.getElementById("rio-drop");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,298,149);
         ctx.stroke(); 
+          
+        //Russia
+        var c = document.getElementById("rus-drop");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,298,149);
+        ctx.stroke();
       </script>
   </body>
 </html>
