@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canvas</title>
+    <meta charset = "utf-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mystyles.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+      
+$(document).ready(function(){
+$( ".flag" ).draggable();
+  function showBorder(jqEl, className) {
+      if(jqEl.hasClass(className)){
+        $(jqEl).css("border", "3px solid green");
+      } else {
+        $(jqEl).css("border", "3px solid red");
+      }
+  }
+    //China
+  $( "#germ-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'germany');
+    }
+  });
+  //USA
+  $( "#spain-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'spain');
+    }
+  });
+    //India
+  $( "#mong-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'mongolia');
+    }
+  });
+  //Venice
+  $( "#india-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'india');
+    }
+  });
+    //Brazil
+  $( "#kimono-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'japan');
+    }
+  });
+  //India
+  $( "#rus-drop" ).droppable({
+    accept: ".flag",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'russia');
+    }
+  });
+})
+  </script>
+      
+  </head>
+  <body>
+    <header>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Geographical Quizes</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Capital quizes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Capitals of Latin America</a></li>
+          <li><a href="#">Capitals of Asia</a></li>
+          <li><a href="#">Capitals of Europe</a></li>
+          <li><a href="#">Capitals of Africa</a></li>
+        </ul>
+      </li>
+      <li>
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Envelope quizes
+       <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="index-new.html">Envelopes from BRICS countries</a></li>
+          <li><a href="eu_quiz.html">Envelopes from EU countries</a></li>
+        </ul>
+        </li>
+      <li class = "active">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Culture quizes
+      <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Ethnic food quiz</a></li>
+          <li><a href="celebration%20quiz.html">Celebrations quiz</a></li>
+          <li><a href="clothes_quiz.html">Traditional clothes quiz</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>    
+</header>
+      
+<h1 class = 'h1'>Traditional clothes quiz</h1>
+      
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Culture quizes</a></li>
+  <li class="breadcrumb-item active">Traditional clothes quiz</li>
+</ol>
+      
+<div class = "container">
+      <div class = "row">
+         <div class = 'col-sm-5 col-xs-12'>
+             <img src ="clothes/dirndl-dresses-750x497.jpg" alt = "Drindls" width = '400' height = '400'>
+             <h4 class = 'h4'>In what country does people wore it?</h4>
+             <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
+             <canvas class = "quizCanvas" id = "germ-drop"></canvas>
+          </div>
+          <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
+              <img src ="clothes/spain.jpg" alt = "Spanish clothes" width = '400' height = '400'>
+              <h4 class = 'h4'>In what country does people wore it?</h4>
+              <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
+              <canvas class = "quizCanvas" id = "spain-drop"></canvas>
+          </div>
+          
+          <div class = 'col-sm-5 col-xs-12'>
+             <img src ="clothes/Mongolian.jpg" alt = "Mongolian dress" width = '400' height = '400'>
+             <h4 class = 'h4'>In what country does people wore it?</h4>
+             <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
+             <canvas class = "quizCanvas" id = "mong-drop"></canvas>
+          </div>
+          <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
+              <img src ="clothes/sari.jpg" alt = 'Sari' width = '400' height = '400'>
+              <h4 class = 'h4'>In what country does people wore it?</h4>
+              <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
+              <canvas class = "quizCanvas" id = "india-drop"></canvas>
+          </div>
+          
+          <div class = 'col-sm-5 col-xs-12'>
+             <img src ="clothes/japanese.jpg" alt = "Kimono" width = '400' height = '400'>
+             <h4 class = 'h4'>In what country does people wore it?</h4>
+             <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
+             <canvas class = "quizCanvas" id = "kimono-drop"></canvas>
+          </div>
+          <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
+              <img src ="clothes/russian%20girl.jpg" alt = 'Russia' width = '400' height = '400'>
+              <h4 class = 'h4'>In what country does people wore it?</h4>
+              <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
+              <canvas class = "quizCanvas" id = "rus-drop"></canvas>
+          </div>
+      </div>
+</div>
+      
+      <hr style = "height:3;">
+      
+      <img src = "flags/Flag_of_the_People's_Republic_of_China.svg.png" alt = "Chinese flag" width = "90" height = "80" class = "flag china">
+      <img src = "flags/united_states_of_america_texture.gif" alt = "American flag" width = "90" height = "80" class = "flag usa">
+      <img src = "flags/1280px-Flag_of_Germany.svg.png" alt = "German flag" width = "90" height = "80" class = "flag germany">
+      <img src = "flags/1280px-Flag_of_Japan.svg.png" alt = "Japanese flag" width = "90" height = "80" class = "flag japan">
+      <img src = "flags/russian-flag9.jpg" alt = "Russian flag" width = "90" height = "80" class = "flag russia">
+      <img src = "flags/Flag_of_Spain.svg.png" alt = "Spanish flag" width = "90" height = "80" class = "flag spain">
+      <img src ="flags/indian-flag.png" alt = "Indian flag" width = "90" height = "80" class = "flag india">
+      <img src = "flags/brazil_flag_MED.gif" alt = "Brazilian flag" width = "90" height = "80" class = "flag brazil">
+      <img src = "flags/italy-flag11.gif" alt = "Italian flag" width = "90" height = "80" class = "flag italy">
+      <img src = "flags/Flag_of_South_Korea.svg.png" alt = "Korean flag" width = "90" height = "80" class = "flag korea">
+      <img src ="flags/Flag_of_the_Netherlands.svg.png" alt = "Holland flag" width = "90" height = "80" class = "flag holland">
+      <img src ="flags/mongolian.gif" alt = "Mongolian flag" width = "90" height = "80" class = "flag mongolia">
+      
+      
+      <script>
+        //China
+        var c = document.getElementById("germ-drop");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,298,149);
+        ctx.stroke(); 
+          
+        //USA
+        var c = document.getElementById("spain-drop");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,298,149);
+        ctx.stroke(); 
+         
+        //Venice
+        var c = document.getElementById("mong-drop");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,298,149);
+        ctx.stroke(); 
+          
+        //Holi India
+        var c = document.getElementById("india-drop");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,298,149);
+        ctx.stroke();
+          
+        //Brazil
+        var c = document.getElementById("kimono-drop");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,298,149);
+        ctx.stroke(); 
+          
+        //Russia
+        var c = document.getElementById("rus-drop");
+        var ctx = c.getContext("2d");
+          
+        ctx.rect(0,0,298,149);
+        ctx.stroke();
+      </script>
+  </body>
+</html>
