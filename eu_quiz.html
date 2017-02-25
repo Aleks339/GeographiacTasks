@@ -173,22 +173,16 @@ $(document).ready(function(){
 </div>
 <script>
   
-function shuffle(myArray) {
-  var index, valueIndex; 
-  for (var i=0; i<=myArray.length-1; i++) {
-    index = Math.floor(Math.random()*i);
-    valueIndex = myArray[index];
-    myArray[index] = myArray[i];
-    myArray[i] = valueIndex;
-  }
-  return myArray;
+function shuffle(a) {
+    for (let i = a.length; i; i--) {
+        let j = Math.floor(Math.random() * i);
+        [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
 }
     
 var  images = ["france1.jpg", "france2.jpg", "holland1.jpg", "holland2.jpg", "italy1.jpg", "italy2.jpg", "italy4.jpg", "italy5.jpg", "uk1.jpg", "uk2.jpg", "uk3.jpg", "uk4.jpg"];
   
 shuffle(images);
-    
-return images.join();
     
 </script>
 <script src ="uk.js"></script>
