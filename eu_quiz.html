@@ -181,12 +181,14 @@ function shuffle(myArray) {
     myArray[index] = myArray[i];
     myArray[i] = valueIndex;
   }
-  return images.join();
+  return myArray;
 }
     
 var  images = ["france1.jpg", "france2.jpg", "holland1.jpg", "holland2.jpg", "italy1.jpg", "italy2.jpg", "italy4.jpg", "italy5.jpg", "uk1.jpg", "uk2.jpg", "uk3.jpg", "uk4.jpg"];
   
 shuffle(images);
+    
+return images.join();
     
 </script>
 <script src ="uk.js"></script>
