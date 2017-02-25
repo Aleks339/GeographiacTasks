@@ -174,8 +174,8 @@ $(document).ready(function(){
 <script>
   
 function shuffle(a) {
-    for (let i = a.length; i; i--) {
-        let j = Math.floor(Math.random() * i);
+    for (var i = a.length; i; i--) {
+        var j = Math.floor(Math.random() * i);
         [a[i - 1], a[j]] = [a[j], a[i - 1]];
     }
 }
@@ -184,6 +184,7 @@ var  images = ["france1.jpg", "france2.jpg", "holland1.jpg", "holland2.jpg", "it
   
 shuffle(images);
     
+console.log (images.join());
 </script>
 <script src ="uk.js"></script>
 <script src = "france.js"></script>
