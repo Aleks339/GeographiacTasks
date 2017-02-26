@@ -19,6 +19,11 @@
   <script type="text/javascript">
       
 $(document).ready(function(){
+  var stage = $('#stage');
+  createCountry(stage, 'france');
+  createCountry(stage, 'holland');
+  createCountry(stage, 'uk');
+  createCountry(stage, 'italy');
   $.ajax({
     url: 'ajax/france.html',
     success: function(data){
@@ -180,15 +185,12 @@ function shuffle(a) {
     }
 }
     
-var  images = ["france1.jpg", "france2.jpg", "holland1.jpg", "holland2.jpg", "italy1.jpg", "italy2.jpg", "italy4.jpg", "italy5.jpg", "uk1.jpg", "uk2.jpg", "uk3.jpg", "uk4.jpg"];
+var  images = ["ajax/postcards/eu/france1.jpg", "ajax/postcards/eu/france2.jpg", "ajax/postcards/eu/holland1.jpg", "ajax/postcards/eu/holland2.jpg", "ajax/postcards/eu/italy1.jpg", "ajax/postcards/eu/italy2.jpg", "ajax/postcards/eu/italy4.jpg", "ajax/postcards/eu/italy5.jpg", "ajax/postcards/eu/uk1.jpg", "ajax/postcards/eu/uk2.jpg", "ajax/postcards/eu/uk3.jpg", "ajax/postcards/eu/uk4.jpg"];
   
 shuffle(images);
     
 document.getElementsByTagName('img').value = images.join();
 </script>
-<script src ="uk.js"></script>
-<script src = "france.js"></script>
-<script src ="holland.js"></script>
-<script src ="italy.js"></script>
+<script src = "js/eu_dinamic.js"></script>
 </body>
 </html>
