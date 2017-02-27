@@ -93,7 +93,7 @@ function createPostStamp(jqEl, stampImg){
 }
 
 function appendPostSpamps(jqEl, idPostStamps){
-   jqEl.append(idPostStamps);
+   jqEl.append(<'img src ="'+srcPostSpamps+'" width = "100" height = "100" class="'+ classPostSpamps+'" id = "'+idPostStamps+'" alt = "'+altPostSpamps+'">');
 }
 
 function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpamps){
