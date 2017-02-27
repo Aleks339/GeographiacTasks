@@ -84,9 +84,9 @@ var postSpamps = {
     },
     
 }
-function createPostStamp(jqEl, stampImg){
-    if (postSpamps[stampImg]){
-        var postStamp = postSpamps[stampImg];
+function createPostStamp(jqEl, stampName){
+    if (postSpamps[stampName]){
+        var postStamp = postSpamps[stampName];
         appendPostSpamps(jqEl, postStamp.id);
         drawPostStamp ( postStamp.id, postStamp.alt, postStamp.src, postStamp.class);
     }
