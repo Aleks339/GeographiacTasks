@@ -74,3 +74,35 @@ function drawCountryCanvas (idCanvas, grdColor1, fillText){
 function appendCountryCanvas(jqEl, idCanvas){
    jqEl.append('<div class = "col-sm-6 col-xs-12"><canvas id="'+idCanvas+'" width="400" height="400" class = "envelope"></canvas></div>')
 }
+
+var postSpamps = {
+    brazilian1:  {
+        id: 'brazilBird',
+        alt: 'Brazilian Bird',
+        src: 'ajax/postcards/brazilBird.jpg',
+        class: 'braz-drop',
+    },
+    
+}
+function createPostStamp(jqEl, stampImg){
+    if (postSpamps[stampImg]){
+        var postStamp = postSpamps[stampImg];
+        appendPostSpamps(jqEl, postStamp.id, postStamp.src, postStamp.class, postStamp.alt);
+        drawPostStamp ( postStamp.id, postStamp.alt, postStamp.src, postStamp.class);
+    }
+}
+
+function appendPostSpamps(jqEl, idPostStamps){
+   jqEl.append('<img src = "'+srcPostSpamps+'" alt = "'+altPostSpamps+'" id = "'+idPostStamps+'" class = "'+classPostSpamps'" width = "100" height = "100">');
+}
+
+function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpamps){
+    var stampId = document.getElementById(idPostStamps);
+    if (stampId){
+        stampId.width = '100';
+        stampId.height = '100';
+        stampId.src = srcPostSpamps;
+        stampId.alt = altPostSpamps;
+        stampId.class = classPostSpamps;
+    }
+}

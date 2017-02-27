@@ -25,6 +25,9 @@ $(document).ready(function(){
   createCountry(stage, 'africa');
   createCountry(stage, 'russia');
   createCountry(stage, 'china');
+    
+  var stage1 = $('#stage1');
+  createPostStamp(stage1, 'brazilian1');
 $( ".ui-widget-content" ).draggable();
   function showBorder(jqEl, className) {
       if(jqEl.hasClass(className)){
@@ -132,8 +135,10 @@ $( ".ui-widget-content" ).draggable();
 
             <br><br><br>
 
-            <img src ="ajax/postcards/brazilBird.jpg" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content braz-drop" id = "brazilBird">
-            <img src ="ajax/postcards/india1.jpg" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content ind-drop" id = "india1">
+            <div id = "stage1">
+            
+            </div>
+            <img src ="ajax/postcards/india1.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india1">
             <img src ="ajax/postcards/russia70.jpg" width = "100" height = "100" class="ui-widget-content rus-drop" id = "russia3">
             <img src = "https://s-media-cache-ak0.pinimg.com/736x/f3/55/3c/f3553cf2347e4f332329e498a7dbe234.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa3">
             <img src = "http://chinablog.cc/wp-content/gallery/art/tiger_stamp/China_tiger_stamp.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china2">
@@ -164,6 +169,6 @@ $( ".ui-widget-content" ).draggable();
 </div>
     
 
-<script src = "js/dinamic.js"></script>
+<script src ="js/dinamic.js"></script>
 </body>
 </html>
