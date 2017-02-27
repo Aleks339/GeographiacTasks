@@ -87,13 +87,13 @@ var postSpamps = {
 function createPostStamp(jqEl, stampImg){
     if (postSpamps[stampImg]){
         var postStamp = postSpamps[stampImg];
-        appendPostSpamps(jqEl, postStamp.id, postStamp.src, postStamp.class, postStamp.alt);
+        appendPostSpamps(jqEl, postStamp.id);
         drawPostStamp ( postStamp.id, postStamp.alt, postStamp.src, postStamp.class);
     }
 }
 
 function appendPostSpamps(jqEl, idPostStamps){
-   jqEl.append('<img src = "'+srcPostSpamps+'" alt = "'+altPostSpamps+'" id = "'+idPostStamps+'" class = "'+classPostSpamps'" width = "100" height = "100">');
+   jqEl.append(idPostStamps);
 }
 
 function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpamps){
@@ -101,8 +101,8 @@ function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpa
     if (stampId){
         stampId.width = '100';
         stampId.height = '100';
-        stampId.src = srcPostSpamps;
         stampId.alt = altPostSpamps;
+        stampId.src = srcPostSpamps;
         stampId.class = classPostSpamps;
     }
 }
