@@ -117,7 +117,6 @@ function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpa
     if (stampId){
         stampId.width = '100';
         stampId.height = '100';
-        stampId.id = idPostStamps;
         stampId.alt = altPostSpamps;
         stampId.src = srcPostSpamps;
         stampId.class1 = classPostSpamps;
