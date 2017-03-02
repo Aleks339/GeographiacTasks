@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mystyles.css">
     
-    <script src = "eu_random.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
@@ -25,19 +24,19 @@ $(document).ready(function(){
   createCountry(stage, 'uk');
   createCountry(stage, 'italy');
   $.ajax({
-    url: 'ajax/france.html',
+    url: 'js/ajax/france.html',
     success: function(data){
       $('#stamps').append(data);
       $.ajax({
-        url: 'ajax/italy.html',
+        url: 'js/ajax/italy.html',
         success: function(data){
           $('#stamps').append(data);
           $.ajax({
-            url: 'ajax/uk.html',
+            url: 'js/ajax/uk.html',
             success: function(data){
               $('#stamps').append(data);
               $.ajax({
-                url: 'ajax/holland.html',
+                url: 'js/ajax/holland.html',
                 success: function(data){
                   $('#stamps').append(data);
                           $( ".ui-widget-content" ).draggable();
@@ -145,48 +144,25 @@ $(document).ready(function(){
 </ol>
     
 <div class = "container">
-    <div class = "row">
-        <div class = "col-sm-11">
-            <h1 class = "h1">Try to clue right post stamps on the right envelope!</h1>
-            
-            <div class = "row">
-                <div class = "col-sm-6 col-xs-12">
-                    <canvas id="FranceCanvas" width="400" height="400" class = "envelope"></canvas>
-                </div>
-                
-                <div class = "col-sm-6 col-xs-12">
-                    <canvas id="UKCanvas" width="400" height="400" class = "envelope"></canvas>
-                </div>
-            </div>
-            
-            <div class = "row">
-                <div class = "col-sm-6 col-xs-12">
-                    <canvas id="ItalyCanvas" width="400" height="400" class = "envelope"></canvas>
-                </div>
-                
-                <div class = "col-sm-6 col-xs-12">
-                    <canvas id="HollandCanvas" width="400" height="400" class = "envelope"></canvas>
-                </div>
-            </div>
-
-            <br><br><br>
-<img src ="ajax/postcards/eu/uk1.jpg" width = "100" height = "100" class="ui-widget-content uk-drop" id = "uk1" alt = "uk1">
-<img src="ajax/postcards/eu/uk2.jpg" width = "100" height = "100" class="ui-widget-content uk-drop" id = "uk2" alt = "uk2">
-<img src ="ajax/postcards/eu/uk3.jpg" width = "100" height = "100" class="ui-widget-content uk-drop" id = "uk3" alt = "uk3">
-<img src ="ajax/postcards/eu/uk4.jpg" width = "100" height = "100" class="ui-widget-content uk-drop" id = "uk4" alt = "uk4">
-<img src ="ajax/postcards/eu/italy1.jpg" width = "100" height = "100" class="ui-widget-content it-drop" id = "italy1" alt = "italy1">
-<img src="ajax/postcards/eu/italy2.jpg" width = "100" height = "100" class="ui-widget-content it-drop" id = "italy2" alt = "italy2">
-<img src ="ajax/postcards/eu/italy3.jpg" width = "100" height = "100" class="ui-widget-content it-drop" id = "italy3" alt = "italy3">
-<img src ="ajax/postcards/eu/italy4.jpg" width = "100" height = "100" class="ui-widget-content it-drop" id = "italy4" alt = "italy4">
-<img src ="ajax/postcards/eu/italy5.jpg" width = "100" height = "100" class="ui-widget-content it-drop" id = "italy4" alt = "italy5">
-<img src="ajax/postcards/eu/holland1.jpg" width = "100" height = "100" class="ui-widget-content holl-drop" id = "holland1" alt = "holland1">
-<img src="ajax/postcards/eu/holland2.jpg" width = "100" height = "100" class="ui-widget-content holl-drop" id = "holland2" alt = "holland2">
-<img src ="ajax/postcards/eu/france1.jpg" width = "100" height = "100" class="ui-widget-content fr-drop" id = "france1"  alt = "france1">
-<img src="ajax/postcards/eu/france2.jpg" width = "100" height = "100" class="ui-widget-content fr-drop" id = "france2"  alt = "france2">
-            
-        </div>
+    <div class = "row" id = "stage">
     </div>    
 </div>
+    
+    
+<br><br><br>
+<img src ="js/ajax/postcards/eu/uk1.jpg" width = "100" height = "100" class="ui-widget-content uk-drop" id = "uk1" alt = "uk1">
+<img src="js/ajax/postcards/eu/uk2.jpg" width = "100" height = "100" class="ui-widget-content uk-drop" id = "uk2" alt = "uk2">
+<img src ="js/ajax/postcards/eu/uk3.jpg" width = "100" height = "100" class="ui-widget-content uk-drop" id = "uk3" alt = "uk3">
+<img src ="js/ajax/postcards/eu/uk4.jpg" width = "100" height = "100" class="ui-widget-content uk-drop" id = "uk4" alt = "uk4">
+<img src ="js/ajax/postcards/eu/italy1.jpg" width = "100" height = "100" class="ui-widget-content it-drop" id = "italy1" alt = "italy1">
+<img src="js/ajax/postcards/eu/italy2.jpg" width = "100" height = "100" class="ui-widget-content it-drop" id = "italy2" alt = "italy2">
+<img src ="js/ajax/postcards/eu/italy3.jpg" width = "100" height = "100" class="ui-widget-content it-drop" id = "italy3" alt = "italy3">
+<img src ="js/ajax/postcards/eu/italy4.jpg" width = "100" height = "100" class="ui-widget-content it-drop" id = "italy4" alt = "italy4">
+<img src ="js/ajax/postcards/eu/italy5.jpg" width = "100" height = "100" class="ui-widget-content it-drop" id = "italy4" alt = "italy5">
+<img src="js/ajax/postcards/eu/holland1.jpg" width = "100" height = "100" class="ui-widget-content holl-drop" id = "holland1" alt = "holland1">
+<img src="js/ajax/postcards/eu/holland2.jpg" width = "100" height = "100" class="ui-widget-content holl-drop" id = "holland2" alt = "holland2">
+<img src ="js/ajax/postcards/eu/france1.jpg" width = "100" height = "100" class="ui-widget-content fr-drop" id = "france1"  alt = "france1">
+<img src="js/ajax/postcards/eu/france2.jpg" width = "100" height = "100" class="ui-widget-content fr-drop" id = "france2"  alt = "france2">
 
 <script src = "js/eu_dinamic.js"></script>
 </body>

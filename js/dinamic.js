@@ -77,32 +77,37 @@ function appendCountryCanvas(jqEl, idCanvas){
 
 var postSpamps = {
     brazilian1:  {
+        src: 'ajax/postcards/brazilBird.jpg',
+        class1: 'braz-drop',
         id: 'brazilBird',
         alt: 'Brazilian Bird',
-        src: 'ajax/postcards/brazilBird.jpg',
-        class: 'braz-drop',
     },
-    
+    india1:  {
+        src: 'ajax/postcards/india1.jpg',
+        class1: 'ind-drop',
+        id: 'India1',
+        alt: 'India1',
+    },
 }
 function createPostStamp(jqEl, stampName){
     if (postSpamps[stampName]){
         var postStamp = postSpamps[stampName];
-        appendPostSpamps(jqEl, postStamp.id);
-        drawPostStamp ( postStamp.id, postStamp.alt, postStamp.src, postStamp.class);
+        appendPostSpamps(jqEl, postStamp.src, postStamp.class1, postStamp.id, postStamp.alt);
+        drawPostStamp ( postStamp.src, postStamp.class1, postStamp.id, postStamp.alt );
     }
 }
 
-function appendPostSpamps(jqEl, idPostStamps){
-   jqEl.append(<'img src ="'+srcPostSpamps+'" width = "100" height = "100" class="'+ classPostSpamps+'" id = "'+idPostStamps+'" alt = "'+altPostSpamps+'">');
+function appendPostSpamps(jqEl, srcPostSpamps,  classPostSpamps, idPostStamps, altPostSpamps){
+   jqEl.append('<img src ="'+srcPostSpamps+'" class="'+ classPostSpamps+'" id = "'+idPostStamps+'" alt = "'+altPostSpamps+'">');
 }
 
-function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpamps){
+function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpamps ){
     var stampId = document.getElementById(idPostStamps);
     if (stampId){
         stampId.width = '100';
         stampId.height = '100';
         stampId.alt = altPostSpamps;
         stampId.src = srcPostSpamps;
-        stampId.class = classPostSpamps;
+        stampId.class1 = classPostSpamps;
     }
 }
