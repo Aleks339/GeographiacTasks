@@ -37,6 +37,8 @@ var randomKey    = countryArray[countryIndex];
 // instead of a fresh random value
 var randomValue  = countries[randomKey]; 
 
+randomValue = document.getElementById('stage').outerHTML;
+
 /**
  * this function draws canvas envelope
  */

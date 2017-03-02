@@ -33,6 +33,17 @@ function createCountry(jqEl, countryName){
         drawCountryCanvas(country.id, country.color, country.title);
     }
 }
+
+//random envelope
+var countryArray  = Object.keys(countries);
+var randomNumber = Math.random();
+var countryIndex  = Math.floor(randomNumber * countryArray.length);
+
+var randomKey    = countryArray[countryIndex];
+// This will course this will return the value of the randomKey
+// instead of a fresh random value
+var randomValue  = countries[randomKey]; 
+
 /**
  * this function draws canvas envelope
  */
@@ -98,7 +109,7 @@ function createPostStamp(jqEl, stampName){
 }
 
 function appendPostSpamps(jqEl, srcPostSpamps,  classPostSpamps, idPostStamps, altPostSpamps){
-   jqEl.append('<img src ="'+srcPostSpamps+'" class="'+ classPostSpamps+'" id = "'+idPostStamps+'" alt = "'+altPostSpamps+'">');
+   $(jqEl).append('<img src ="'+srcPostSpamps+'" class="'+ classPostSpamps+'" id = "'+idPostStamps+'" alt = "'+altPostSpamps+'">');
 }
 
 function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpamps ){
