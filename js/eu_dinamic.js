@@ -33,11 +33,10 @@ function randomEnvelope() {
     randomNumber = Math.random();
     countryIndex  = Math.floor(randomNumber * countryArray.length);
 
-    randomKey = countryArray[countryIndex];
+    randomKey    = countryArray[countryIndex];
     // This will course this will return the value of the randomKey
     // instead of a fresh random value
-    randomValue = countries[randomKey]; 
-    document.canvas.src = countries[randomValue];
+    randomValue  = countries[randomKey]; 
 }
 /**
  * this function draws canvas envelope
