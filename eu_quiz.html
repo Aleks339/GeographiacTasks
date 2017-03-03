@@ -24,7 +24,7 @@ $(document).ready(function(){
   createCountry(stage, 'uk');
   createCountry(stage, 'italy');
     
-  $('#stage').append(randomEnvelope());
+  randomEnvelope(stage, randomValue);
     
   $.ajax({
     url: 'js/ajax/france.html',
