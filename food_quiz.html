@@ -23,13 +23,6 @@ $( ".flag" ).draggable();
         $(jqEl).css("border", "3px solid red");
       }
   }
-    //Germany
-  $( "#germ-drop" ).droppable({
-    accept: ".flag",
-    drop: function( event, ui ) {
-      showBorder($(event.toElement), 'germany');
-    }
-  });
   //Spain
   $( "#spain-drop" ).droppable({
     accept: ".flag",
@@ -37,32 +30,25 @@ $( ".flag" ).draggable();
       showBorder($(event.toElement), 'spain');
     }
   });
-    //Mongolia
-  $( "#mong-drop" ).droppable({
-    accept: ".flag",
-    drop: function( event, ui ) {
-      showBorder($(event.toElement), 'mongolia');
-    }
-  });
   //India
-  $( "#india-drop" ).droppable({
+  $( "#ind-drop" ).droppable({
     accept: ".flag",
     drop: function( event, ui ) {
       showBorder($(event.toElement), 'india');
     }
   });
     //Japan
-  $( "#kimono-drop" ).droppable({
+  $( "#sushio-drop" ).droppable({
     accept: ".flag",
     drop: function( event, ui ) {
       showBorder($(event.toElement), 'japan');
     }
   });
-  //Russia
-  $( "#rus-drop" ).droppable({
+  //Italy
+  $( "#italy-drop" ).droppable({
     accept: ".flag",
     drop: function( event, ui ) {
-      showBorder($(event.toElement), 'russia');
+      showBorder($(event.toElement), 'italy');
     }
   });
 })
@@ -100,7 +86,7 @@ $( ".flag" ).draggable();
        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Culture quizes
       <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Ethnic food quiz</a></li>
+          <li><a href="food_quiz.html">Ethnic food quiz</a></li>
           <li><a href="celebration%20quiz.html">Celebrations quiz</a></li>
           <li><a href="clothes_quiz.html">Traditional clothes quiz</a></li>
         </ul>
@@ -110,55 +96,43 @@ $( ".flag" ).draggable();
 </nav>    
 </header>
       
-<h1 class = 'h1'>Traditional clothes quiz</h1>
+<h1 class = 'h1'>Ethnic food quiz</h1>
       
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="#">Home</a></li>
   <li class="breadcrumb-item"><a href="#">Culture quizes</a></li>
-  <li class="breadcrumb-item active">Traditional clothes quiz</li>
+  <li class="breadcrumb-item active">Ethnic food quiz</li>
 </ol>
       
 <div class = "container">
       <div class = "row">
          <div class = 'col-sm-5 col-xs-12'>
-             <img src ="clothes/dirndl-dresses-750x497.jpg" alt = "Drindls" width = '400' height = '400'>
-             <h4 class = 'h4'>In what country did people wear it?</h4>
+             <img src ="food/chicken-curry-ready-to-eat.jpg" alt = "Curry chicken" width = '400' height = '400'>
+             <h4 class = 'h4'>In what country do people eat it?</h4>
              <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
-             <canvas class = "quizCanvas" id = "germ-drop"></canvas>
+             <canvas class = "quizCanvas" id = "ind-drop"></canvas>
           </div>
           <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
-              <img src ="clothes/spain.jpg" alt = "Spanish clothes" width = '400' height = '400'>
-              <h4 class = 'h4'>In what country did people wear it?</h4>
+              <img src="food/paella_0.jpg" alt = "Paella" width = '400' height = '400'>
+              <h4 class = 'h4'>In what country do people eat it?</h4>
               <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
               <canvas class = "quizCanvas" id = "spain-drop"></canvas>
           </div>
           
           <div class = 'col-sm-5 col-xs-12'>
-             <img src ="clothes/Mongolian.jpg" alt = "Mongolian dress" width = '400' height = '400'>
-             <h4 class = 'h4'>In what country did people wear it?</h4>
+             <img src ="food/pizza.jpg" alt = "Pizza" width = '400' height = '400'>
+             <h4 class = 'h4'>In what country do people eat it?</h4>
              <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
-             <canvas class = "quizCanvas" id = "mong-drop"></canvas>
+             <canvas class = "quizCanvas" id = "italy-drop"></canvas>
           </div>
           <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
-              <img src ="clothes/sari.jpg" alt = 'Sari' width = '400' height = '400'>
-              <h4 class = 'h4'>In what country did people wear it?</h4>
+              <img src ="food/sushi_and_sashimi_for_two.jpg" alt = 'Sushi' width = '400' height = '400'>
+              <h4 class = 'h4'>In what country do people eat it?</h4>
               <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
-              <canvas class = "quizCanvas" id = "india-drop"></canvas>
+              <canvas class = "quizCanvas" id = "sushi-drop"></canvas>
           </div>
           
-          <div class = 'col-sm-5 col-xs-12'>
-             <img src ="clothes/japanese.jpg" alt = "Kimono" width = '400' height = '400'>
-             <h4 class = 'h4'>In what country did people wear it?</h4>
-             <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
-             <canvas class = "quizCanvas" id = "kimono-drop"></canvas>
-          </div>
-          <div class = 'col-sm-offset-2 col-sm-5 col-xs-12'>
-              <img src ="clothes/russian%20girl.jpg" alt = 'Russia' width = '400' height = '400'>
-              <h4 class = 'h4'>In what country did people wear it?</h4>
-              <h5 class = 'h5'>Fill the rectangle by the right flag</h5>
-              <canvas class = "quizCanvas" id = "rus-drop"></canvas>
-          </div>
-      </div>
+    </div>
 </div>
       
       <hr style = "height:3;">
@@ -178,47 +152,34 @@ $( ".flag" ).draggable();
       
       
       <script>
-        //China
-        var c = document.getElementById("germ-drop");
+        //India
+        var c = document.getElementById("ind-drop");
         var ctx = c.getContext("2d");
           
         ctx.rect(0,0,298,149);
         ctx.stroke(); 
           
-        //USA
+        //Spain
         var c = document.getElementById("spain-drop");
         var ctx = c.getContext("2d");
           
         ctx.rect(0,0,298,149);
         ctx.stroke(); 
          
-        //Venice
-        var c = document.getElementById("mong-drop");
+        //Italy
+        var c = document.getElementById("italy-drop");
         var ctx = c.getContext("2d");
           
         ctx.rect(0,0,298,149);
         ctx.stroke(); 
           
-        //Holi India
-        var c = document.getElementById("india-drop");
+        //Japan
+        var c = document.getElementById("sushi-drop");
         var ctx = c.getContext("2d");
           
         ctx.rect(0,0,298,149);
         ctx.stroke();
           
-        //Brazil
-        var c = document.getElementById("kimono-drop");
-        var ctx = c.getContext("2d");
-          
-        ctx.rect(0,0,298,149);
-        ctx.stroke(); 
-          
-        //Russia
-        var c = document.getElementById("rus-drop");
-        var ctx = c.getContext("2d");
-          
-        ctx.rect(0,0,298,149);
-        ctx.stroke();
-      </script>
+    </script>
   </body>
 </html>
