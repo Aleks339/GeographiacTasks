@@ -20,6 +20,7 @@
       
 $(document).ready(function(){
   var stage = $('#stage');
+  var stage1 = $('#stage1');
   // createCountry(stage, 'brazil');
   // createCountry(stage, 'india');
   // createCountry(stage, 'africa');
@@ -29,14 +30,8 @@ $(document).ready(function(){
   var countryName = randomEnvelope(countryArray);
   countryArray.splice(countryArray.indexOf(countryName), 1);
   var countryName2 = randomEnvelope(countryArray);
-  createCountry(stage, countryName); 
-  createCountry(stage, countryName2); 
-
-
-    
-  var stage1 = document.getElementById('#stage1');
-  createPostStamp(stage1, 'brazilian1');
-  createPostStamp(stage1, 'india1');
+  createCountry(stage, stage1, countryName); 
+  createCountry(stage, stage1, countryName2); 
     
 
 $( ".ui-widget-content" ).draggable();
@@ -148,7 +143,7 @@ $( ".ui-widget-content" ).draggable();
 
             <div id = "stage1">            
             </div>
-            <img src ="js/ajax/postcards/russia-1958-troika.jpg" width = "100" height = "100" class="ui-widget-content rus-drop" id = "russia3">
+   <!--          <img src ="js/ajax/postcards/russia-1958-troika.jpg" width = "100" height = "100" class="ui-widget-content rus-drop" id = "russia3">
             <img src = "https://s-media-cache-ak0.pinimg.com/736x/f3/55/3c/f3553cf2347e4f332329e498a7dbe234.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa3">
             <img src = "http://chinablog.cc/wp-content/gallery/art/tiger_stamp/China_tiger_stamp.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china2">
             <img src ="js/ajax/postcards/brazilFootballer.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazilFootballer">
@@ -169,7 +164,7 @@ $( ".ui-widget-content" ).draggable();
             <img src = "js/ajax/postcards/india4.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india4">
             <img src = "js/ajax/postcards/brazil2.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazil2">
             <img src = "http://newsdesk.si.edu/sites/default/files/photos/HR%2010c%20Temple%20of%20Heaven%20model,%20China,%201923.JPG" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china4">
-             <img src ="js/ajax/postcards/Stamp_Russia_youth.jpg" width = "100" height = "100" class="ui-widget-content rus-drop" id = "russia1">
+             <img src ="js/ajax/postcards/Stamp_Russia_youth.jpg" width = "100" height = "100" class="ui-widget-content rus-drop" id = "russia1"> -->
             
             
             

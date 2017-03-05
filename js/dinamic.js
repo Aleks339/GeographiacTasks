@@ -3,34 +3,42 @@ var countries = {
         id: "BrazCanvas",
         color: 'red',
         title: 'from Brazil',
+        stamps: ['brazilian1'],
     },
     india: {
         id: 'IndCanvas',
         color: 'green',
         title: "From India",
+        stamps: ['india1'],
     },
     china: {
         id: "ChiCanvas",
         color: "yellow",
         title: "From China",
+        stamps: ['china1'],
     },
     africa: {
         id: "AfrCanvas",
         color: "blue",
         title: "From South Africa",
+        stamps: ['africa1'],
     },
     russia: {
         id: "RusCanvas",
         color: "brown",
         title: "From Russia",
+        stamps: ['russia1'],
     },
 }
 
-function createCountry(jqEl, countryName){
+function createCountry(jqEl, jqElStampsStage, countryName){
     if (countries[countryName]){
         var country = countries[countryName];
         appendCountryCanvas(jqEl, country.id)
         drawCountryCanvas(country.id, country.color, country.title);
+        $.each(country.stamps, function( index, value ) {
+              createPostStamp(jqElStampsStage, value);
+        });
     }
 }
 //random envelope
@@ -91,16 +99,34 @@ function appendCountryCanvas(jqEl, idCanvas){
 
 var postSpamps = {
     brazilian1:  {
-        src: 'ajax/postcards/brazilBird.jpg',
+        src: 'js/ajax/postcards/brazilBird.jpg',
         class1: 'braz-drop',
         id: 'brazilBird',
         alt: 'Brazilian Bird',
     },
     india1:  {
-        src: 'ajax/postcards/india1.jpg',
+        src: 'js/ajax/postcards/india1.jpg',
         class1: 'ind-drop',
         id: 'India1',
         alt: 'India1',
+    },
+    russia1:  {
+        src: 'js/ajax/postcards/russia-1958-troika.jpg',
+        class1: 'rus-drop',
+        id: 'Russia1',
+        alt: 'Russia1',
+    },
+    africa1:  {
+        src: 'https://s-media-cache-ak0.pinimg.com/736x/f3/55/3c/f3553cf2347e4f332329e498a7dbe234.jpg',
+        class1: 'afr-drop',
+        id: 'Africa1',
+        alt: 'Africa1',
+    },
+    china1:  {
+        src: 'http://chinablog.cc/wp-content/gallery/art/tiger_stamp/China_tiger_stamp.jpg',
+        class1: 'chin-drop',
+        id: 'China1',
+        alt: 'China1',
     },
 }
 function createPostStamp(jqEl, stampName){
@@ -112,7 +138,7 @@ function createPostStamp(jqEl, stampName){
 }
 
 function appendPostSpamps(jqEl, srcPostSpamps,  classPostSpamps, idPostStamps, altPostSpamps){
-   $(jqEl).append('<img src ="'+srcPostSpamps+'" class="'+ classPostSpamps+'" id = "'+idPostStamps+'" alt = "'+altPostSpamps+'">');
+   $(jqEl).append('<img src ="'+srcPostSpamps+'" class="'+ classPostSpamps+' ui-widget-content" id = "'+idPostStamps+'" alt = "'+altPostSpamps+'" width = "100" height = "100">');
 }
 
 function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpamps ){
