@@ -33,16 +33,19 @@ function createCountry(jqEl, countryName){
         drawCountryCanvas(country.id, country.color, country.title);
     }
 }
-
 //random envelope
-var countryArray  = Object.keys(countries);
-var randomNumber = Math.random();
-var countryIndex  = Math.floor(randomNumber * countryArray.length);
+function randomEnvelope(countryArray){
+    var randomNumber = Math.random();
+    var countryIndex  = Math.floor(randomNumber * countryArray.length);
 
-var randomKey    = countryArray[countryIndex];
-// This will course this will return the value of the randomKey
-// instead of a fresh random value
-var randomValue  = countries[randomKey]; 
+    var randomKey    = countryArray[countryIndex];
+    // This will course this will return the value of the randomKey
+    // instead of a fresh random value
+    var randomValue  = countries[randomKey]; 
+    return randomKey;
+}
+
+
 
 /**
  * this function draws canvas envelope

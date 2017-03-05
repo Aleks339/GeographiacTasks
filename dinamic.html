@@ -20,11 +20,19 @@
       
 $(document).ready(function(){
   var stage = $('#stage');
-  createCountry(stage, 'brazil');
-  createCountry(stage, 'india');
-  createCountry(stage, 'africa');
-  createCountry(stage, 'russia');
-  createCountry(stage, 'china');
+  // createCountry(stage, 'brazil');
+  // createCountry(stage, 'india');
+  // createCountry(stage, 'africa');
+  // createCountry(stage, 'russia');
+  // createCountry(stage, 'china');
+  var countryArray  = Object.keys(countries);
+  var countryName = randomEnvelope(countryArray);
+  countryArray.splice(countryArray.indexOf(countryName), 1);
+  var countryName2 = randomEnvelope(countryArray);
+  createCountry(stage, countryName); 
+  createCountry(stage, countryName2); 
+
+
     
   var stage1 = document.getElementById('#stage1');
   createPostStamp(stage1, 'brazilian1');
