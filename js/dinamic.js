@@ -99,42 +99,83 @@ function appendCountryCanvas(jqEl, idCanvas){
 
 var postSpamps = {
     brazilian1:  {
-        src: 'js/ajax/postcards/brazilBird.jpg',
+        src: 'img/postcards/brazilBird.jpg',
         class1: 'braz-drop',
         id: 'brazilBird',
         alt: 'Brazilian Bird',
     },
     india1:  {
-        src: 'js/ajax/postcards/india1.jpg',
+        src: 'img/postcards/india1.jpg',
         class1: 'ind-drop',
         id: 'India1',
         alt: 'India1',
     },
     russia1:  {
-        src: 'js/ajax/postcards/russia-1958-troika.jpg',
+        src: 'img/postcards/russia-1958-troika.jpg',
         class1: 'rus-drop',
         id: 'Russia1',
         alt: 'Russia1',
     },
     africa1:  {
-        src: 'https://s-media-cache-ak0.pinimg.com/736x/f3/55/3c/f3553cf2347e4f332329e498a7dbe234.jpg',
+        src: 'img/postcards/africa1.jpg',
         class1: 'afr-drop',
         id: 'Africa1',
         alt: 'Africa1',
     },
     china1:  {
-        src: 'http://chinablog.cc/wp-content/gallery/art/tiger_stamp/China_tiger_stamp.jpg',
+        src: 'img/postcards/china1.jpg',
         class1: 'chin-drop',
         id: 'China1',
         alt: 'China1',
+    },
+    brazilian2:  {
+        src: 'img/postcards/brazilFootballer.jpg',
+        class1: 'braz-drop',
+        id: 'brazilFootballer',
+        alt: 'Brazilian Footballer',
+    },
+    brazilian3:  {
+        src: 'img/postcards/brazilFlag.jpg',
+        class1: 'braz-drop',
+        id: 'brazilFlag',
+        alt: 'brazilFlag',
+    },
+    india2:  {
+        src: 'img/postcards/india2.jpg',
+        class1: 'ind-drop',
+        id: 'India2',
+        alt: 'India2',
+    },
+    africa2:  {
+        src: 'img/postcards/africa2.jpg',
+        class1: 'afr-drop',
+        id: 'Africa2',
+        alt: 'Africa2',
+    },
+    china2:  {
+        src: 'img/postcards/china2.jpg',
+        class1: 'chin-drop',
+        id: 'China2',
+        alt: 'China2',
     },
 }
 function createPostStamp(jqEl, stampName){
     if (postSpamps[stampName]){
         var postStamp = postSpamps[stampName];
-        appendPostSpamps(jqEl, postStamp.src, postStamp.class1, postStamp.id, postStamp.alt);
+        appendPostSpamps(jqEl, postStamp.src, postStamp.class1, postStamp.id, postStamp.alt, stampName);
         drawPostStamp ( postStamp.src, postStamp.class1, postStamp.id, postStamp.alt );
     }
+}
+
+function randomStamp(StampArray){
+    var randomNumber = Math.random();
+    var stampIndex  = Math.floor(randomNumber * StampArray.length);
+
+    var randomKey    = StampArray[stampIndex];
+    // This will course this will return the value of the randomKey
+    // instead of a fresh random value
+    var randomValue  = postSpamps[randomKey]; 
+    return randomKey;
 }
 
 function appendPostSpamps(jqEl, srcPostSpamps,  classPostSpamps, idPostStamps, altPostSpamps){
@@ -144,8 +185,6 @@ function appendPostSpamps(jqEl, srcPostSpamps,  classPostSpamps, idPostStamps, a
 function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpamps ){
     var stampId = document.getElementById(idPostStamps);
     if (stampId){
-        stampId.width = '100';
-        stampId.height = '100';
         stampId.alt = altPostSpamps;
         stampId.src = srcPostSpamps;
         stampId.class1 = classPostSpamps;

@@ -21,11 +21,7 @@
 $(document).ready(function(){
   var stage = $('#stage');
   var stage1 = $('#stage1');
-  // createCountry(stage, 'brazil');
-  // createCountry(stage, 'india');
-  // createCountry(stage, 'africa');
-  // createCountry(stage, 'russia');
-  // createCountry(stage, 'china');
+
   var countryArray  = Object.keys(countries);
   var countryName = randomEnvelope(countryArray);
   countryArray.splice(countryArray.indexOf(countryName), 1);
@@ -33,7 +29,13 @@ $(document).ready(function(){
   createCountry(stage, stage1, countryName); 
   createCountry(stage, stage1, countryName2); 
     
-
+  var stampArray = Object.keys(postStamps);
+  var stampName = randomStamp(StampArray);
+  stampArray.splice(stampArray.indexOf(stampName), 1);
+  var stampName2 = randomStamp(StampArray);
+  appendPostSpamps(stage1, postStamp.src, postStamp.class1, postStamp.id, postStamp.alt, stampName);
+  appendPostSpamps(stage1, postStamp.src, postStamp.class1, postStamp.id, postStamp.alt, stampName);
+    
 $( ".ui-widget-content" ).draggable();
   function showBorder(jqEl, className) {
       if(jqEl.hasClass(className)){
@@ -143,15 +145,7 @@ $( ".ui-widget-content" ).draggable();
 
             <div id = "stage1">            
             </div>
-   <!--          <img src ="js/ajax/postcards/russia-1958-troika.jpg" width = "100" height = "100" class="ui-widget-content rus-drop" id = "russia3">
-            <img src = "https://s-media-cache-ak0.pinimg.com/736x/f3/55/3c/f3553cf2347e4f332329e498a7dbe234.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa3">
-            <img src = "http://chinablog.cc/wp-content/gallery/art/tiger_stamp/China_tiger_stamp.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china2">
-            <img src ="js/ajax/postcards/brazilFootballer.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazilFootballer">
-            <img src ="js/ajax/postcards/brazilFlag.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazilFlag">
-            <img src ="js/ajax/postcards/india2.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india2">
-             <img src = "https://s-media-cache-ak0.pinimg.com/236x/fa/0a/0c/fa0a0c40fd4c1d074455af3874031d83.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa1">
-            <img src = "https://s-media-cache-ak0.pinimg.com/originals/93/b1/7a/93b17a6946f284fe3c409c1c328c3fa8.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china1">
-            <img src = "https://s-media-cache-ak0.pinimg.com/originals/5f/f4/81/5ff481e3be28d19fb056f631fcf4cbef.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa4">
+   <!--    <img src = "https://s-media-cache-ak0.pinimg.com/originals/5f/f4/81/5ff481e3be28d19fb056f631fcf4cbef.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa4">
             <img src ="js/ajax/postcards/russia.jpg" width = "100" height = "100" class="ui-widget-content rus-drop" id = "russia2">
             <img src = "http://www.philatelicdatabase.com/wp-content/uploads/2008/05/china-1894-9c.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china3">
             <img src ="js/ajax/postcards/russia70.jpg" width = "100" height = "100" class="ui-widget-content rus-drop" id = "russia4">
