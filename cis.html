@@ -28,9 +28,26 @@ $(document).ready(function(){
   var countryName2 = randomEnvelope(countryArray);
   createCountry(stage, stage1, countryName); 
   createCountry(stage, stage1, countryName2);
-  
+  $(document).ready(function(){
+  var stage = $('#stage');
+  var stage1 = $('#stage1');
+
+  var countryArray  = Object.keys(countries);
+  var countryName = randomEnvelope(countryArray);
+  countryArray.splice(countryArray.indexOf(countryName), 1);
+  var countryName2 = randomEnvelope(countryArray);
+  createCountry(stage, stage1, countryName); 
+  createCountry(stage, stage1, countryName2); 
     
-  $( ".ui-widget-content" ).draggable();
+  var stampArray = Object.keys(postStamps);
+  var stampName = drawPostSpamps(postStamp.id, postStamp.alt, postStamp.src, postStamp.class1);
+  var stampName2 = drawPostSpamps(postStamp.id, postStamp.alt, postStamp.src, postStamp.class1);
+  var stampName3 = drawPostSpamps(postStamp.id, postStamp.alt, postStamp.src, postStamp.class1);
+  createPostSpamps(stage1, stampName);
+  createPostSpamps(stage1, stampName2);
+  createPostSpamps(stage1, stampName3);
+    
+$( ".ui-widget-content" ).draggable();
   function showBorder(jqEl, className) {
       if(jqEl.hasClass(className)){
         $(jqEl).css("border", "3px solid green");
@@ -38,35 +55,28 @@ $(document).ready(function(){
         $(jqEl).css("border", "3px solid red");
       }
   }
-  //UK
-  $( "#UKCanvas" ).droppable({
+  //Kazachstan
+  $( "#KazCanvas" ).droppable({
     accept: ".ui-widget-content",
     drop: function( event, ui ) {
-      showBorder($(event.toElement), 'uk-drop');
+      showBorder($(event.toElement), 'kaz-drop');
     }
   });
-  //Holland
-  $( "#HollCanvas" ).droppable({
+  //Belarus
+  $( "#BelCanvas" ).droppable({
     accept: " .ui-widget-content",
     drop: function( event, ui ) {
-      showBorder($(event.toElement), 'holl-drop');
+      showBorder($(event.toElement), 'bel-drop');
     }
   });
-  //France
-    $( "#FrCanvas" ).droppable({
+  //Azerbaijan
+    $( "#AzerbCanvas" ).droppable({
     accept: ".ui-widget-content",
     drop: function( event, ui ) {
-      showBorder($(event.toElement), 'fr-drop');
+      showBorder($(event.toElement), 'azerb-drop');
     }
   });
-  //Italy
-  $( "#ItCanvas" ).droppable({
-    accept: " .ui-widget-content",
-    drop: function( event, ui ) {
-      showBorder($(event.toElement), 'it-drop');
-    }
-  });
-});
+})
   </script>
     
   <script>
@@ -102,6 +112,7 @@ $(document).ready(function(){
         <ul class="dropdown-menu">
           <li><a href="dinamic.html">Envelopes from BRICS countries</a></li>
           <li><a href="eu_quiz.html">Envelopes from EU countries</a></li>
+          <li><a href="cis.html">Envelopes from CIS countries</a></li>
         </ul>
         </li>
       <li>
@@ -123,7 +134,7 @@ $(document).ready(function(){
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="#">Home</a></li>
   <li class="breadcrumb-item"><a href="#">Envelope quizes</a></li>
-  <li class="breadcrumb-item active">Envelopes from EU countries</li>
+  <li class="breadcrumb-item active">Envelopes from CIS countries</li>
 </ol>
     
 <div class = "container">
@@ -133,8 +144,9 @@ $(document).ready(function(){
     
     
 <br><br><br>
+<div id = 'stage1'></div>
 
 
-<script src = "js/eu_dinamic.js"></script>
+<script src ="js/cis.js"></script>
 </body>
 </html>

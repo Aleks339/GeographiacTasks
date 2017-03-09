@@ -1,32 +1,27 @@
 var countries = {
-    france: {
-        id: "FrCanvas",
+    kazachstan: {
+        id: "KazCanvas",
         color: 'red',
-        title: 'from France',
-        stamps: ['fr1', 'fr2'],
+        title: 'from Kazakhstan',
+        stamps: ['kaz1', 'kaz2', 'kaz3'],
     },
-    uk: {
-        id: 'UKCanvas',
+    azerbaijan: {
+        id: 'AzerCanvas',
         color: 'green',
-        title: "From the United Kingdom",
-        stamps: ['uk1', 'uk2', 'uk3', 'uk4'],
+        title: "From Azerbaijan",
+        stamps: ['azerb1', 'azerb2', 'azerb3'],
     },
-    italy: {
-        id: "ItCanvas",
+    belarus: {
+        id: "BelCanvas",
         color: "yellow",
-        title: "From Italy",
-        stamps: ['it1', 'it2'],
-    },
-    holland: {
-        id: "HollCanvas",
-        color: "blue",
-        title: "From Holland",
-        stamps: ['holl1', 'holl2'],
+        title: "From Belarus",
+        stamps: ['bel1', 'bel2', 'bel3', 'bel4', 'bel5'],
     },
 }
+
 function createCountry(jqEl, jqElStampsStage, countryName){
     if (countries[countryName]){
-    var country = countries[countryName];
+        var country = countries[countryName];
         appendCountryCanvas(jqEl, country.id)
         drawCountryCanvas(country.id, country.color, country.title);
         $.each(country.stamps, function( index, value ) {
@@ -45,6 +40,8 @@ function randomEnvelope(countryArray){
     var randomValue  = countries[randomKey]; 
     return randomKey;
 }
+
+
 
 /**
  * this function draws canvas envelope
@@ -89,65 +86,77 @@ function appendCountryCanvas(jqEl, idCanvas){
 }
 
 var postSpamps = {
-    uk1:  {
-        src: 'img/eu/uk1.jpg',
-        class1: 'uk-drop',
-        id: 'uk1',
-        alt: 'uk1',
+    azerb1:  {
+        src: 'img/cis/azerb1.jpg',
+        class1: 'azerb-drop',
+        id: 'azerb1',
+        alt: 'Azerbaijan 1',
     },
-    uk2:  {
-        src: 'img/eu/uk2.jpg',
-        class1: 'uk-drop',
-        id: 'uk2',
-        alt: 'uk2',
+    azerb2:  {
+        src: 'img/cis/azerb2.jpg',
+        class1: 'azerb-drop',
+        id: 'azerb2',
+        alt: 'Azerbaijan 2',
     },
-    uk3:  {
-        src: 'img/eu/uk3.jpg',
-        class1: 'uk-drop',
-        id: 'uk3',
-        alt: 'uk3',
+    azerb3:  {
+        src: 'img/cis/azerb3.jpg',
+        class1: 'azerb-drop',
+        id: 'azerb3',
+        alt: 'Azerbaijan 3',
     },
-    uk4:  {
-        src: 'img/eu/uk4.jpg',
-        class1: 'uk-drop',
-        id: 'uk4',
-        alt: 'uk4',
+    azerb4:  {
+        src: 'img/cis/azerb4.jpg',
+        class1: 'azerb-drop',
+        id: 'azerb4',
+        alt: 'Azerbaijan 4',
     },
-    fr1:  {
-        src: 'img/eu/france1.jpg',
-        class1: 'fr-drop',
-        id: 'fr1',
-        alt: 'fr1',
+    kaz1:  {
+        src: 'img/cis/kaz1.jpg',
+        class1: 'kaz-drop',
+        id: 'kaz1',
+        alt: 'Kazachstan 1',
     },
-    fr2:  {
-        src: 'img/eu/france1.jpg',
-        class1: 'fr-drop',
-        id: 'fr2',
-        alt: 'fr2',
+    kaz2:  {
+        src: 'img/cis/kaz2.jpg',
+        class1: 'kaz-drop',
+        id: 'kaz2',
+        alt: 'Kazachstan 2',
     },
-    it1:  {
-        src: 'img/eu/italy1.jpg',
-        class1: 'it-drop',
-        id: 'it1',
-        alt: 'it1',
+    kaz3:  {
+        src: 'img/cis/kaz3.jpg',
+        class1: 'kaz-drop',
+        id: 'kaz3',
+        alt: 'Kazachstan 3',
     },
-    it2:  {
-        src: 'img/eu/italy1.jpg',
-        class1: 'it-drop',
-        id: 'it2',
-        alt: 'it2',
+    bel1:  {
+        src: 'img/cis/bel1.jpg',
+        class1: 'bel-drop',
+        id: 'bel1',
+        alt: 'Belarus 1',
     },
-    holl1:  {
-        src: 'img/eu/holland1.jpg',
-        class1: 'holl-drop',
-        id: 'holl1',
-        alt: 'holl1',
+    bel2:  {
+        src: 'img/cis/bel2.jpg',
+        class1: 'bel-drop',
+        id: 'bel2',
+        alt: 'Belarus 2',
     },
-    holl2:  {
-        src: 'img/eu/holland2.jpg',
-        class1: 'holl-drop',
-        id: 'holl2',
-        alt: 'holl2',
+    bel3:  {
+        src: 'img/cis/bel3.jpg',
+        class1: 'bel-drop',
+        id: 'bel3',
+        alt: 'Belarus 3',
+    },
+    bel4:  {
+        src: 'img/cis/bel4.jpg',
+        class1: 'bel-drop',
+        id: 'bel4',
+        alt: 'Belarus 4',
+    },
+    bel5:  {
+        src: 'img/cis/bel5.jpg',
+        class1: 'bel-drop',
+        id: 'bel5',
+        alt: 'Belarus 5',
     },
 }
 
