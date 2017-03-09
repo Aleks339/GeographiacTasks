@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="css/mystyles.css">
 
     <script src="js/bootstrap.css"></script>
-  <style>
-  .ui-state-highlight{
-    border: 3px solid green;
-  }
-  </style>
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   <script type="text/javascript">
@@ -28,13 +23,13 @@ $(document).ready(function(){
   createCountry(stage, stage1, countryName); 
   createCountry(stage, stage1, countryName2); 
     
-  var stampArray = Object.keys(postStamps);
-  var stampName = drawPostSpamps(postStamp.id, postStamp.alt, postStamp.src, postStamp.class1);
-  var stampName2 = drawPostSpamps(postStamp.id, postStamp.alt, postStamp.src, postStamp.class1);
-  var stampName3 = drawPostSpamps(postStamp.id, postStamp.alt, postStamp.src, postStamp.class1);
-  createPostSpamps(stage1, stampName);
-  createPostSpamps(stage1, stampName2);
-  createPostSpamps(stage1, stampName3);
+$(function () {
+    var parent = $("#stage1");
+    var divs = parent.children();
+    while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+});
     
 $( ".ui-widget-content" ).draggable();
   function showBorder(jqEl, className) {
@@ -109,6 +104,7 @@ $( ".ui-widget-content" ).draggable();
         <ul class="dropdown-menu">
           <li><a href="dinamic.html">Envelopes from BRICS countries</a></li>
           <li><a href="eu_quiz.html">Envelopes from EU countries</a></li>
+          <li><a href="cis.html">Envelopes from CIS countries</a></li>
         </ul>
         </li>
       <li>
@@ -144,22 +140,7 @@ $( ".ui-widget-content" ).draggable();
             <br><br><br>
 
             <div id = "stage1">            
-            </div>
-   <!--    <img src = "https://s-media-cache-ak0.pinimg.com/originals/5f/f4/81/5ff481e3be28d19fb056f631fcf4cbef.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa4">
-            <img src ="js/ajax/postcards/russia.jpg" width = "100" height = "100" class="ui-widget-content rus-drop" id = "russia2">
-            <img src = "http://www.philatelicdatabase.com/wp-content/uploads/2008/05/china-1894-9c.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china3">
-            <img src ="js/ajax/postcards/russia70.jpg" width = "100" height = "100" class="ui-widget-content rus-drop" id = "russia4">
-            <img src ="js/ajax/postcards/india3.jpg"width = "100" height = "100" class="ui-widget-content ind-drop" id = "india3">
-            <img src="js/ajax/postcards/indiatiger.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "indiatiger">
-            <img src = "js/ajax/postcards/brazil1.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazil1">
-            <img src = "http://newsdesk.si.edu/sites/default/files/photos/HR%20Giant%20Panda%20single,%20China,%201973.JPG" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china5">
-            <img src = "http://www.marquetry.org/photos_and_illustrations/early_nationals/1980s/813a1_south_african_1d_stamp.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa5">
-            <img src = "https://www.drweb.de/magazin/wp-content/uploads/sm/wp-content/uploads/2010/01/southafrica2.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa2">
-            <img src = "js/ajax/postcards/india4.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india4">
-            <img src = "js/ajax/postcards/brazil2.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazil2">
-            <img src = "http://newsdesk.si.edu/sites/default/files/photos/HR%2010c%20Temple%20of%20Heaven%20model,%20China,%201923.JPG" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china4">
-             <img src ="js/ajax/postcards/Stamp_Russia_youth.jpg" width = "100" height = "100" class="ui-widget-content rus-drop" id = "russia1"> -->
-            
+            </div> 
             
             
         </div>

@@ -15,7 +15,7 @@ var countries = {
         id: "BelCanvas",
         color: "yellow",
         title: "From Belarus",
-        stamps: ['bel1', 'bel2', 'bel3', 'bel4', 'bel5'],
+        stamps: ['bel1', 'bel3', 'bel4', 'bel5'],
     },
 }
 
@@ -133,12 +133,6 @@ var postSpamps = {
         class1: 'bel-drop',
         id: 'bel1',
         alt: 'Belarus 1',
-    },
-    bel2:  {
-        src: 'img/cis/bel2.jpg',
-        class1: 'bel-drop',
-        id: 'bel2',
-        alt: 'Belarus 2',
     },
     bel3:  {
         src: 'img/cis/bel3.jpg',

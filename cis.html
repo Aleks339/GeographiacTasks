@@ -18,17 +18,6 @@
   <script type="text/javascript">
       
 $(document).ready(function(){
-$(document).ready(function(){
-  var stage = $('#stage');
-  var stage1 = $('#stage1');
-
-  var countryArray  = Object.keys(countries);
-  var countryName = randomEnvelope(countryArray);
-  countryArray.splice(countryArray.indexOf(countryName), 1);
-  var countryName2 = randomEnvelope(countryArray);
-  createCountry(stage, stage1, countryName); 
-  createCountry(stage, stage1, countryName2);
-  $(document).ready(function(){
   var stage = $('#stage');
   var stage1 = $('#stage1');
 
@@ -39,13 +28,13 @@ $(document).ready(function(){
   createCountry(stage, stage1, countryName); 
   createCountry(stage, stage1, countryName2); 
     
-  var stampArray = Object.keys(postStamps);
-  var stampName = drawPostSpamps(postStamp.id, postStamp.alt, postStamp.src, postStamp.class1);
-  var stampName2 = drawPostSpamps(postStamp.id, postStamp.alt, postStamp.src, postStamp.class1);
-  var stampName3 = drawPostSpamps(postStamp.id, postStamp.alt, postStamp.src, postStamp.class1);
-  createPostSpamps(stage1, stampName);
-  createPostSpamps(stage1, stampName2);
-  createPostSpamps(stage1, stampName3);
+ $(function () {
+    var parent = $("#stage1");
+    var divs = parent.children();
+    while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+});
     
 $( ".ui-widget-content" ).draggable();
   function showBorder(jqEl, className) {
@@ -78,12 +67,7 @@ $( ".ui-widget-content" ).draggable();
   });
 })
   </script>
-    
-  <script>
-    function mathRand(){
-        var x = document.getElementById("stamps").innerHTML = Math.random();
-    }
-  </script>
+
 </head>
 
 <body>
@@ -121,7 +105,7 @@ $( ".ui-widget-content" ).draggable();
         <ul class="dropdown-menu">
           <li><a href="food_quiz.html">Ethnic food quiz</a></li>
           <li><a href="celebration%20quiz.html">Celebrations quiz</a></li>
-          <li><a href="#">Traditional clothes quiz</a></li>
+          <li><a href="clothes_quiz.html">Traditional clothes quiz</a></li>
         </ul>
       </li>
     </ul>
@@ -129,7 +113,7 @@ $( ".ui-widget-content" ).draggable();
 </nav>    
 </header>
     
-<h1 class = 'h1'>Envelope quizes (EU)</h1>
+<h1 class = 'h1'>Envelope quizes (CIS)</h1>
       
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="#">Home</a></li>
