@@ -7,22 +7,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mystyles.css">
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   <style>
   .ui-state-highlight{
     border: 3px solid green;
   }
   </style>
-  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
   <script type="text/javascript">
       
 $(document).ready(function(){
+$(document).ready(function(){
   var stage = $('#stage');
-  createCountry(stage, 'france');
-  createCountry(stage, 'holland');
-  createCountry(stage, 'uk');
-  createCountry(stage, 'italy');
+  var stage1 = $('#stage1');
+
+  var countryArray  = Object.keys(countries);
+  var countryName = randomEnvelope(countryArray);
+  countryArray.splice(countryArray.indexOf(countryName), 1);
+  var countryName2 = randomEnvelope(countryArray);
+  createCountry(stage, stage1, countryName); 
+  createCountry(stage, stage1, countryName2);
     
   $.ajax({
     url: 'js/ajax/france.html',

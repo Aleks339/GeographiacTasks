@@ -3,25 +3,25 @@ var countries = {
         id: "BrazCanvas",
         color: 'red',
         title: 'from Brazil',
-        stamps: ['brazilian1'],
+        stamps: ['brazilian1', 'brazilian2', 'brazilian3'],
     },
     india: {
         id: 'IndCanvas',
         color: 'green',
         title: "From India",
-        stamps: ['india1'],
+        stamps: ['india1', 'india2'],
     },
     china: {
         id: "ChiCanvas",
         color: "yellow",
         title: "From China",
-        stamps: ['china1'],
+        stamps: ['china1', 'china2'],
     },
     africa: {
         id: "AfrCanvas",
         color: "blue",
         title: "From South Africa",
-        stamps: ['africa1'],
+        stamps: ['africa1', 'africa2'],
     },
     russia: {
         id: "RusCanvas",
@@ -159,23 +159,25 @@ var postSpamps = {
         alt: 'China2',
     },
 }
-function createPostStamp(jqEl, stampName){
-    if (postSpamps[stampName]){
-        var postStamp = postSpamps[stampName];
-        appendPostSpamps(jqEl, postStamp.src, postStamp.class1, postStamp.id, postStamp.alt, stampName);
-        drawPostStamp ( postStamp.src, postStamp.class1, postStamp.id, postStamp.alt );
-    }
-}
 
-function randomStamp(StampArray){
+//random envelope
+function randomStamp(stampArray){
     var randomNumber = Math.random();
-    var stampIndex  = Math.floor(randomNumber * StampArray.length);
+    var stampIndex  = Math.floor(randomNumber * stampArray.length);
 
-    var randomKey    = StampArray[stampIndex];
+    var randomKey    = stampArray[stampIndex];
     // This will course this will return the value of the randomKey
     // instead of a fresh random value
     var randomValue  = postSpamps[randomKey]; 
     return randomKey;
+}
+
+function createPostStamp(jqEl, stampName){
+    if (postSpamps[stampName]){
+        var postStamp = postSpamps[stampName];
+        appendPostSpamps(jqEl, postStamp.src, postStamp.class1, postStamp.id, postStamp.alt);
+        drawPostStamp ( postStamp.src, postStamp.class1, postStamp.id, postStamp.alt );
+    }
 }
 
 function appendPostSpamps(jqEl, srcPostSpamps,  classPostSpamps, idPostStamps, altPostSpamps){
