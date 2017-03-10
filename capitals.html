@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="css/mystyles.css">
     
     <script src="js/bootstrap.min.js"></script>
-  <style>
-  .ui-state-highlight{
-    border: 3px solid green;
-  }
-  </style>
   <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   <script type="text/javascript">
 $(document).ready(function(){
+    
+$(function () {
+    var parent = $("#whole_quiz");
+    var divs = parent.children();
+    while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+});
 $( ".draggable" ).draggable();
   function showBorder(jqEl, className) {
       if(jqEl.hasClass(className)){
@@ -109,7 +112,7 @@ $( ".draggable" ).draggable();
   <li class="breadcrumb-item active">Capitals of Latin America</li>
 </ol>
 
-<div id = "whole_quiz">
+
     <div style = "float: left; text-indent:30px;">
 
     <div>
@@ -141,24 +144,25 @@ $( ".draggable" ).draggable();
     <canvas width = "300" height = "50" id = "Argentina" style = "position:relative; left:25px;" class = "droppable"></canvas>
 
     </div>
-</div>
 
 <br><br><br>
     
-<div style = "float: right; position:relative; left:30px;">
 
-<canvas id = "BuenAir" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable BuenAir" width = "300" height = "50">
-</canvas>
 
-<canvas id = "carac" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable carac" width = "300" height = "50">
-</canvas>
+<div style = "float: right; position:relative; left:30px;" id = "whole_quiz">
 
-<canvas id = "san" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100"  class="draggable san" width = "300" height = "50">
-</canvas>
+    <canvas id = "BuenAir" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable BuenAir" width = "300" height = "50">
+    </canvas>
+
+    <canvas id = "carac" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable carac" width = "300" height = "50">
+    </canvas>
+
+    <canvas id = "san" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100"  class="draggable san" width = "300" height = "50">
+    </canvas>
+
+    <canvas id = "bog" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable bog" width = "300" height = "50">
+    </canvas>
     
-<canvas id = "bog" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable bog" width = "300" height = "50">
-</canvas>
-
 </div>
 
 <script>
