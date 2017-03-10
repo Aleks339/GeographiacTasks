@@ -37,31 +37,61 @@ $( ".draggable" ).draggable();
          accept: ".draggable",
          drop: function( event, ui ) {
          showBorder($(event.toElement), 'Seul');
-    }
-});
+        }
+    });
     //Japan
     $( "#Japan" ).droppable({
          accept: ".draggable",
          drop: function( event, ui ) {
          showBorder($(event.toElement), 'Tokio');
-    }
-});
+        }
+    });
 
     //Indonesia
     $( "#Indonesia" ).droppable({
          accept: ".draggable",
          drop: function( event, ui ) {
          showBorder($(event.toElement), 'Jakarta');
-    }
-});
+        }
+    });
 
     //China
     $( "#China" ).droppable({
          accept: ".draggable",
          drop: function( event, ui ) {
          showBorder($(event.toElement), 'Bejing');
-    }
- });
+        }
+     });
+    //Malaysia
+    $( "#Malaysia" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'KualaLumpur');
+        }
+    });
+    //Thailand
+    $( "#Thailand" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Bangkok');
+        }
+    });
+
+    //India
+    $( "#India" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'NewDelhi');
+        }
+    });
+
+    //Vietnam
+    $( "#Vietnam" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Hanoi');
+        }
+     });
 });
 </script>
 </head>
@@ -148,6 +178,39 @@ $( ".draggable" ).draggable();
     
 </div>
     
+<div style = "float: left; text-indent:30px;">
+    
+<div>
+	<h3>What's the capital of Thailand?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Thailand" style = "position:relative; left:30px;" class = "droppable"></canvas>
+
+<div>
+	<h3>What's the capital of Vietnam?</h3>
+</div>
+    
+<canvas width = "300" height = "50" id = "Vietnam" style = "position:relative; left:30px;" class = "droppable"></canvas>
+    
+</div>
+    
+<div style = "float: left; text-indent:25px;">
+
+<div>
+	<h3>What's the capital of Malaysia?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Malaysia" style = "position:relative; left:25px;" class = "droppable"></canvas>
+
+<div>
+	<h3>What's the capital of India?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "India" style = "position:relative; left:25px;" class = "droppable"></canvas>
+    
+</div>
+    
+    
 <br><br><br>
     
 <div style = "float: right; position:relative; left:30px;" id = "whole_quiz">
@@ -162,6 +225,18 @@ $( ".draggable" ).draggable();
 </canvas>
     
 <canvas id = "Seul" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Seul" width = "300" height = "50">
+</canvas>
+    
+<canvas id = "Hanoi" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Hanoi" width = "300" height = "50">
+</canvas>
+
+<canvas id = "Bangkok" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Bangkok" width = "300" height = "50">
+</canvas>
+
+<canvas id = "NewDelhi" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100"  class="draggable NewDelhi" width = "300" height = "50">
+</canvas>
+    
+<canvas id = "KualaLumpur" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable KualaLumpur" width = "300" height = "50">
 </canvas>
 
 </div>
@@ -191,6 +266,30 @@ var ctx = ven.getContext("2d");
 
 ctx.strokeRect(5, 5, 290, 40);
     
+//Thailand
+var col = document.getElementById("Thailand");
+var ctx = col.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//Vietnam
+var chi = document.getElementById("Vietnam");
+var ctx = chi.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//Malaysia
+var arg = document.getElementById("Malaysia");
+var ctx = arg.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//India
+var ven = document.getElementById("India");
+var ctx = ven.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+    
 //Jakarta
 var canvas = document.getElementById("Jakarta");
 var ctx = canvas.getContext("2d");
@@ -214,6 +313,30 @@ var canvas = document.getElementById("Seul");
 var ctx = canvas.getContext("2d");
 ctx.font = "30px Arial";
 ctx.fillText("Seul",10,30);
+    
+//Kuala Lumpur
+var canvas = document.getElementById("KualaLumpur");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Kuala Lumpur",10,30);
+
+//NewDelhi
+var canvas = document.getElementById("NewDelhi");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("New Delhi",10,30);
+    
+//Hanoi
+var canvas = document.getElementById("Hanoi");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Hanoi",10,30);
+
+//Bangkok
+var canvas = document.getElementById("Bangkok");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Bangkok",10,30);
 </script>
 
 </body>
