@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mystyles.css">
+    
+    <script src="js/bootstrap.min.js"></script>
+  <style>
+  .ui-state-highlight{
+    border: 3px solid green;
+  }
+  </style>
+  <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <script type="text/javascript">
+$(document).ready(function(){
+$( ".draggable" ).draggable();
+  function showBorder(jqEl, className) {
+      if(jqEl.hasClass(className)){
+        $(jqEl).css("border", "3px solid green");
+      } else {
+        $(jqEl).css("border", "3px solid red");
+      }
+  }
+    //Korea
+    $( "#Korea" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Seul');
+    }
+});
+    //Japan
+    $( "#Japan" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Tokio');
+    }
+});
+
+    //Indonesia
+    $( "#Indonesia" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Jakarta');
+    }
+});
+
+    //China
+    $( "#China" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Bejing');
+    }
+ });
+});
+</script>
+</head>
+<body>
+    
+<header>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Geographical Quizes</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li class="dropdown active">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Capital quizes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="capitals.html">Capitals of Latin America</a></li>
+          <li><a href="#">Capitals of Asia</a></li>
+          <li><a href="#">Capitals of Europe</a></li>
+          <li><a href="#">Capitals of Africa</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Envelope quizes
+       <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="dinamic.html">Envelopes from BRICS countries</a></li>
+          <li><a href="eu_quiz.html">Envelopes from EU countries</a></li>
+          <li><a href="cis.html">Envelopes from CIS countries</a></li>
+        </ul>
+        </li>
+      <li class="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Culture quizes
+      <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="food_quiz.html">Ethnic food quiz</a></li>
+          <li><a href="celebration%20quiz.html">Celebrations quiz</a></li>
+          <li><a href="clothes_quiz.html">Traditional clothes quiz</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>    
+</header>
+    
+<h1 class = 'h1'>Capital quizes (Latin America)</h1>
+      
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Capital quizes</a></li>
+  <li class="breadcrumb-item active">Capitals of Latin America</li>
+</ol>
+
+<div style = "float: left; text-indent:30px;">
+
+<div>
+	<h3>What's the capital of Japan?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Japan" style = "position:relative; left:30px;" class = "droppable"></canvas>
+
+<div>
+	<h3>What's the capital of South Korea?</h3>
+</div>
+    
+<canvas width = "300" height = "50" id = "Korea" style = "position:relative; left:30px;" class = "droppable"></canvas>
+    
+</div>
+    
+<div style = "float: left; text-indent:25px;">
+
+<div>
+	<h3>What's the capital of China?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "China" style = "position:relative; left:25px;" class = "droppable"></canvas>
+
+<div>
+	<h3>What's the capital of Indonesia?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Indonesia" style = "position:relative; left:25px;" class = "droppable"></canvas>
+    
+</div>
+    
+<br><br><br>
+    
+<div style = "float: right; position:relative; left:30px;">
+
+<canvas id = "Jakarta" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Jakarta" width = "300" height = "50">
+</canvas>
+
+<canvas id = "Bejing" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Bejing" width = "300" height = "50">
+</canvas>
+
+<canvas id = "Tokio" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100"  class="draggable Tokio" width = "300" height = "50">
+</canvas>
+    
+<canvas id = "Seul" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Seul" width = "300" height = "50">
+</canvas>
+
+</div>
+
+<script>
+//Japan
+var col = document.getElementById("Japan");
+var ctx = col.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//Korea
+var chi = document.getElementById("Korea");
+var ctx = chi.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//China
+var arg = document.getElementById("China");
+var ctx = arg.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//Indonesia
+var ven = document.getElementById("Indonesia");
+var ctx = ven.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+    
+//Jakarta
+var canvas = document.getElementById("Jakarta");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Jakarta",10,30);
+
+//Bejing
+var canvas = document.getElementById("Bejing");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Bejing",10,30);
+    
+//Tokio
+var canvas = document.getElementById("Tokio");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Tokio",10,30);
+
+//Seul
+var canvas = document.getElementById("Seul");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Seul",10,30);
+</script>
+
+</body>
+</html>
