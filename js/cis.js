@@ -6,7 +6,7 @@ var countries = {
         stamps: ['kaz1', 'kaz2', 'kaz3'],
     },
     azerbaijan: {
-        id: 'AzerCanvas',
+        id: 'AzerbCanvas',
         color: 'green',
         title: "From Azerbaijan",
         stamps: ['azerb1', 'azerb2', 'azerb3'],

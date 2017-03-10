@@ -13,7 +13,7 @@
     border: 3px solid green;
   }
   </style>
-  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   <script type="text/javascript">
       
@@ -37,34 +37,34 @@ $(document).ready(function(){
 });
     
 $( ".ui-widget-content" ).draggable();
-  function showBorder(jqEl, className) {
-      if(jqEl.hasClass(className)){
-        $(jqEl).css("border", "3px solid green");
-      } else {
-        $(jqEl).css("border", "3px solid red");
+      function showBorder(jqEl, className) {
+          if(jqEl.hasClass(className)){
+            $(jqEl).css("border", "3px solid green");
+          } else {
+            $(jqEl).css("border", "3px solid red");
+          }
       }
-  }
-  //Kazachstan
-  $( "#KazCanvas" ).droppable({
-    accept: ".ui-widget-content",
-    drop: function( event, ui ) {
-      showBorder($(event.toElement), 'kaz-drop');
-    }
-  });
-  //Belarus
-  $( "#BelCanvas" ).droppable({
-    accept: " .ui-widget-content",
-    drop: function( event, ui ) {
-      showBorder($(event.toElement), 'bel-drop');
-    }
-  });
+      //Kazachstan
+      $( "#KazCanvas" ).droppable({
+        accept: ".ui-widget-content",
+        drop: function( event, ui ) {
+          showBorder($(event.toElement), 'kaz-drop');
+        }
+      });
+      //Belarus
+      $( "#BelCanvas" ).droppable({
+        accept: " .ui-widget-content",
+        drop: function( event, ui ) {
+          showBorder($(event.toElement), 'bel-drop');
+        }
+      });
   //Azerbaijan
     $( "#AzerbCanvas" ).droppable({
-    accept: ".ui-widget-content",
-    drop: function( event, ui ) {
-      showBorder($(event.toElement), 'azerb-drop');
-    }
-  });
+        accept: ".ui-widget-content",
+        drop: function( event, ui ) {
+        showBorder($(event.toElement), 'azerb-drop');
+        }
+    });
 })
   </script>
 
