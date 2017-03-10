@@ -2,124 +2,159 @@
 <html>
 <head>
 	<title>test</title>
-	<meta charset="utf-8">
-	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	  <script>
-	  $(document).ready(function() {
-        //Colombia
-	    $( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
-	    $( "#Colombia" ).droppable({
-            accept: ".draggable1",
-            classes: {
-            "ui-droppable-active": "ui-state-active",
-            "ui-droppable-hover": "ui-state-hover"
-          },
-			drop: function( event, ui ) {
-             $( this )
-              .addClass( "ui-state-highlight" )
-              .find( "h1" )
-                alert( "Good job!" );
-			}
-		});
-            
-                  
-        //Chilie
-		$( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
-	    $( "#Chilie" ).droppable({
-            accept: ".draggable2",
-            classes: {
-            "ui-droppable-active": "ui-state-active",
-            "ui-droppable-hover": "ui-state-hover"
-        },
-			drop: function( event, ui ) {
-             $( this )
-              .addClass( "ui-state-highlight" )
-              .find( "h1" )
-                alert( "You are right!" );	
-		    }
-		});
-          
-        //Venezuela
-		$( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
-	    $( "#Venezuela" ).droppable({
-            accept: ".draggable3",
-            classes: {
-            "ui-droppable-active": "ui-state-active",
-            "ui-droppable-hover": "ui-state-hover"
-        },
-			drop: function( event, ui ) {
-             $( this )
-              .addClass( "ui-state-highlight" )
-              .find( "h1" )
-                alert( "Congratulations!" );
-			}
-		});
-          
-        //Argentina"
-		$( ".draggable1, .draggable2, .draggable3, .draggable4" ).draggable();
-	    $( "#Argentina" ).droppable({
-            accept: ".draggable4",
-            classes: {
-            "ui-droppable-active": "ui-state-active",
-            "ui-droppable-hover": "ui-state-hover"
-        },
-			drop: function( event, ui ) {
-             $( this )
-              .addClass( "ui-state-highlight" )
-              .find( "h1" )
-                alert( "Exellent!" );	
-            }
-		});
-	  } );
-	  </script>
+	<meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mystyles.css">
+    
+    <script src="js/bootstrap.min.js"></script>
+  <style>
+  .ui-state-highlight{
+    border: 3px solid green;
+  }
+  </style>
+  <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <script type="text/javascript">
+$(document).ready(function(){
+$( ".draggable" ).draggable();
+  function showBorder(jqEl, className) {
+      if(jqEl.hasClass(className)){
+        $(jqEl).css("border", "3px solid green");
+      } else {
+        $(jqEl).css("border", "3px solid red");
+      }
+  }
+    //Colombia
+    $( "#Colombia" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'bog');
+    }
+});
+    //Chilie
+    $( "#Chilie" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'san');
+    }
+});
+
+    //Venezuela
+    $( "#Venezuela" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'carac');
+    }
+});
+
+    //Argentina
+    $( "#Argentina" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'BuenAir');
+    }
+ });
+});
+</script>
 </head>
 <body>
+    
+<header>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Geographical Quizes</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li class="dropdown active">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Capital quizes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="capitals.html">Capitals of Latin America</a></li>
+          <li><a href="#">Capitals of Asia</a></li>
+          <li><a href="#">Capitals of Europe</a></li>
+          <li><a href="#">Capitals of Africa</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Envelope quizes
+       <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="dinamic.html">Envelopes from BRICS countries</a></li>
+          <li><a href="eu_quiz.html">Envelopes from EU countries</a></li>
+          <li><a href="cis.html">Envelopes from CIS countries</a></li>
+        </ul>
+        </li>
+      <li class="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Culture quizes
+      <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="food_quiz.html">Ethnic food quiz</a></li>
+          <li><a href="celebration%20quiz.html">Celebrations quiz</a></li>
+          <li><a href="clothes_quiz.html">Traditional clothes quiz</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>    
+</header>
+    
+<h1 class = 'h1'>Capital quizes (Latin America)</h1>
+      
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Capital quizes</a></li>
+  <li class="breadcrumb-item active">Capitals of Latin America</li>
+</ol>
 
 <div style = "float: left; text-indent:30px;">
 
-<div class = "droppable1">
-	<h1>What's the capital of Colombia?</h1>
+<div>
+	<h3>What's the capital of Colombia?</h3>
 </div>
 
-<canvas width = "300" height = "50" id = "Colombia" style = "position:relative; left:30px;"></canvas>
+<canvas width = "300" height = "50" id = "Colombia" style = "position:relative; left:30px;" class = "droppable"></canvas>
 
-<div class = "droppable2">
-	<h1>What's the capital of Chilie?</h1>
-</div>
-    
-<canvas width = "300" height = "50" id = "Chilie" style = "position:relative; left:30px;"></canvas>
-    
+<div>
+	<h3>What's the capital of Chilie?</h3>
 </div>
     
-<div style = "float: left; text-indent:320px;">
-
-<div class = "droppable3">
-	<h1>What's the capital of Venezuela?</h1>
-</div>
-
-<canvas width = "300" height = "50" id = "Venezuela" style = "position:relative; left:320px;"></canvas>
-
-<div class = "droppable4">
-	<h1>What's the capital of Argentina?</h1>
-</div>
-
-<canvas width = "300" height = "50" id = "Argentina" style = "position:relative; left:320px;"></canvas>
+<canvas width = "300" height = "50" id = "Chilie" style = "position:relative; left:30px;" class = "droppable"></canvas>
     
 </div>
     
-<div style = "float: right; position:relative; left:-10px;">
+<div style = "float: left; text-indent:25px;">
 
-<canvas id = "BuenAir" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable4" width = "300" height = "50">
+<div>
+	<h3>What's the capital of Venezuela?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Venezuela" style = "position:relative; left:25px;" class = "droppable"></canvas>
+
+<div>
+	<h3>What's the capital of Argentina?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Argentina" style = "position:relative; left:25px;" class = "droppable"></canvas>
+    
+</div>
+    
+<br><br><br>
+    
+<div style = "float: right; position:relative; left:30px;">
+
+<canvas id = "BuenAir" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable BuenAir" width = "300" height = "50">
 </canvas>
 
-<canvas id = "carac" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable3" width = "300" height = "50">
+<canvas id = "carac" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable carac" width = "300" height = "50">
 </canvas>
 
-<canvas id = "san" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100"  class="draggable2" width = "300" height = "50">
+<canvas id = "san" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100"  class="draggable san" width = "300" height = "50">
 </canvas>
     
-<canvas id = "bog" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable1" width = "300" height = "50">
+<canvas id = "bog" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable bog" width = "300" height = "50">
 </canvas>
 
 </div>
