@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>canvas</title>
-	<meta charset="utf-8">    
+    <title>canvas</title>
+    <meta charset="utf-8">    
+
+    <link rel="stylesheet" type="text/css" href="js/bootstrap.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mystyles.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-  .ui-state-highlight{
-    border: 3px solid green;
-  }
-  </style>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
   <script type="text/javascript">
       
 $(document).ready(function(){
+  var stage = $('#envelope-wrapper');
+  var stage1 = $('#stamps-wrapper');
 
+  var score = new Score($('.score-count'));
+
+  var countryArray  = Object.keys(countries);
+  var countryName = randomEnvelope(countryArray);
+  countryArray.splice(countryArray.indexOf(countryName), 1);
+  var countryName2 = randomEnvelope(countryArray);
+  createCountry(stage, stage1, countryName); 
+  createCountry(stage, stage1, countryName2); 
+    
+$(function () {
+    var parent = $("#stamps-wrapper");
+    var divs = parent.children();
+    while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+});
+    
 $( ".ui-widget-content" ).draggable();
   function showBorder(jqEl, className) {
       if(jqEl.hasClass(className)){
+        score.addPoint();
         $(jqEl).css("border", "3px solid green");
       } else {
+        score.removePoint();
         $(jqEl).css("border", "3px solid red");
       }
   }
@@ -56,6 +71,13 @@ $( ".ui-widget-content" ).draggable();
       showBorder($(event.toElement), 'afr-drop');
     }
   });
+  //Russia
+  $( "#RusCanvas" ).droppable({
+    accept: " .ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'rus-drop');
+    }
+  });
 })
   </script>
 </head>
@@ -69,7 +91,7 @@ $( ".ui-widget-content" ).draggable();
       <a class="navbar-brand" href="#">Geographical Quizes</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Home</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Capital quizes
         <span class="caret"></span></a>
@@ -80,27 +102,32 @@ $( ".ui-widget-content" ).draggable();
           <li><a href="#">Capitals of Africa</a></li>
         </ul>
       </li>
-      <li>
+      <li class="active">
        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Envelope quizes
        <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Envelopes from BRICS countries</a></li>
-          <li><a href="#">Envelopes from EU countries</a></li>
+          <li><a href="dinamic.html">Envelopes from BRICS countries</a></li>
+          <li><a href="eu_quiz.html">Envelopes from EU countries</a></li>
+          <li><a href="cis.html">Envelopes from CIS countries</a></li>
         </ul>
         </li>
       <li>
        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Culture quizes
       <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Ethnic food quiz</a></li>
-          <li><a href="#">Celebrations quiz</a></li>
-          <li><a href="#">Traditional clothes quiz</a></li>
+          <li><a href="food_quiz.html">Ethnic food quiz</a></li>
+          <li><a href="celebration%20quiz.html">Celebrations quiz</a></li>
+          <li><a href="clothes_quiz.html">Traditional clothes quiz</a></li>
         </ul>
       </li>
     </ul>
   </div>
 </nav>    
 </header>
+
+<div id = "score-wrapper">
+  <span class = "score-count"></span>
+</div>
     
 <h1 class = 'h1'>Envelope quizes (BRICS)</h1>
       
@@ -110,63 +137,17 @@ $( ".ui-widget-content" ).draggable();
   <li class="breadcrumb-item active">Envelopes from BRICS countries</li>
 </ol>
     
-<div class = "container">
+<div class = "container-fluid">
     <div class = "row">
-        <div class = "col-sm-11">
-            <h1 class = "h1">Try to clue Brazilian post stamps on the Brazilian envelope, and Indian ones on the Indian envelope!</h1>
-            
-            <div class = "row">
-                <div class = "col-sm-6 col-xs-12">
-                    <canvas id="BrazCanvas" width="400" height="400" class = "envelope"></canvas>
-                </div>
-                
-                <div class = "col-sm-6 col-xs-12">
-                    <canvas id="IndCanvas" width="400" height="400" class = "envelope"></canvas>
-                </div>
-                
-                <div class = "col-sm-6 col-xs-12">
-                    <canvas id="ChiCanvas" width="400" height="400" class = "envelope"></canvas>
-                </div>
-                
-                <div class = "col-sm-6 col-xs-12">
-                    <canvas id="AfrCanvas" width="400" height="400" class = "envelope"></canvas>
-                </div>
-            </div>
-
-            <br><br><br>
-
-            <img src = "postcards/brazil1" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content braz-drop" id = "brazilBird">
-            <img src = "postcards/india1.jpg" width = "100" height = "100" class="ui-widget-content" class="ui-widget-content ind-drop" id = "india1">
-            <img src = "https://s-media-cache-ak0.pinimg.com/736x/f3/55/3c/f3553cf2347e4f332329e498a7dbe234.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa3">
-            <img src = "http://chinablog.cc/wp-content/gallery/art/tiger_stamp/China_tiger_stamp.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china2">
-            <img src = "postcards/brazilFootballer.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazilFootballer">
-            <img src = "postcards/brazilFlag.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazilFlag">
-            <img src = "postcards/india2.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india2">
-             <img src = "https://s-media-cache-ak0.pinimg.com/236x/fa/0a/0c/fa0a0c40fd4c1d074455af3874031d83.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa1">
-            <img src = "https://s-media-cache-ak0.pinimg.com/originals/93/b1/7a/93b17a6946f284fe3c409c1c328c3fa8.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china1">
-            <img src = "https://s-media-cache-ak0.pinimg.com/originals/5f/f4/81/5ff481e3be28d19fb056f631fcf4cbef.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa4">
-            <img src = "http://www.philatelicdatabase.com/wp-content/uploads/2008/05/china-1894-9c.jpg" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china3">
-            <img src = "postcards/india3.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india3">
-            <img src = "postcards/indiatiger.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "indiatiger">
-            <img src = "postcards/brazil1.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazil1">
-            <img src = "http://newsdesk.si.edu/sites/default/files/photos/HR%20Giant%20Panda%20single,%20China,%201973.JPG" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china5">
-            <img src = "http://www.marquetry.org/photos_and_illustrations/early_nationals/1980s/813a1_south_african_1d_stamp.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa5">
-            <img src = "https://www.drweb.de/magazin/wp-content/uploads/sm/wp-content/uploads/2010/01/southafrica2.jpg" width = "100" height = "100" class="ui-widget-content afr-drop" id = "africa2">
-            <img src = "postcards/india4.jpg" width = "100" height = "100" class="ui-widget-content ind-drop" id = "india4">
-            <img src = "postcards/brazil2.jpg" width = "100" height = "100" class="ui-widget-content braz-drop" id = "brazil2">
-            <img src = "http://newsdesk.si.edu/sites/default/files/photos/HR%2010c%20Temple%20of%20Heaven%20model,%20China,%201923.JPG" width = "100" height = "100" class="ui-widget-content chin-drop" id = "china4">
+        <div class = "col-sm-8" id = "envelope-wrapper">
+          <h1 class = "h1">Try to clue right stamps on the right envelope!</h1>
         </div>
+        <div id = "stamps-wrapper" class = "col-sm-4">           
+        </div> 
     </div>    
 </div>
     
 
-
-<script src = "brazil.js"></script>
-
-<script src = "india.js"></script>
-    
-<script src = "china.js"></script>
-    
-<script src = "southAfrica.js"></script>
+<script src ="js/dinamic.js"></script>
 </body>
 </html>

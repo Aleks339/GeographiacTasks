@@ -170,7 +170,7 @@ var postSpamps = {
         id: 'India3',
         alt: 'India3',
     },
-    russia2:  {
+    russia3:  {
         src: 'img/postcards/russia2.jpg',
         class1: 'rus-drop',
         id: 'Russia2',
@@ -251,4 +251,39 @@ function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpa
         stampId.src = srcPostSpamps;
         stampId.class1 = classPostSpamps;
     }
+}
+
+function Score(jqEl){
+   var me = this;
+   this.jqEl = jqEl;
+   this.addPoint = function(){
+        me.plus++;
+        me.showResult();
+        me.saveResult();
+   }
+   this.removePoint = function(){
+        me.minus++;
+        me.showResult();
+        me.saveResult();
+   }
+   this.showResult = function(){
+        me.jqEl.html(me.plus - me.minus);
+   }
+   this.saveResult = function(){
+        var score = {
+            plus : me.plus,
+            minus : me.minus
+        }
+        localStorage.score = JSON.stringify(score);
+   }
+   this.restoreResult = function(){
+        var score = localStorage.score ? JSON.parse(localStorage.score) : {
+            plus : 0,
+            minus : 0
+        };
+        me.plus = score.plus;
+        me.minus = score.minus;
+        me.showResult();
+   }
+   this.restoreResult();
 }
