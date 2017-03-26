@@ -256,15 +256,21 @@ function drawPostStamp (idPostStamps, altPostSpamps, srcPostSpamps, classPostSpa
 function Score(jqEl){
    var me = this;
    this.jqEl = jqEl;
-   this.addPoint = function(){
-        me.plus++;
-        me.showResult();
-        me.saveResult();
+   this.addPoint = function(id){
+        if (!localStorage['stamp_'+id]){
+            me.plus++;
+            me.showResult();
+            me.saveResult();
+            localStorage['stamp_'+id] = 1; 
+        }
    }
-   this.removePoint = function(){
-        me.minus++;
-        me.showResult();
-        me.saveResult();
+   this.removePoint = function(id){
+        if (!localStorage['stamp_'+id]){
+            me.minus++;
+            me.showResult();
+            me.saveResult();
+            localStorage['stamp_'+id] = -1; 
+        }
    }
    this.showResult = function(){
         me.jqEl.html(me.plus - me.minus);
@@ -286,4 +292,8 @@ function Score(jqEl){
         me.showResult();
    }
    this.restoreResult();
+   this.cleanStorage = function (){
+    localStorage.clear();
+    this.restoreResult();
+   }
 }

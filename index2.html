@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas</title>
+    <meta charset="utf-8">    
+
+    <link rel="stylesheet" type="text/css" href="js/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/mystyles.css">
+
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <script type="text/javascript">
+      
+$(document).ready(function(){
+  var stage = $('#envelope-wrapper');
+  var stage1 = $('#stamps-wrapper');
+
+  var score = new Score($('.score-count'));
+
+  var countryArray  = Object.keys(countries);
+  var countryName = randomEnvelope(countryArray);
+  countryArray.splice(countryArray.indexOf(countryName), 1);
+  var countryName2 = randomEnvelope(countryArray);
+  createCountry(stage, stage1, countryName); 
+  createCountry(stage, stage1, countryName2); 
+    
+$(function () {
+    var parent = $("#stamps-wrapper");
+    var divs = parent.children();
+    while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+});
+    
+$( ".ui-widget-content" ).draggable();
+  function showBorder(jqEl, className) {
+      if(jqEl.hasClass(className)){
+        score.addPoint(jqEl.attr('id'));
+        $(jqEl).css("border", "3px solid green");
+      } else {
+        score.removePoint(jqEl.attr('id'));
+        $(jqEl).css("border", "3px solid red");
+      }
+  }
+  //Brazil
+  $( "#BrazCanvas" ).droppable({
+    accept: ".ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'braz-drop');
+    }
+  });
+  //India
+  $( "#IndCanvas" ).droppable({
+    accept: " .ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'ind-drop');
+    }
+  });
+  //China
+    $( "#ChiCanvas" ).droppable({
+    accept: ".ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'chin-drop');
+    }
+  });
+  //South Africa
+  $( "#AfrCanvas" ).droppable({
+    accept: " .ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'afr-drop');
+    }
+  });
+  //Russia
+  $( "#RusCanvas" ).droppable({
+    accept: " .ui-widget-content",
+    drop: function( event, ui ) {
+      showBorder($(event.toElement), 'rus-drop');
+    }
+  });
+  $('#clean-up-history').click(function (){
+    score.cleanStorage();
+    
+  });
+});
+  </script>
+</head>
+
+<body>
+    
+<header>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Geographical Quizes</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Capital quizes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Capitals of Latin America</a></li>
+          <li><a href="#">Capitals of Asia</a></li>
+          <li><a href="#">Capitals of Europe</a></li>
+          <li><a href="#">Capitals of Africa</a></li>
+        </ul>
+      </li>
+      <li class="active">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Envelope quizes
+       <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="dinamic.html">Envelopes from BRICS countries</a></li>
+          <li><a href="eu_quiz.html">Envelopes from EU countries</a></li>
+          <li><a href="cis.html">Envelopes from CIS countries</a></li>
+        </ul>
+        </li>
+      <li>
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Culture quizes
+      <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="food_quiz.html">Ethnic food quiz</a></li>
+          <li><a href="celebration%20quiz.html">Celebrations quiz</a></li>
+          <li><a href="clothes_quiz.html">Traditional clothes quiz</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>    
+</header>
+
+<div id = "score-wrapper">
+  <span class = "score-count"></span>
+</div>
+    
+<h1 class = 'h1'>Envelope quizes (BRICS)</h1>
+      
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Envelope quizes</a></li>
+  <li class="breadcrumb-item active">Envelopes from BRICS countries</li>
+</ol>
+    
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-sm-8" id = "envelope-wrapper">
+          <h1 class = "h1">Try to clue right stamps on the right envelope!</h1>
+        </div>
+        <div id = "stamps-wrapper" class = "col-sm-4">           
+        </div> 
+    </div>    
+</div>
+
+<button id = "clean-up-history">Clean up history</button>
+    
+
+<script src ="js/dinamic.js"></script>
+</body>
+</html>
