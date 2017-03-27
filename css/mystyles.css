@@ -46,3 +46,20 @@ hr {
   right: 20px;
   top: 153px;
 }
+table {
+  color: green;
+  font-weight: bold;
+  padding: 25px;
+  font-size: 35px;
+  text-indent: 15px;
+}
+th {
+  color: blue;
+  font-weight: bold;
+  padding: 25px;
+  font-size: 35px;
+  text-indent: 15px;
+}
+td {
+  padding: 25px;
+}
