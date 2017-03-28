@@ -8,6 +8,41 @@
 
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui.js"></script>
+  
+ <script>
+    var playerScore;
+    var gameResult = {};
+    var highscoreList = [];
+    var contryName;
+    var stampsQuantity = [];
+    var guessedRight = 0;
+    var guessedWrong = 0;
+     
+     stampsQuantity = {
+         brazilStamps: {
+             class1 : 'braz-drop', 
+             amount  : 6,
+        },
+         indiaStamps : {
+            class1 : 'ind-drop', 
+            amount  : 4,
+        },
+         africaStamps : {
+            class1 : 'afr-drop', 
+            amount  : 4,
+        },
+         chinaStamps : {
+            class1 : 'chin-drop', 
+            amount  : 4,
+        },
+         russiaStamps : {
+            class1 : 'rus-drop', 
+            amount  : 4,
+        },
+     }
+     document.getElementsByClassName('stampsQuantity').innerHTML = 
+     
+</script>
 </head>
 <body>
     <header>
@@ -55,10 +90,10 @@
             <div class = "table table-responsive table-hover">
                  <table>
                     <tr><th>Quiz result</th></tr>
-                    <tr><td>Name of the country</td><td id = "countryName"></td></tr>
-                    <tr><td>Quantity of stamps</td><td id = "stampsQuantity"></td></tr>
-                    <tr><td>Quantity of right answers</td><td id = "rightAnswersQuantity"></td></tr>
-                    <tr><td>Quantity of wrong answers</td><td id = "wrongAnswersQuantity"></td></tr>
+                    <tr><td>Name of the country</td><td class = "countryName"></td><td class = "countryName"></td><td class = "countryName"></td><td class = "countryName"></td><td class = "countryName"></td></tr>
+                    <tr><td>Quantity of stamps</td><td class = "stampsQuantity"><td class = "stampsQuantity"><td class = "stampsQuantity"><td class = "stampsQuantity"><td class = "stampsQuantity"></td></tr>
+                    <tr><td>Quantity of right answers</td><td class = "rightAnswersQuantity"></td><td class = "rightAnswersQuantity"></td><td class = "rightAnswersQuantity"></td><td class = "rightAnswersQuantity"></td><td class = "rightAnswersQuantity"></td></tr>
+                    <tr><td>Quantity of wrong answers</td><td class = "wrongAnswersQuantity"></td><td class = "wrongAnswersQuantity"></td><td class = "wrongAnswersQuantity"></td><td class = "wrongAnswersQuantity"></td><td class = "wrongAnswersQuantity"></td></tr>
                 </table>  
             </div>
         </div>
