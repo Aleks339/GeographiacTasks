@@ -50,15 +50,15 @@
          }
       }
      
-     if (document.getElementsByClassName('.countryName1'))
+     if (document.getElementsByClassName('countryName1'))
          $('.stampsQuantity1').html = stampsQuantity.brazilStamps.amount;
-     else if 
+     else if (document.getElementsByClassName('countryName2'))
         $('.stampsQuantity2').html = stampsQuantity.indiaStamps.amount; 
-     else if 
+     else if (document.getElementsByClassName('countryName3'))
         $('.stampsQuantity3').html = stampsQuantity.africaStamps.amount; 
-     else if 
+     else if (document.getElementsByClassName('countryName4'))
         $('.stampsQuantity4').html = stampsQuantity.chinaStamps.amount;
-     else
+     else if (document.getElementsByClassName('countryName5'))
         $('.stampsQuantity5').html = stampsQuantity.russiaStamps.amount; 
      
      //function definePostStamp (classPostSpamps, amountPostSpamps){
