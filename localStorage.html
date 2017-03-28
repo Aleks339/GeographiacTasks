@@ -41,13 +41,33 @@
         },
      }
      
-     function drawPostStamp (classPostSpamps, amountPostSpamps){
-        var stampClass = document.getElementById("stampsQuantity");
-        if (stampClass){
-            stampClass.class1 = classPostSpamps;
-            stampClass.amount = amountPostSpamps;
-        }
-    }
+     $( ".ui-widget-content" ).draggable();
+      function answersQuantity(jqEl, className) {
+          if(jqEl.hasClass(className)){
+              guessedRight++;
+         } else {
+            guessedWrong++;
+         }
+      }
+     
+     if (document.getElementsByClassName('.countryName1'))
+         $('.stampsQuantity1').html = stampsQuantity.brazilStamps.amount;
+     else if 
+        $('.stampsQuantity2').html = stampsQuantity.indiaStamps.amount; 
+     else if 
+        $('.stampsQuantity3').html = stampsQuantity.africaStamps.amount; 
+     else if 
+        $('.stampsQuantity4').html = stampsQuantity.chinaStamps.amount;
+     else
+        $('.stampsQuantity5').html = stampsQuantity.russiaStamps.amount; 
+     
+     //function definePostStamp (classPostSpamps, amountPostSpamps){
+        //var stampClass = document.getElementById("stampsQuantity");
+        //if (stampClass){
+            //stampClass.class1 = classPostSpamps;
+           // stampClass.amount = amountPostSpamps;
+        //}
+   // }
      
 </script>
 </head>
@@ -97,10 +117,10 @@
             <div class = "table table-responsive table-hover">
                  <table>
                     <tr><th>Quiz result</th></tr>
-                    <tr><td>Name of the country</td><td class = "countryName"></td><td class = "countryName"></td><td class = "countryName"></td><td class = "countryName"></td><td class = "countryName"></td></tr>
-                    <tr><td>Quantity of stamps</td><td class = "stampsQuantity"><td class = "stampsQuantity"><td class = "stampsQuantity"><td class = "stampsQuantity"><td class = "stampsQuantity"></td></tr>
-                    <tr><td>Quantity of right answers</td><td class = "rightAnswersQuantity"></td><td class = "rightAnswersQuantity"></td><td class = "rightAnswersQuantity"></td><td class = "rightAnswersQuantity"></td><td class = "rightAnswersQuantity"></td></tr>
-                    <tr><td>Quantity of wrong answers</td><td class = "wrongAnswersQuantity"></td><td class = "wrongAnswersQuantity"></td><td class = "wrongAnswersQuantity"></td><td class = "wrongAnswersQuantity"></td><td class = "wrongAnswersQuantity"></td></tr>
+                    <tr><td>Name of the country</td><td class = "countryName1">Brazil</td><td class = "countryName2">India</td><td class = "countryName3">South Africa</td><td class = "countryName4">China</td><td class = "countryName5">Russia</td></tr>
+                    <tr><td>Quantity of stamps</td><td class = "stampsQuantity1"><td class = "stampsQuantity2"><td class = "stampsQuantity3"><td class = "stampsQuantity4"><td class = "stampsQuantity5"></td></tr>
+                    <tr><td>Quantity of right answers</td><td class = "rightAnswersQuantity1"></td><td class = "rightAnswersQuantity2"></td><td class = "rightAnswersQuantity3"></td><td class = "rightAnswersQuantity4"></td><td class = "rightAnswersQuantity5"></td></tr>
+                    <tr><td>Quantity of wrong answers</td><td class = "wrongAnswersQuantity1"></td><td class = "wrongAnswersQuantity2"></td><td class = "wrongAnswersQuantity3"></td><td class = "wrongAnswersQuantity4"></td><td class = "wrongAnswersQuantity5"></td></tr>
                 </table>  
             </div>
         </div>
