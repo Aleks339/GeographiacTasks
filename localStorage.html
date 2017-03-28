@@ -40,7 +40,14 @@
             amount  : 4,
         },
      }
-     document.getElementsByClassName('stampsQuantity').innerHTML = 
+     
+     function drawPostStamp (classPostSpamps, amountPostSpamps){
+        var stampClass = document.getElementById("stampsQuantity");
+        if (stampClass){
+            stampClass.class1 = classPostSpamps;
+            stampClass.amount = amountPostSpamps;
+        }
+    }
      
 </script>
 </head>
