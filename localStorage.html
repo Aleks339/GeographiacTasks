@@ -10,9 +10,9 @@
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   
  <script>
-    var hst = document.getElementById("stampsQuantity");
+    var hst = document.getElementById("highscores");
      
-     var stampsQuantity = {
+     var highscores = {
          brazilStamps: {
              class1 : 'braz-drop', 
              amount  : 6,
@@ -35,39 +35,13 @@
         },
      }
      
-     localStorage.setItem("stampsQuantity", JSON.stringify(stampsQuantity));
+     localStorage.setItem("highscores", JSON.stringify(stampsQuantity));
      
-     var retrievedScores = JSON.parse(localStorage.getItem("stampsQuantity"));
+     var retrievedScores = JSON.parse(localStorage.getItem("highscores"));
 
     for (var i = 0; i < retrievedScores.length; i++) {
-        hst.innerHTML += "<tr><td>" + retrievedScores[i].name + "</td><td>" + retrievedScores[i].score + "</td></tr>";
+        hst.innerHTML += "<tr><td>" + retrievedScores[i].class1 + "</td><td>" + retrievedScores[i].amount + "</td></tr>";
     }
-     
-//     $( ".ui-widget-content" ).draggable();
-//      function answersQuantity(jqEl, className) {
-//          if(jqEl.hasClass(className)){
-//              guessedRight++;
-//         } else {
-//            guessedWrong++;
-//         }
-//      }
-//     
-//     $(document).ready(function(){
-//        $('.stampsQuantity1').html = stampsQuantity.brazilStamps.amount;
-//        $('.stampsQuantity2').html = stampsQuantity.indiaStamps.amount; 
-//        $('.stampsQuantity3').html = stampsQuantity.africaStamps.amount; 
-//        $('.stampsQuantity4').html = stampsQuantity.chinaStamps.amount;
-//        $('.stampsQuantity5').html = stampsQuantity.russiaStamps.amount;
-//     });
-//         
-//     
-//     //function definePostStamp (classPostSpamps, amountPostSpamps){
-//        //var stampClass = document.getElementById("stampsQuantity");
-//        //if (stampClass){
-//            //stampClass.class1 = classPostSpamps;
-//           // stampClass.amount = amountPostSpamps;
-//        //}
-//   // }
      
 </script>
 </head>
@@ -115,7 +89,7 @@
     <div class = 'row'>
         <div class = "col-sm-12">
             <div class = "table table-responsive table-hover">
-                 <table id = "stampsQuantity">
+                 <table id = "highscores">
                     <tr><th>Quiz result</th></tr>
                     <tr><td>Name of the country</td><td class = "countryName1">Brazil</td><td class = "countryName2">India</td><td class = "countryName3">South Africa</td><td class = "countryName4">China</td><td class = "countryName5">Russia</td></tr>
                      <tr><td>Quantity of stamps</td><td class = "stampsQuantity1"></td><td class = "stampsQuantity2"></td><td class = "stampsQuantity3"></td><td class = "stampsQuantity4"></td><td class = "stampsQuantity5"></td></tr>
