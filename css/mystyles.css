@@ -50,7 +50,7 @@ table {
   color: green;
   font-weight: bold;
   padding: 25px;
-  font-size: 35px;
+  font-size: 15px;
   text-indent: 15px;
 }
 th {
@@ -61,5 +61,5 @@ th {
   text-indent: 15px;
 }
 td {
-  padding: 25px;
+  padding: 8px;
 }

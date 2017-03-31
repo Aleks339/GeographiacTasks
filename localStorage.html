@@ -10,15 +10,9 @@
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   
  <script>
-    var playerScore;
-    var gameResult = {};
-    var highscoreList = [];
-    var contryName;
-    var stampsQuantity = [];
-    var guessedRight = 0;
-    var guessedWrong = 0;
+    var hst = document.getElementById("stampsQuantity");
      
-     stampsQuantity = {
+     var stampsQuantity = {
          brazilStamps: {
              class1 : 'braz-drop', 
              amount  : 6,
@@ -41,33 +35,39 @@
         },
      }
      
-     $( ".ui-widget-content" ).draggable();
-      function answersQuantity(jqEl, className) {
-          if(jqEl.hasClass(className)){
-              guessedRight++;
-         } else {
-            guessedWrong++;
-         }
-      }
+     localStorage.setItem("stampsQuantity", JSON.stringify(stampsQuantity));
      
-     if (document.getElementsByClassName('countryName1'))
-         $('.stampsQuantity1').html = stampsQuantity.brazilStamps.amount;
-     else if (document.getElementsByClassName('countryName2'))
-        $('.stampsQuantity2').html = stampsQuantity.indiaStamps.amount; 
-     else if (document.getElementsByClassName('countryName3'))
-        $('.stampsQuantity3').html = stampsQuantity.africaStamps.amount; 
-     else if (document.getElementsByClassName('countryName4'))
-        $('.stampsQuantity4').html = stampsQuantity.chinaStamps.amount;
-     else if (document.getElementsByClassName('countryName5'))
-        $('.stampsQuantity5').html = stampsQuantity.russiaStamps.amount; 
+     var retrievedScores = JSON.parse(localStorage.getItem("stampsQuantity"));
+
+    for (var i = 0; i < retrievedScores.length; i++) {
+        hst.innerHTML += "<tr><td>" + retrievedScores[i].name + "</td><td>" + retrievedScores[i].score + "</td></tr>";
+    }
      
-     //function definePostStamp (classPostSpamps, amountPostSpamps){
-        //var stampClass = document.getElementById("stampsQuantity");
-        //if (stampClass){
-            //stampClass.class1 = classPostSpamps;
-           // stampClass.amount = amountPostSpamps;
-        //}
-   // }
+//     $( ".ui-widget-content" ).draggable();
+//      function answersQuantity(jqEl, className) {
+//          if(jqEl.hasClass(className)){
+//              guessedRight++;
+//         } else {
+//            guessedWrong++;
+//         }
+//      }
+//     
+//     $(document).ready(function(){
+//        $('.stampsQuantity1').html = stampsQuantity.brazilStamps.amount;
+//        $('.stampsQuantity2').html = stampsQuantity.indiaStamps.amount; 
+//        $('.stampsQuantity3').html = stampsQuantity.africaStamps.amount; 
+//        $('.stampsQuantity4').html = stampsQuantity.chinaStamps.amount;
+//        $('.stampsQuantity5').html = stampsQuantity.russiaStamps.amount;
+//     });
+//         
+//     
+//     //function definePostStamp (classPostSpamps, amountPostSpamps){
+//        //var stampClass = document.getElementById("stampsQuantity");
+//        //if (stampClass){
+//            //stampClass.class1 = classPostSpamps;
+//           // stampClass.amount = amountPostSpamps;
+//        //}
+//   // }
      
 </script>
 </head>
@@ -115,10 +115,10 @@
     <div class = 'row'>
         <div class = "col-sm-12">
             <div class = "table table-responsive table-hover">
-                 <table>
+                 <table id = "stampsQuantity">
                     <tr><th>Quiz result</th></tr>
                     <tr><td>Name of the country</td><td class = "countryName1">Brazil</td><td class = "countryName2">India</td><td class = "countryName3">South Africa</td><td class = "countryName4">China</td><td class = "countryName5">Russia</td></tr>
-                    <tr><td>Quantity of stamps</td><td class = "stampsQuantity1"><td class = "stampsQuantity2"><td class = "stampsQuantity3"><td class = "stampsQuantity4"><td class = "stampsQuantity5"></td></tr>
+                     <tr><td>Quantity of stamps</td><td class = "stampsQuantity1"></td><td class = "stampsQuantity2"></td><td class = "stampsQuantity3"></td><td class = "stampsQuantity4"></td><td class = "stampsQuantity5"></td></tr>
                     <tr><td>Quantity of right answers</td><td class = "rightAnswersQuantity1"></td><td class = "rightAnswersQuantity2"></td><td class = "rightAnswersQuantity3"></td><td class = "rightAnswersQuantity4"></td><td class = "rightAnswersQuantity5"></td></tr>
                     <tr><td>Quantity of wrong answers</td><td class = "wrongAnswersQuantity1"></td><td class = "wrongAnswersQuantity2"></td><td class = "wrongAnswersQuantity3"></td><td class = "wrongAnswersQuantity4"></td><td class = "wrongAnswersQuantity5"></td></tr>
                 </table>  
