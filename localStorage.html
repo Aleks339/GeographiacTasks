@@ -10,38 +10,16 @@
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   
  <script>
-    var hst = document.getElementById("highscores");
-     
-     var highscores = {
-         brazilStamps: {
-             class1 : 'braz-drop', 
-             amount  : 6,
-        },
-         indiaStamps : {
-            class1 : 'ind-drop', 
-            amount  : 4,
-        },
-         africaStamps : {
-            class1 : 'afr-drop', 
-            amount  : 4,
-        },
-         chinaStamps : {
-            class1 : 'chin-drop', 
-            amount  : 4,
-        },
-         russiaStamps : {
-            class1 : 'rus-drop', 
-            amount  : 4,
-        },
-     }
-     
-     localStorage.setItem("highscores", JSON.stringify(highscores));
-     
-     var retrievedScores = JSON.parse(localStorage.getItem("highscores"));
-
-    for (var i = 0; i < retrievedScores.length; i++) {
-        hst.innerHTML += "<tr><td>" + retrievedScores[i].class1 + "</td><td>" + retrievedScores[i].amount + "</td></tr>";
-    }
+    $(document).ready (function(){
+      $.each( countries, function( key, value ) {
+        var tr = '<tr><td>';
+        tr+=key;
+        tr += '</td><td>';
+        tr += value.stamps.length;
+        tr += '</td><td></td><td></td></tr>';
+        $(".countries-scores").append(tr);
+      });
+    });
      
 </script>
 </head>
@@ -88,17 +66,17 @@
     </header>
     <div class = 'row'>
         <div class = "col-sm-12">
-            <div class = "table table-responsive table-hover">
-                 <table id = "highscores">
-                    <tr><th>Quiz result</th></tr>
-                    <tr><td>Name of the country</td><td class = "countryName1">Brazil</td><td class = "countryName2">India</td><td class = "countryName3">South Africa</td><td class = "countryName4">China</td><td class = "countryName5">Russia</td></tr>
-                     <tr><td>Quantity of stamps</td><td class = "stampsQuantity1"></td><td class = "stampsQuantity2"></td><td class = "stampsQuantity3"></td><td class = "stampsQuantity4"></td><td class = "stampsQuantity5"></td></tr>
-                    <tr><td>Quantity of right answers</td><td class = "rightAnswersQuantity1"></td><td class = "rightAnswersQuantity2"></td><td class = "rightAnswersQuantity3"></td><td class = "rightAnswersQuantity4"></td><td class = "rightAnswersQuantity5"></td></tr>
-                    <tr><td>Quantity of wrong answers</td><td class = "wrongAnswersQuantity1"></td><td class = "wrongAnswersQuantity2"></td><td class = "wrongAnswersQuantity3"></td><td class = "wrongAnswersQuantity4"></td><td class = "wrongAnswersQuantity5"></td></tr>
+                <table class = "table table-responsive countries-scores">
+                  <tr>
+                    <td>Name of the country</td>
+                    <td>Quantity of stamps</td>
+                    <td>Quantity of right answers</td>
+                    <td>Quantity of wrong answers</td>
+                  </tr>
                 </table>  
             </div>
         </div>
     </div>
-    
+    <script src = "js/dinamic.js"></script>
 </body>
 </html>
