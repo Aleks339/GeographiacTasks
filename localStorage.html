@@ -21,15 +21,15 @@ $(document).ready(function(){
     tr += '</td> <td class="right"></td> <td class="wrong"></td> </tr>';
     $(".countries-scores").append(tr);
   }); 
-  updateRight("braz-drop", 6);
-  updateRight("chin-drop", 4);
-  updateRight("ind-drop", 4);
-  updateRight("afr-drop", 4);
-  updateRight("rus-drop", 2);
+  updateRight("braz-drop", 0);
+  updateRight("chin-drop", 0);
+  updateRight("ind-drop", 0);
+  updateRight("afr-drop", 0);
+  updateRight("rus-drop", 0);
 
-    function updateRight(countryClass, quantity) {
-      $("." + countryClass).find(right).html(quantity++);
-      $("." + countryClass).find(wrong).html(quantity++);
+    function updateRight(countryClass, Startquantity) {
+      $("." + countryClass).find(right).html(Startquantity++);
+      $("." + countryClass).find(wrong).html(Startquantity++);
     }
 });
  
