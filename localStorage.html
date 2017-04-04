@@ -10,13 +10,19 @@
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   
  <script>
+     var rightAnswers =;
+     var wrongAnswers =;
     $(document).ready (function(){
       $.each( countries, function( key, value ) {
         var tr = '<tr><td>';
         tr+=key;
         tr += '</td><td>';
         tr += value.stamps.length;
-        tr += '</td><td></td><td></td></tr>';
+        tr += '</td><td>';
+        tr += rightAnswers+;
+        tr += '</td><td>';
+        tr += wrongAnswers;
+        tr +='</td></tr>';
         $(".countries-scores").append(tr);
       });
     });
@@ -76,7 +82,6 @@
                 </table>  
             </div>
         </div>
-    </div>
     <script src = "js/dinamic.js"></script>
 </body>
 </html>
