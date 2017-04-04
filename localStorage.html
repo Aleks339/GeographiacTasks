@@ -10,7 +10,7 @@
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   
  <script>
-     var rightAnswers = Score($('#rightAnswers')).saveResult.score.plus;
+     var rightAnswers;
      var wrongAnswers =Score($('#wrongAnswers')).saveResult.score.minus;
     $(document).ready (function(){
       $.each( countries, function( key, value ) {
@@ -19,13 +19,17 @@
         tr += '</td><td>';
         tr += value.stamps.length;
         tr += '</td><td>';
-        tr += rightAnswers+;
+        tr += rightAnswers++;
         tr += '</td><td>';
-        tr += wrongAnswers;
+        tr += wrongAnswers++;
         tr +='</td></tr>';
         $(".countries-scores").append(tr);
       });
     });
+     
+     for(rightAnswers = 0; rightAnswers < $.each(countries).length; rightAnswers++){
+         if ()
+     }
      
 </script>
 </head>
