@@ -19,17 +19,18 @@ $(document).ready(function(){
     tr += '</td> <td class="right"></td> <td class="wrong"></td> </tr>';
     $(".countries-scores").append(tr);
   }); 
-  updateRight("braz-drop", 0);
-  updateRight("chin-drop", 0);
-  updateRight("ind-drop", 0);
-  updateRight("afr-drop", 0);
-  updateRight("rus-drop", 0);
-
-    function updateRight(countryClass, Startquantity) {
-      $("." + countryClass).find(".right").html(Startquantity++);
-      $("." + countryClass).find(".wrong").html(Startquantity++);
-    }
 });
+     
+updateRight("braz-drop", 0);
+updateRight("chin-drop", 0);
+updateRight("ind-drop", 0);
+updateRight("afr-drop", 0);
+updateRight("rus-drop", 0);
+
+function updateRight(countryClass, StartQuantity) {
+  $("." + countryClass).find(".right").html(StartQuantity++);
+  $("." + countryClass).find(".wrong").html(StartQuantity++);
+}
  
 </script>
 </head>
