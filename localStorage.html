@@ -10,8 +10,8 @@
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   
  <script>
-     var rightAnswers =;
-     var wrongAnswers =;
+     var rightAnswers = Score($('#rightAnswers')).saveResult.score.plus;
+     var wrongAnswers =Score($('#wrongAnswers')).saveResult.score.minus;
     $(document).ready (function(){
       $.each( countries, function( key, value ) {
         var tr = '<tr><td>';
@@ -76,8 +76,8 @@
                   <tr>
                     <td>Name of the country</td>
                     <td>Quantity of stamps</td>
-                    <td>Quantity of right answers</td>
-                    <td>Quantity of wrong answers</td>
+                    <td id = "rightAnswers">Quantity of right answers</td>
+                    <td id = "wrongAnswers">Quantity of wrong answers</td>
                   </tr>
                 </table>  
             </div>
