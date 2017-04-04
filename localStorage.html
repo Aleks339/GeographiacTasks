@@ -10,8 +10,6 @@
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   
  <script>
-var right = $(".right");
-var wrong = $(".wrong");
 $(document).ready(function(){
    $.each(countries, function(key, value) {
     var tr = '<tr class="' + key + '"><td>';
@@ -28,8 +26,8 @@ $(document).ready(function(){
   updateRight("rus-drop", 0);
 
     function updateRight(countryClass, Startquantity) {
-      $("." + countryClass).find(right).html(Startquantity++);
-      $("." + countryClass).find(wrong).html(Startquantity++);
+      $("." + countryClass).find(".right").html(Startquantity++);
+      $("." + countryClass).find(".wrong").html(Startquantity++);
     }
 });
  
