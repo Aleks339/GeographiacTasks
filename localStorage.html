@@ -10,26 +10,29 @@
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   
  <script>
-     var rightAnswers;
-     var wrongAnswers =Score($('#wrongAnswers')).saveResult.score.minus;
-    $(document).ready (function(){
-      $.each( countries, function( key, value ) {
-        var tr = '<tr><td>';
-        tr+=key;
-        tr += '</td><td>';
-        tr += value.stamps.length;
-        tr += '</td><td>';
-        tr += rightAnswers++;
-        tr += '</td><td>';
-        tr += wrongAnswers++;
-        tr +='</td></tr>';
-        $(".countries-scores").append(tr);
-      });
-    });
-     
-     for(rightAnswers = 0; rightAnswers < $.each(countries).length; rightAnswers++){
-         if ()
-     }
+$(document).ready(function(){
+   $.each(countries, function(key, value) {
+    var tr = '<tr class="' + key + '"><td>';
+    tr += key;
+    tr += '</td><td>';
+    tr += value.stamps.length;
+    tr += '</td> <td class="right"></td> <td class="wrong"></td> </tr>';
+    $(".countries-scores").append(tr);
+  }); 
+})
+
+
+// or wrap into a function call
+  updateRight("braz-drop", 6);
+  updateRight("chin-drop", 4);
+  updateRight("ind-drop", 4);
+  updateRight("afr-drop", 4);
+  updateRight("rus-drop", 2);
+
+function updateRight(countryClass, quantity) {
+  $("." + countryClass).find(".right").html(quantity);
+}
+
      
 </script>
 </head>
@@ -80,8 +83,8 @@
                   <tr>
                     <td>Name of the country</td>
                     <td>Quantity of stamps</td>
-                    <td id = "rightAnswers">Quantity of right answers</td>
-                    <td id = "wrongAnswers">Quantity of wrong answers</td>
+                    <td>Quantity of right answers</td>
+                    <td>Quantity of wrong answers</td>
                   </tr>
                 </table>  
             </div>
