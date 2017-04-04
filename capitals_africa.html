@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mystyles.css">
+    
+    <script src="js/bootstrap.min.js"></script>
+  <style>
+  .ui-state-highlight{
+    border: 3px solid green;
+  }
+  </style>
+  <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <script type="text/javascript">
+$(document).ready(function(){
+$(function () {
+    var parent = $("#whole_quiz");
+    var divs = parent.children();
+    while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+});
+$( ".draggable" ).draggable();
+  function showBorder(jqEl, className) {
+      if(jqEl.hasClass(className)){
+        $(jqEl).css("border", "3px solid green");
+      } else {
+        $(jqEl).css("border", "3px solid red");
+      }
+  }
+    //Zimbabwe
+    $( "#Zimbabwe" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Harare');
+        }
+    });
+    //Kenya
+    $( "#Kenya" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Nairobi');
+        }
+    });
+
+    //Tanzania
+    $( "#Tanzania" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Dodoma');
+        }
+    });
+
+    //Ghana
+    $( "#Ghana" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Accra');
+        }
+     });
+    //Mozambique
+    $( "#Mozambique" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Maputo');
+        }
+    });
+    //Botswana
+    $( "#Botswana" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Gaborone');
+        }
+    });
+
+    //Sudan
+    $( "#Sudan" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Khartoum');
+        }
+    });
+
+    //Nigeria
+    $( "#Nigeria" ).droppable({
+         accept: ".draggable",
+         drop: function( event, ui ) {
+         showBorder($(event.toElement), 'Abuja');
+        }
+     });
+});
+</script>
+</head>
+<body>
+    
+<header>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Geographical Quizes</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li class="dropdown active">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Capital quizes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="capitals.html">Capitals of Latin America</a></li>
+          <li><a href="#">Capitals of Asia</a></li>
+          <li><a href="#">Capitals of Europe</a></li>
+          <li><a href="#">Capitals of Africa</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Envelope quizes
+       <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="dinamic.html">Envelopes from BRICS countries</a></li>
+          <li><a href="eu_quiz.html">Envelopes from EU countries</a></li>
+          <li><a href="cis.html">Envelopes from CIS countries</a></li>
+        </ul>
+        </li>
+      <li class="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Culture quizes
+      <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="food_quiz.html">Ethnic food quiz</a></li>
+          <li><a href="celebration%20quiz.html">Celebrations quiz</a></li>
+          <li><a href="clothes_quiz.html">Traditional clothes quiz</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>    
+</header>
+    
+<h1 class = 'h1'>Capital quizes (Africa)</h1>
+      
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Capital quizes</a></li>
+  <li class="breadcrumb-item active">Capitals of Africa</li>
+</ol>
+
+<div style = "float: left; text-indent:30px;">
+
+<div>
+	<h3>What's the capital of Zimbabwe?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Zimbabwe" style = "position:relative; left:30px;" class = "droppable"></canvas>
+
+<div>
+	<h3>What's the capital of Kenya?</h3>
+</div>
+    
+<canvas width = "300" height = "50" id = "Kenya" style = "position:relative; left:30px;" class = "droppable"></canvas>
+    
+</div>
+    
+<div style = "float: left; text-indent:25px;">
+
+<div>
+	<h3>What's the capital of Tanzania?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Tanzania" style = "position:relative; left:25px;" class = "droppable"></canvas>
+
+<div>
+	<h3>What's the capital of Ghana?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Ghana" style = "position:relative; left:25px;" class = "droppable"></canvas>
+    
+</div>
+    
+<div style = "float: left; text-indent:30px;">
+    
+<div>
+	<h3>What's the capital of Mozambique?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Mozambique" style = "position:relative; left:30px;" class = "droppable"></canvas>
+
+<div>
+	<h3>What's the capital of Botswana?</h3>
+</div>
+    
+<canvas width = "300" height = "50" id = "Botswana" style = "position:relative; left:30px;" class = "droppable"></canvas>
+    
+</div>
+    
+<div style = "float: left; text-indent:25px;">
+
+<div>
+	<h3>What's the capital of Sudan?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Sudan" style = "position:relative; left:25px;" class = "droppable"></canvas>
+
+<div>
+	<h3>What's the capital of Nigeria?</h3>
+</div>
+
+<canvas width = "300" height = "50" id = "Nigeria" style = "position:relative; left:25px;" class = "droppable"></canvas>
+    
+</div>
+    
+    
+<br><br><br>
+    
+<div style = "float: right; position:relative; left:30px;" id = "whole_quiz">
+
+<canvas id = "Harare" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Harare" width = "300" height = "50">
+</canvas>
+
+<canvas id = "Nairobi" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Nairobi" width = "300" height = "50">
+</canvas>
+
+<canvas id = "Dodoma" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100"  class="draggable Dodoma" width = "300" height = "50">
+</canvas>
+    
+<canvas id = "Accra" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Accra" width = "300" height = "50">
+</canvas>
+    
+<canvas id = "Maputo" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Maputo" width = "300" height = "50">
+</canvas>
+
+<canvas id = "Gaborone" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Gaborone" width = "300" height = "50">
+</canvas>
+
+<canvas id = "Khartoum" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100"  class="draggable Khartoum" width = "300" height = "50">
+</canvas>
+    
+<canvas id = "Abuja" style = "border:1px solid black; background-image: url('http://elitefon.ru/download.php?file=201211/1280x1024/elitefon.ru-19016.jpg'); z-index:100" class = "draggable Abuja" width = "300" height = "50">
+</canvas>
+
+</div>
+
+<script>
+//Japan
+var col = document.getElementById("Zimbabwe");
+var ctx = col.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//Kenya
+var chi = document.getElementById("Kenya");
+var ctx = chi.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//Tanzania
+var arg = document.getElementById("Tanzania");
+var ctx = arg.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//Ghana
+var ven = document.getElementById("Ghana");
+var ctx = ven.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+    
+//Mozambique
+var col = document.getElementById("Mozambique");
+var ctx = col.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//Botswana
+var chi = document.getElementById("Botswana");
+var ctx = chi.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//Sudan
+var arg = document.getElementById("Sudan");
+var ctx = arg.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+
+//Nigeria
+var ven = document.getElementById("Nigeria");
+var ctx = ven.getContext("2d");
+
+ctx.strokeRect(5, 5, 290, 40);
+    
+    
+    
+    
+//Harare
+var canvas = document.getElementById("Harare");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Harare",10,30);
+
+//Nairobi
+var canvas = document.getElementById("Nairobi");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Nairobi",10,30);
+    
+//Dodoma
+var canvas = document.getElementById("Dodoma");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Dodoma",10,30);
+
+//Accra
+var canvas = document.getElementById("Accra");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Accra",10,30);
+    
+//Maputo
+var canvas = document.getElementById("Maputo");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Maputo",10,30);
+
+//Gaborone
+var canvas = document.getElementById("Gaborone");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Gaborone",10,30);
+    
+//Khartoum
+var canvas = document.getElementById("Khartoum");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Khartoum",10,30);
+
+//Abuja
+var canvas = document.getElementById("Abuja");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Abuja",10,30);
+</script>
+
+</body>
+</html>
