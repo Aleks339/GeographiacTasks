@@ -19,19 +19,19 @@ $(document).ready(function(){
     tr += '</td> <td class="right"></td> <td class="wrong"></td> </tr>';
     $(".countries-scores").append(tr);
   }); 
-})
-
-
-// or wrap into a function call
   updateRight("braz-drop", 6);
   updateRight("chin-drop", 4);
   updateRight("ind-drop", 4);
   updateRight("afr-drop", 4);
   updateRight("rus-drop", 2);
 
-function updateRight(countryClass, quantity) {
-  $("." + countryClass).find(".right").html(quantity);
-}
+    function updateRight(countryClass, quantity) {
+      $("." + countryClass).find(".right").html(quantity);
+    }
+});
+
+
+
 
      
 </script>
