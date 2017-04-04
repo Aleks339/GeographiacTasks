@@ -28,7 +28,8 @@ $(document).ready(function(){
   updateRight("rus-drop", 2);
 
     function updateRight(countryClass, quantity) {
-      $("." + countryClass).find(".right").html(quantity);
+      $("." + countryClass).find(right).html(quantity++);
+      $("." + countryClass).find(wrong).html(quantity++);
     }
 });
  
