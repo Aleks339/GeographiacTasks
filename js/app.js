@@ -66,4 +66,142 @@ app.controller('stampsController', function($scope){
             ctx.fillText(fillText, 195, 340);  //different titles
         }
     }
+    
+    $scope.postSpamps = {
+        brazilian1:  {
+            src: 'img/postcards/brazil1.jpg',
+            class1: 'braz-drop',
+            id: 'brazil1',
+            alt: 'Brazilian Bird',
+        },
+        india1:  {
+            src: 'img/postcards/india1.jpg',
+            class1: 'ind-drop',
+            id: 'India1',
+            alt: 'India1',
+        },
+        russia1:  {
+            src: 'img/postcards/russia1.jpg',
+            class1: 'rus-drop',
+            id: 'Russia1',
+            alt: 'Russia1',
+        },
+        africa1:  {
+            src: 'img/postcards/africa1.jpg',
+            class1: 'afr-drop',
+            id: 'Africa1',
+            alt: 'Africa1',
+        },
+        china1:  {
+            src: 'img/postcards/china1.jpg',
+            class1: 'chin-drop',
+            id: 'China1',
+            alt: 'China1',
+        },
+        brazilian2:  {
+            src: 'img/postcards/brazil2.jpg',
+            class1: 'braz-drop',
+            id: 'brazil2',
+            alt: 'Brazil2',
+        },
+        brazilian3:  {
+            src: 'img/postcards/brazil3.jpg',
+            class1: 'braz-drop',
+            id: 'brazil3',
+            alt: 'brazil3',
+        },
+        india2:  {
+            src: 'img/postcards/india2.jpg',
+            class1: 'ind-drop',
+            id: 'India2',
+            alt: 'India2',
+        },
+        africa2:  {
+            src: 'img/postcards/africa2.jpg',
+            class1: 'afr-drop',
+            id: 'Africa2',
+            alt: 'Africa2',
+        },
+        china2:  {
+            src: 'img/postcards/china2.jpg',
+            class1: 'chin-drop',
+            id: 'China2',
+            alt: 'China2',
+        },
+        brazilian4:  {
+            src: 'img/postcards/brazil4.jpg',
+            class1: 'braz-drop',
+            id: 'brazil4',
+            alt: 'Brazilian Bird',
+        },
+        india3:  {
+            src: 'img/postcards/india3.jpg',
+            class1: 'ind-drop',
+            id: 'India3',
+            alt: 'India3',
+        },
+        russia3:  {
+            src: 'img/postcards/russia2.jpg',
+            class1: 'rus-drop',
+            id: 'Russia2',
+            alt: 'Russia2',
+        },
+        africa3:  {
+            src: 'img/postcards/africa3.jpg',
+            class1: 'afr-drop',
+            id: 'Africa3',
+            alt: 'Africa3',
+        },
+        china3:  {
+            src: 'img/postcards/china3.jpg',
+            class1: 'chin-drop',
+            id: 'China3',
+            alt: 'China3',
+        },
+        brazilian5:  {
+            src: 'img/postcards/brazil5.jpg',
+            class1: 'braz-drop',
+            id: 'brazil5',
+            alt: 'Brazilian5',
+        },
+        brazilian6:  {
+            src: 'img/postcards/brazil6.jpg',
+            class1: 'braz-drop',
+            id: 'brazil6',
+            alt: 'brazil6',
+        },
+        india4:  {
+            src: 'img/postcards/india4.jpg',
+            class1: 'ind-drop',
+            id: 'India4',
+            alt: 'India4',
+        },
+        africa4:  {
+            src: 'img/postcards/africa4.jpg',
+            class1: 'afr-drop',
+            id: 'Africa4',
+            alt: 'Africa4',
+        },
+        china4:  {
+            src: 'img/postcards/china4.jpg',
+            class1: 'chin-drop',
+            id: 'China4',
+            alt: 'China4',
+        },
+    }
+    $scope.createPostStamp = function(jqEl, stampName){
+        if (postSpamps[stampName]){
+            var postStamp = postSpamps[stampName];
+            appendPostSpamps(jqEl, postStamp.src, postStamp.class1, postStamp.id, postStamp.alt);
+            drawPostStamp ( postStamp.src, postStamp.class1, postStamp.id, postStamp.alt );
+        }
+    }
+    $scope.drawPostStamp = function(idPostStamps, altPostSpamps, srcPostSpamps, classPostSpamps ){
+        var stampId = document.getElementById(idPostStamps);
+        if (stampId){
+            stampId.alt = altPostSpamps;
+            stampId.src = srcPostSpamps;
+            stampId.class1 = classPostSpamps;
+        }
+    }
 });
