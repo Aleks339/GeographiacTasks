@@ -1,0 +1,21 @@
+{
+  "name": "geo.loc",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "github": "Aleks339",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.5"
+  },
+  "devDependencies": {
+    "angular": "^1.6.5"
+  }
+}

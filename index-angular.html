@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ngApp = "geoLoc">
+<html ng-app = "geoLoc">
 <head>
     <title>canvas</title>
     <meta charset="utf-8">    
@@ -10,9 +10,6 @@
 
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui.js"></script>
-
- <script src = "bower_components/angular/angular.js"></script>
-
   <script type="text/javascript">
       
 $(document).ready(function(){
@@ -39,10 +36,10 @@ $(function () {
 $( ".ui-widget-content" ).draggable();
   function showBorder(jqEl, className) {
       if(jqEl.hasClass(className)){
-        score.addPoint();
+        score.addPoint(jqEl.attr('id'));
         $(jqEl).css("border", "3px solid green");
       } else {
-        score.removePoint();
+        score.removePoint(jqEl.attr('id'));
         $(jqEl).css("border", "3px solid red");
       }
   }
@@ -81,11 +78,15 @@ $( ".ui-widget-content" ).draggable();
       showBorder($(event.toElement), 'rus-drop');
     }
   });
-})
+  $('#clean-up-history').click(function (){
+    score.cleanStorage();
+    
+  });
+});
   </script>
 </head>
 
-<body ng-controller = "stampsController">
+<body>
     
 <header>
  <nav class="navbar navbar-default">
@@ -131,6 +132,7 @@ $( ".ui-widget-content" ).draggable();
 <div id = "score-wrapper">
   <span class = "score-count"></span>
 </div>
+<button id = "clean-up-history">Clean up history</button>
     
 <h1 class = 'h1'>Envelope quizes (BRICS)</h1>
       
@@ -140,7 +142,17 @@ $( ".ui-widget-content" ).draggable();
   <li class="breadcrumb-item active">Envelopes from BRICS countries</li>
 </ol>
     
-<div class = "container-fluid">
+<div class = "container-fluid" ng-controller = "stampsController">
+    <div class = "row">
+        <div class = "col-sm-8" id = "ang-envelope-wrapper" ng-repeat = 'country in countries'>
+          <h1 class = "h1">Try to clue right stamps on the right envelope!</h1>
+        </div>
+        <div id = "ang-stamps-wrapper" class = "col-sm-4" ng-repeat = 'stamp in stamps'>           
+        </div> 
+    </div>    
+</div>
+    
+<div class = "container-fluid" ng-controller = "stampsController">
     <div class = "row">
         <div class = "col-sm-8" id = "envelope-wrapper" ng-repeat = 'country in countries'>
           <h1 class = "h1">Try to clue right stamps on the right envelope!</h1>
@@ -149,8 +161,8 @@ $( ".ui-widget-content" ).draggable();
         </div> 
     </div>    
 </div>
-    
 
 <script src ="js/dinamic.js"></script>
+<script src ="js/app.js"></script>
 </body>
 </html>
