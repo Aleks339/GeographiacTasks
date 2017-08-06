@@ -67,7 +67,7 @@ app.controller('stampsController', function($scope){
         }
     }
     
-    $scope.postSpamps = {
+    $scope.stamps = {
         brazilian1:  {
             src: 'img/postcards/brazil1.jpg',
             class1: 'braz-drop',
@@ -188,20 +188,5 @@ app.controller('stampsController', function($scope){
             id: 'China4',
             alt: 'China4',
         },
-    }
-    $scope.createPostStamp = function(jqEl, stampName){
-        if (postSpamps[stampName]){
-            var postStamp = postSpamps[stampName];
-            appendPostSpamps(jqEl, postStamp.src, postStamp.class1, postStamp.id, postStamp.alt);
-            drawPostStamp ( postStamp.src, postStamp.class1, postStamp.id, postStamp.alt );
-        }
-    }
-    $scope.drawPostStamp = function(idPostStamps, altPostSpamps, srcPostSpamps, classPostSpamps ){
-        var stampId = document.getElementById(idPostStamps);
-        if (stampId){
-            stampId.alt = altPostSpamps;
-            stampId.src = srcPostSpamps;
-            stampId.class1 = classPostSpamps;
-        }
     }
 });
