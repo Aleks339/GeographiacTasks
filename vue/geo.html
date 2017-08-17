@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="stamps">
+      <ol>
+        <!--
+          Now we provide each todo-item with the todo object
+          it's representing, so that its content can be dynamic.
+          We also need to provide each component with a "key",
+          which will be explained later.
+        -->
+        <stamps
+          v-for="poststamp in stampList"
+          v-bind:stampprop="poststamp"
+          v-bind:key="poststamp.id">
+        </stamps>
+      </ol>
+    </div>
+    
+   <script src="data/data.js"></script>
+    <script src="../node_modules/vue/dist/vue.js"></script>  
+    <script>
+        Vue.component('stamps', {
+          // The todo-item component now accepts a
+          // "prop", which is like a custom attribute.
+          // This prop is called todo.
+          props: ['stampprop'],
+          template: '<img :src={{poststamp.src}} />'
+        })
+        
+        var app7 = new Vue({
+          el: '#stamps',
+          data: {
+            stampList: [
+              {
+                template: '#stamps'
+              }
+            ]
+          }
+        })
+    </script>
+</body>
+</html>

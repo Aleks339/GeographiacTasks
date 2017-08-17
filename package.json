@@ -14,10 +14,15 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.8",
+    "css-loader": "^0.28.5",
     "gulp": "^3.9.1",
-    "gulp-less": "^3.3.0"
+    "gulp-less": "^3.3.0",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "vue": "^2.4.2"
+  },
   "keywords": [
     "countries",
     "envelopes",
