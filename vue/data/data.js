@@ -247,3 +247,36 @@ var postspamps = {
     },
 }
 
+var countries = {
+        brazil: {
+        id: "BrazCanvas",
+        color: 'red',
+        title: 'from Brazil',
+        stamps: ['brazilian1', 'brazilian2', 'brazilian3', 'brazilian4', 'brazilian5', 'brazilian6'],
+    },
+    india: {
+        id: 'IndCanvas',
+        color: 'green',
+        title: "From India",
+        stamps: ['india1', 'india2', 'india3', 'india4'],
+    },
+    china: {
+        id: "ChiCanvas",
+        color: "yellow",
+        title: "From China",
+        stamps: ['china1', 'china2', 'china3', 'china4'],
+    },
+    africa: {
+        id: "AfrCanvas",
+        color: "blue",
+        title: "From South Africa",
+        stamps: ['africa1', 'africa2', 'africa3', 'africa4'],
+    },
+    russia: {
+        id: "RusCanvas",
+        color: "brown",
+        title: "From Russia",
+        stamps: ['russia1', 'russia3'],
+    },
+}
+

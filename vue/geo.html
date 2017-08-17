@@ -12,7 +12,14 @@
 <body>
    <div class="container" id = "geo">
        <div class="row">
-           <div class="col-sm-8"></div>
+           <div class="col-sm-8">
+               <envelope
+                   v-for="envelopeitem in envelopeList"
+                      v-bind:envelopeprop="envelopeitem"
+                      v-bind:key="envelopeitem.id">
+                          
+            </envelope>
+           </div>
            <div class="col-sm-4">
                <div>
                   <ol>
@@ -45,12 +52,27 @@
           template: '<img :src="stampprop.src" class = "stamp"/>'
         })
         
+        Vue.component('envelope', {
+          // The todo-item component now accepts a
+          // "prop", which is like a custom attribute.
+          // This prop is called todo.
+          props: ['envelopeprop'],
+          template: '<div class = "envelope">\
+            <h2 :class = "envelopeprop.color">\
+            {{envelopeprop.title}}\
+        </h2>\
+        </div>'
+        })
+        
         var app7 = new Vue({
           el: '#geo',
           data: {
-            stampList: postspamps
+            stampList: postspamps,
+            envelopeList: countries
           }
         })
+        
+        
     </script>
 </body>
 </html>

@@ -1,4 +1,39 @@
 .stamp {
     width:100px;
     height:100px;
+    margin: 2px;
+}
+.envelope {
+    background-image: url(envelope.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width:300px;
+    height:200px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.envelope h2 {
+    text-align: center;
+    background-color: rgba(100, 100, 100, 0.2);
+}
+
+.red {
+    color:red;
+}
+.green {
+    color:green;
+}
+.red {
+    color:red;
+}
+.brown {
+    color:brown;
+}
+.blue {
+    color:blue;
+}
+.yellow {
+    color:yellow;
 }
