@@ -3,23 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="../js/bootstrap.css">
+    
+    <script src="../js/jquery-3.1.1.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="stamps">
-      <ol>
-        <!--
-          Now we provide each todo-item with the todo object
-          it's representing, so that its content can be dynamic.
-          We also need to provide each component with a "key",
-          which will be explained later.
-        -->
-        <stamps
-          v-for="poststamp in stampList"
-          v-bind:stampprop="poststamp"
-          v-bind:key="poststamp.id">
-        </stamps>
-      </ol>
-    </div>
+   <div class="container" id = "geo">
+       <div class="row">
+           <div class="col-sm-8"></div>
+           <div class="col-sm-4">
+               <div>
+                  <ol>
+                    <!--
+                      Now we provide each todo-item with the todo object
+                      it's representing, so that its content can be dynamic.
+                      We also need to provide each component with a "key",
+                      which will be explained later.
+                    -->
+                    <stamps
+                      v-for="poststamp in stampList"
+                      v-bind:stampprop="poststamp"
+                      v-bind:key="poststamp.id">
+                    </stamps>
+                  </ol>
+                </div>
+           </div>
+       </div>
+   </div>
+    
     
    <script src="data/data.js"></script>
     <script src="../node_modules/vue/dist/vue.js"></script>  
@@ -29,11 +42,11 @@
           // "prop", which is like a custom attribute.
           // This prop is called todo.
           props: ['stampprop'],
-          template: '<img :src="stampprop.src" />'
+          template: '<img :src="stampprop.src" class = "stamp"/>'
         })
         
         var app7 = new Vue({
-          el: '#stamps',
+          el: '#geo',
           data: {
             stampList: postspamps
           }
