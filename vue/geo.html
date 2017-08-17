@@ -29,17 +29,13 @@
           // "prop", which is like a custom attribute.
           // This prop is called todo.
           props: ['stampprop'],
-          template: '<img :src={{poststamp.src}} />'
+          template: '<img :src="stampprop.src" />'
         })
         
         var app7 = new Vue({
           el: '#stamps',
           data: {
-            stampList: [
-              {
-                template: '#stamps'
-              }
-            ]
+            stampList: postspamps
           }
         })
     </script>
